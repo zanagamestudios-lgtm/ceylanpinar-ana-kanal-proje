@@ -1,0 +1,1372 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ceylanpınar Ana Kanal Proje Dosyası</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Kimlik: tek, açık ve yüksek kontrastlı tema (sunum için). Düzen: yapışkan üst menü + sekmeli görünümler. */
+:root{
+  --c-m:#dcefe4; --c-i:#dde8f7; --c-e:#f7ead2; --c-n:#ece2f4; --c-d:#e8ebef;
+  --paper:#f5f7fa; --sheet:#ffffff; --ink:#111a27; --ink-2:#4f5b6b; --line:#d7dee7; --line-2:#e9eef4;
+  --accent:#1b5fc1; --accent-ink:#ffffff; --accent-soft:#e7f0fd; --water:#1b5fc1; --warn:#a25f00; --warn-soft:#fff3df;
+  --viewer:#eef2f6;
+  --f-display:"Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --f-body:"Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  --r:8px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{background:var(--paper);color:var(--ink)}
+body{font-family:var(--f-body);font-size:15.5px;line-height:1.6;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--sheet)}
+a{color:var(--water)}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1320px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;letter-spacing:-.01em;text-wrap:balance;margin:0;line-height:1.1}
+h2{font-size:30px}
+h3{font-size:21px}
+.mono{font-family:var(--f-mono)}
+.eyebrow{font-family:var(--f-body);font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.num{font-variant-numeric:tabular-nums}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--sheet);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;padding-block:10px;flex-wrap:wrap}
+.brand{display:flex;flex-direction:column;min-width:0}
+.brand b{font-family:var(--f-display);font-size:18px;font-weight:700;letter-spacing:-.005em;line-height:1.25}
+.brand span{font-size:12px;color:var(--ink-2)}
+nav.tabs{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap}
+nav.tabs a{text-decoration:none;color:var(--ink-2);padding:7px 12px;border-radius:var(--r);font-weight:500;font-size:14px}
+nav.tabs a:hover{background:var(--line-2);color:var(--ink)}
+nav.tabs a[aria-current="page"]{background:var(--accent);color:var(--accent-ink)}
+main{padding-block:28px 60px}
+section.view{display:flex;flex-direction:column;gap:28px}
+
+/* overview */
+.hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;align-items:start}
+.hero h1{font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-.015em}
+.hero p{max-width:65ch;color:var(--ink-2);margin:12px 0 0}
+.titleblock{border:1.5px solid var(--ink);background:var(--sheet);font-size:13px}
+.titleblock div{display:grid;grid-template-columns:130px 1fr;border-bottom:1px solid var(--ink)}
+.titleblock div:last-child{border-bottom:0}
+.titleblock dt,.titleblock dd{margin:0;padding:6px 10px}
+.titleblock dt{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;border-right:1px solid var(--ink);color:var(--ink-2)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.facts div{background:var(--sheet);padding:14px 16px}
+.facts b{display:block;font-family:var(--f-display);font-size:30px;font-weight:600;line-height:1}
+.facts span{font-size:13px;color:var(--ink-2)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:24px}
+.card{background:var(--sheet);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.card h3{margin-bottom:10px}
+.card ul,.card ol{margin:0;padding-left:20px}
+.card li{margin:3px 0}
+.guide{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:14px}
+.guide a{display:block;text-decoration:none;color:inherit;background:var(--sheet);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.guide a:hover{border-color:var(--accent)}
+.guide b{font-family:var(--f-display);font-size:20px;font-weight:600;display:block}
+.guide span{font-size:13.5px;color:var(--ink-2)}
+.note{background:var(--warn-soft);border-left:3px solid var(--warn);padding:12px 14px;border-radius:0 var(--r) var(--r) 0;font-size:14px}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--sheet)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line-2);text-align:left;vertical-align:top}
+th{font-family:var(--f-body);font-size:12px;font-weight:600;letter-spacing:.01em;text-transform:none;color:var(--ink-2);font-weight:500;background:var(--paper);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right}
+
+/* drawings */
+.dwg{display:grid;grid-template-columns:300px minmax(0,1fr);gap:18px;align-items:start}
+.rail{background:var(--sheet);border:1px solid var(--line);border-radius:var(--r);max-height:calc(100vh - 140px);overflow:auto;position:sticky;top:calc(env(safe-area-inset-top,0px) + 80px)}
+.rail .search{padding:10px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--sheet);z-index:1}
+.rail input{width:100%;padding:7px 10px;border:1px solid var(--line);border-radius:var(--r);background:var(--paper)}
+.grp{padding:10px 12px 4px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.item{display:grid;grid-template-columns:64px 1fr;gap:10px;align-items:center;width:100%;text-align:left;border:0;background:none;padding:7px 12px;cursor:pointer;border-left:3px solid transparent}
+.item:hover{background:var(--line-2)}
+.item[aria-current="true"]{background:var(--accent-soft);border-left-color:var(--accent)}
+.item img{width:64px;height:44px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:3px}
+.item code{font-family:var(--f-mono);font-size:11px;color:var(--ink-2);display:block}
+.item span{font-size:13px;line-height:1.3;display:block}
+.stage{display:flex;flex-direction:column;gap:12px;min-width:0}
+.stagehead{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:end}
+.stagehead h2{font-size:28px}
+.toolbar{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--sheet);border-radius:var(--r);padding:7px 11px;cursor:pointer;font-size:13.5px;font-weight:500;white-space:nowrap}
+.btn:hover{border-color:var(--ink-2)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.on{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn.icon{padding:7px}
+.zoomval{font-family:var(--f-mono);font-size:12.5px;min-width:56px;text-align:center;color:var(--ink-2)}
+#osd{width:100%;height:min(74vh,860px);min-height:380px;background:var(--viewer);border:1px solid var(--line);border-radius:var(--r);position:relative;overflow:hidden}
+#osd.neg .openseadragon-canvas{filter:invert(1) hue-rotate(180deg)}
+.stage.max{position:fixed;inset:0;z-index:50;background:var(--paper);padding:max(10px,env(safe-area-inset-top,0px)) max(10px,env(safe-area-inset-right,0px)) max(10px,env(safe-area-inset-bottom,0px)) max(10px,env(safe-area-inset-left,0px))}
+.stage.max #osd{flex:1;height:auto}
+.stage.max .desc{display:none}
+.loading{position:absolute;left:12px;top:12px;z-index:5;background:var(--sheet);border:1px solid var(--line);padding:4px 10px;border-radius:20px;font-size:12px;font-family:var(--f-mono)}
+.desc{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:18px}
+.desc p{margin:0 0 8px;max-width:72ch}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-family:var(--f-mono);font-size:11.5px;padding:3px 8px;border-radius:20px;background:var(--accent-soft);color:var(--ink);border:1px solid var(--line);text-decoration:none}
+.meta{font-size:13px;color:var(--ink-2)}
+.meta div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed var(--line);padding:4px 0}
+.hint{font-size:12.5px;color:var(--ink-2)}
+#tYazi,#qkn,.kpis b,.total .grand span{overflow-wrap:anywhere}
+.mobilepick{display:none}
+
+/* items */
+.poz{display:grid;grid-template-columns:150px minmax(0,1fr);gap:0;background:var(--sheet);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.poz > .code{background:var(--paper);border-right:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:4px}
+.poz > .code b{font-family:var(--f-mono);font-size:15px}
+.poz > .code span{font-size:12.5px;color:var(--ink-2)}
+.poz > .body{padding:16px 18px;min-width:0}
+.poz h3{margin-bottom:8px}
+.poz ul{margin:6px 0;padding-left:20px}
+.poz li{margin:2px 0}
+.poz .row{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px;font-size:13px;color:var(--ink-2)}
+details.more summary{cursor:pointer;color:var(--water);font-size:13.5px;margin-top:6px}
+details.more p{font-size:13.5px;color:var(--ink-2);max-width:80ch}
+.pozlist{display:flex;flex-direction:column;gap:12px}
+
+/* quote */
+.qgrid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:20px;align-items:start}
+.qtable td{vertical-align:middle}
+.qtable input{width:130px;text-align:right;padding:6px 8px;border:1px solid var(--line);border-radius:4px;background:var(--paper);font-variant-numeric:tabular-nums}
+.qtable input.changed{border-color:var(--accent);background:var(--accent-soft)}
+.qtable input.qty{width:96px}
+.qtable .range{font-size:11.5px;color:var(--ink-2);font-family:var(--f-mono);white-space:nowrap}
+.qtable .name{min-width:240px}
+.qtable td.mono{white-space:nowrap}
+.qtable tfoot td{font-weight:600;background:var(--paper)}
+.side{display:flex;flex-direction:column;gap:14px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 80px)}
+.form{display:flex;flex-direction:column;gap:10px}
+.form label{display:flex;flex-direction:column;gap:3px;font-size:12.5px;color:var(--ink-2)}
+.form input,.form textarea,.form select{width:100%;min-width:0;padding:7px 9px;border:1px solid var(--line);border-radius:4px;background:var(--paper);color:var(--ink);font-size:14px}
+.form .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+.total{display:flex;flex-direction:column;gap:6px}
+.total div{display:flex;justify-content:space-between;gap:10px;font-variant-numeric:tabular-nums}
+.total .grand{font-family:var(--f-display);font-size:22px;flex-wrap:wrap;font-weight:700;border-top:1.5px solid var(--ink);padding-top:8px}
+.actions{display:flex;flex-direction:column;gap:8px}
+.actions .btn{justify-content:center}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--sheet);padding:9px 16px;border-radius:var(--r);font-size:14px;z-index:60;max-width:calc(100% - 32px)}
+.bar{height:8px;background:var(--line-2);border-radius:4px;overflow:hidden;min-width:60px}
+.bar i{display:block;height:100%;background:var(--accent)}
+
+.poz > .code .bfbig{font-family:var(--f-display);font-size:20px;font-weight:700;margin-top:10px;color:var(--accent)}
+.anh{font-family:var(--f-display);font-size:18px;font-weight:600;margin:16px 0 6px}
+.kabul{font-size:13px;color:var(--ink-2);margin-bottom:8px}.kabul ul{margin:4px 0 0;padding-left:18px}
+.antable td{vertical-align:middle}
+.antable td.mono{white-space:nowrap}
+.cols2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:20px;align-items:start}
+@media (max-width:1100px){.cols2{grid-template-columns:1fr}}
+.antable input{width:110px;text-align:right;padding:5px 7px;border:1px solid var(--line);border-radius:4px;background:var(--paper);font-variant-numeric:tabular-nums}
+.antable input.qty{width:86px}
+.antable input.changed{border-color:var(--accent);background:var(--accent-soft)}
+.antable tfoot td{background:var(--paper);font-weight:500}
+.antable .bfrow td,.bfrow td{font-weight:700;color:var(--accent);border-top:1.5px solid var(--ink)}
+.tt{display:inline-block;font-family:var(--f-mono);font-size:10.5px;padding:2px 6px;border-radius:3px;white-space:nowrap;color:var(--ink)}
+.t-m{background:var(--c-m)}.t-i{background:var(--c-i)}.t-e{background:var(--c-e)}.t-n{background:var(--c-n)}.t-d{background:var(--c-d)}
+.stack{display:flex;height:10px;border-radius:5px;overflow:hidden;margin-top:10px;gap:2px}.stack i{display:block;min-width:2px}
+.cmp{font-size:13px;margin-top:8px;padding:8px 10px;border-radius:var(--r);border:1px solid var(--line)}
+.cmp.in{background:var(--accent-soft)}.cmp.low,.cmp.high{background:var(--warn-soft)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:middle}.dot.in{background:var(--accent)}.dot.low{background:var(--water)}.dot.high{background:var(--warn)}
+.explain{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px;background:var(--sheet);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.explain p{margin:6px 0 0;color:var(--ink-2);max-width:70ch}
+.formula{font-size:14px;line-height:2.1;align-self:center}
+a.chiplink{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ink-2)}
+.pa h4{font-family:var(--f-display);font-size:17px;font-weight:600;margin:14px 0 4px}
+.pa ul{margin:0;padding-left:20px}.pa li{margin:2px 0}
+.pa .tip{background:var(--accent-soft);padding:8px 12px;border-radius:var(--r);font-size:13.5px;margin-top:10px}
+.profit{display:flex;flex-direction:column;gap:18px;margin-top:10px}
+.pgrid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:20px;align-items:start}
+.wf td{padding:7px 8px}#ohp td.r{white-space:nowrap}.wf .sub td{color:var(--ink-2);font-size:13px;padding-left:22px}
+.wf .tot td{font-weight:700;border-top:1.5px solid var(--ink)}.wf .kar td{color:var(--accent);font-weight:700}
+.stack.big{height:16px;margin-top:12px}
+.t-oh{background:var(--c-n)}.t-sz{background:var(--c-e)}.t-rk{background:var(--c-d)}.t-kr{background:var(--accent)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:12px}
+.kpis div{background:var(--sheet);padding:10px 12px}.kpis b{display:block;font-family:var(--f-display);font-size:22px;font-weight:700;line-height:1.1}.kpis span{font-size:12px;color:var(--ink-2)}
+tr.neg td{background:var(--warn-soft)}tr.neg td.km{color:var(--warn);font-weight:700}
+.src ul{font-size:13.5px;color:var(--ink-2)}.src summary{cursor:pointer}
+@media (max-width:980px){.pgrid{grid-template-columns:1fr}}
+.m3grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:18px;align-items:start}
+.m3stage{position:relative}
+#m3d{width:100%;height:min(72vh,820px);min-height:380px;background:var(--viewer);border:1px solid var(--line);border-radius:var(--r);position:relative;overflow:hidden;touch-action:none}
+#m3d canvas{display:block;width:100%!important;height:100%!important}
+.m3stage.max{position:fixed;inset:0;z-index:50;background:var(--paper);padding:max(10px,env(safe-area-inset-top,0px)) max(10px,env(safe-area-inset-right,0px)) max(10px,env(safe-area-inset-bottom,0px)) max(10px,env(safe-area-inset-left,0px))}
+.m3stage.max #m3d{height:100%}
+.m3pick{position:absolute;left:12px;bottom:12px;max-width:min(420px,calc(100% - 24px));background:var(--sheet);border:1px solid var(--line);border-radius:var(--r);padding:10px 12px;font-size:13.5px;box-shadow:0 4px 18px rgba(0,0,0,.12)}
+.m3pick b{display:block;font-size:14.5px}
+.m3groups{display:flex;flex-direction:column;gap:6px}
+.m3groups label{display:grid;grid-template-columns:auto 14px 1fr;gap:8px;align-items:center;font-size:13.5px;cursor:pointer}
+.m3groups .sw{width:14px;height:14px;border-radius:3px;border:1px solid var(--line)}
+.m3groups small{display:block;color:var(--ink-2);font-family:var(--f-mono);font-size:10.5px}
+.m3slider{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--ink-2);margin-top:14px}
+.m3chk{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--ink-2);margin-top:10px}
+.m3dims{margin:0;padding-left:18px;font-size:13.5px}
+@media (max-width:980px){.m3grid{grid-template-columns:1fr}#m3d{height:60vh}}
+.m3models{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(128px,100%),1fr));gap:8px}
+.m3tab{display:flex;flex-direction:column;gap:4px;text-align:left;border:1px solid var(--line);background:var(--sheet);border-radius:var(--r);padding:6px;cursor:pointer;font-size:13px;font-weight:500}
+.m3tab img{width:100%;aspect-ratio:16/8;object-fit:cover;border-radius:3px;background:#dfe3e3}
+.m3tab small{display:block;font-family:var(--f-mono);font-size:10.5px;color:var(--ink-2);font-weight:400}
+.m3tab[aria-selected="true"]{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+.m3gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:12px;margin-top:8px}
+.m3gal figure{margin:0;background:var(--sheet);border:1px solid var(--line);border-radius:var(--r);padding:6px}
+.m3gal img{width:100%;border-radius:3px;display:block}.m3gal figcaption{font-size:12.5px;color:var(--ink-2);margin-top:4px}
+.modebtn{margin-left:4px;padding:6px 10px;font-size:13px}
+.top .wrap{flex-wrap:nowrap;gap:14px}
+nav.tabs{flex-wrap:nowrap}
+nav.tabs a{padding:7px 9px;font-size:14px;white-space:nowrap}
+.brand b{font-size:16px!important}
+body.ro .cols2{grid-template-columns:1fr}
+.cols2>*,.cols>*,.qgrid>*,.pgrid>*,.ozbody>*{min-width:0}
+@media (max-width:1180px){.top .wrap{flex-wrap:wrap}}
+.modebtn.on{background:var(--warn-soft);border-color:var(--warn);color:var(--ink)}
+body.ro .edit-only{display:none!important}
+body:not(.priv) .priv-only{display:none!important}
+.lockdlg{position:fixed;inset:0;z-index:80;background:rgba(17,26,39,.45);display:flex;align-items:center;justify-content:center;padding:16px}
+.lockbox{background:var(--sheet);border-radius:12px;padding:22px;width:min(380px,100%);display:flex;flex-direction:column;gap:10px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.lockbox input{padding:10px 12px;border:1px solid var(--line);border-radius:var(--r);font-size:16px;background:var(--paper)}
+.lockbtn{white-space:nowrap}
+body:not(.ro) .ro-only{display:none!important}
+body.ro .edin{display:none!important}
+body:not(.ro) .rov{display:none!important}
+body.ro .adv{display:none!important}
+.toolbar.showadv .adv{display:inline-flex!important}
+body.ro .qtable .tfl{text-align:left}
+.lead{font-size:18px;line-height:1.5;color:var(--ink)!important;max-width:60ch}
+.ozet{display:flex;flex-direction:column;gap:14px}
+.ozhead{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap}
+.ozhead .btn{text-decoration:none}
+.ozbody{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px}
+.kpis.big b{font-size:28px}.kpis.big span{font-size:13px}
+.kpis.big{margin-top:0}
+.hbars{display:flex;flex-direction:column;gap:7px}
+.hbar{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) 74px;gap:10px;align-items:center;font-size:13.5px}
+.hbar .lbl{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hbar .trk{height:12px;background:var(--line-2);border-radius:0 4px 4px 0;overflow:hidden}
+.hbar .trk i{display:block;height:100%;background:var(--accent);border-radius:0 4px 4px 0;min-width:2px}
+.hbar .v{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-2)}
+.steps{margin:6px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.pozsum{display:flex;gap:22px;flex-wrap:wrap;margin:10px 0 2px;font-size:14.5px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:8px 12px}
+details.calc{margin-top:10px}
+details.calc > summary{cursor:pointer;color:var(--water);font-weight:500;font-size:14px}
+details.card > summary{cursor:pointer}
+@media (max-width:980px){.ozbody{grid-template-columns:1fr}}
+@media (max-width:1180px){.qgrid{grid-template-columns:1fr}.side{position:static;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr))}}
+@media (max-width:980px){
+  .hero,.qgrid,.desc,.explain{grid-template-columns:1fr}
+  .dwg{grid-template-columns:1fr}
+  .rail{display:none}
+  .mobilepick{display:flex;gap:8px}
+  .mobilepick select{flex:1;min-width:0;padding:8px;border:1px solid var(--line);border-radius:var(--r);background:var(--sheet)}
+  .side{position:static}
+  #osd{height:62vh}
+}
+@media (max-width:560px){
+  .poz{grid-template-columns:1fr}
+  .poz > .code{border-right:0;border-bottom:1px solid var(--line);flex-direction:row;align-items:baseline;gap:10px}
+  .titleblock div{grid-template-columns:100px 1fr}
+}
+/* ---------- telefon: kaydırmasız menü ve kart tablolar ---------- */
+@media (max-width:760px){
+  header.top{position:static}
+  .top .wrap{flex-wrap:wrap!important;gap:8px;padding-block:10px}
+  .brand{width:100%}
+  .brand b{font-size:15px!important}
+  .brand span{display:none}
+  nav.tabs{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;width:100%;margin-left:0}
+  nav.tabs a{text-align:center;padding:9px 4px;font-size:13px;white-space:normal;line-height:1.2;border:1px solid var(--line);background:var(--paper)}
+  nav.tabs a[aria-current="page"]{border-color:var(--accent)}
+  .modebtn{width:100%;margin-left:0;justify-content:center}
+  main{padding-block:18px 40px}
+  h2{font-size:24px}
+  .stagehead{flex-direction:column;align-items:stretch}
+  .toolbar{flex-wrap:wrap}
+  .kpis.big{grid-template-columns:1fr 1fr}
+  .kpis.big b{font-size:18px;overflow-wrap:anywhere}
+  .kpis.big div{padding:10px}
+  .kpis b{overflow-wrap:anywhere}
+  .hbar{grid-template-columns:minmax(0,1fr) 70px 52px}
+  .tbl-wrap{overflow-x:visible;border:0;background:transparent}
+  table.mstack, table.mstack tbody, table.mstack tfoot, table.mstack tr, table.mstack td{display:block;width:100%}
+  table.mstack thead{display:none}
+  table.mstack tbody tr{border:1px solid var(--line);border-radius:var(--r);margin:0 0 10px;padding:8px 12px;background:var(--sheet)}
+  table.mstack td{border:0;padding:3px 0;display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:right}
+  table.mstack td::before{content:attr(data-l);color:var(--ink-2);font-size:12.5px;text-align:left;flex:0 0 44%}
+  table.mstack td[data-l=""]::before, table.mstack td:not([data-l])::before{display:none}
+  table.mstack td.name, table.mstack td.lead-cell{display:block;text-align:left;font-weight:600;font-size:14.5px;padding-bottom:4px}
+  table.mstack td.name::before, table.mstack td.lead-cell::before{display:none}
+  table.mstack tfoot tr{display:flex;justify-content:space-between;gap:10px;padding:8px 12px;border-top:1.5px solid var(--ink);background:var(--paper)}
+  table.mstack tfoot td{display:block;width:auto;padding:0}
+  table.mstack tfoot tr{flex-wrap:wrap}
+  table.mstack tfoot td{min-width:0;overflow-wrap:anywhere}
+  .poz .body{min-width:0}
+  table.mstack tfoot td:empty{display:none}
+  table.mstack .bar{min-width:90px}
+  table.qtable.mstack tbody td:first-child{display:none}
+  table.mstack input{width:96px;min-width:0}
+  table.mstack td{min-width:0}
+  table.mstack td > *{min-width:0}
+  .qtable .range{white-space:normal}
+  .total div{flex-wrap:wrap}
+  .dwg .rail{display:none}
+  .m3models{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .m3tab span{font-size:12px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><b>Mardin Ceylanpınar Ana Kanalı · 3. Kısım Rehabilitasyonu</b><span>DSİ GAP 15. Bölge Müdürlüğü · İKN 2026/2092622 · Proje okuma dosyası</span></div>
+    <nav class="tabs" aria-label="Bölümler">
+      <a href="#genel">1 · Özet</a>
+      <a href="#paftalar">2 · Çizimler</a>
+      <a href="#model">3 · 3D model</a>
+      <a href="#is-kalemleri">4 · Yapılacak işler</a>
+      <a href="#teklif">5 · Fiyat teklifi</a>
+      <a href="#sartname">Şartname</a>
+    </nav>
+    <button class="btn modebtn lockbtn" id="lockBtn" type="button">🔒 Yönetici girişi</button>
+    <button class="btn modebtn priv-only" id="modeBtn" type="button" aria-pressed="false" title="Fiyatları ve oranları düzenlemek için açın">Düzenleme: kapalı</button>
+  </div>
+</header>
+
+<div class="lockdlg" id="lockDlg" hidden role="dialog" aria-modal="true" aria-labelledby="lockT">
+  <form class="lockbox" id="lockForm" autocomplete="off">
+    <h3 id="lockT">Yönetici girişi</h3>
+    <p class="hint">Maliyet, kâr ve oranları görmek ve fiyatları düzenlemek için parolayı girin.</p>
+    <input id="lockPw" type="password" placeholder="Parola" aria-label="Parola" autocomplete="off">
+    <div class="hint" id="lockErr" style="color:var(--warn);min-height:1.2em"></div>
+    <div class="toolbar"><button class="btn primary" type="submit" id="lockGo">Giriş</button><button class="btn" type="button" id="lockCancel">Vazgeç</button></div>
+  </form>
+</div>
+<main class="wrap">
+
+<!-- ============ GENEL ============ -->
+<section class="view" id="v-genel">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Proje okuma dosyası · 2026</div>
+      <h1>Ana kanal çek yapıları, radyal kapaklar ve hidrolik tertibat rehabilitasyonu</h1>
+      <p class="lead">Kanal üzerindeki su kapaklarının (radyal kapaklar) bakımı, boyanması, contalarının ve hidrolik sistemlerinin yenilenmesi ile kanal boyunca bakım yolu yapılması işi.</p>
+      <p>Bu dosya işi 5 adımda anlatır: ne yapılacağı, çizimler, 3D model, iş kalemleri ve fiyat teklifi. Üstteki menüden sırayla ilerleyin.</p>
+    </div>
+    <dl class="titleblock">
+      <div><dt>İdare</dt><dd>DSİ GAP 15. Bölge Müdürlüğü, Sulama Şube Müdürlüğü, Şanlıurfa</dd></div>
+      <div><dt>İş</dt><dd>Mardin Ceylanpınar Ovaları Sulaması Ana Kanal Rehabilitasyonu 3. Kısım</dd></div>
+      <div><dt>İKN</dt><dd class="mono">2026/2092622</dd></div>
+      <div><dt>Yer</dt><dd>Mardin Ceylanpınar Ana Kanalı, Km 0+00 – 221+00 (Şanlıurfa / Mardin)</dd></div>
+      <div><dt>Süre</dt><dd>Yer tesliminden itibaren 450 gün</dd></div>
+      <div><dt>Teklif türü</dt><dd>Birim fiyat (15 iş kalemi, KDV hariç)</dd></div>
+    </dl>
+  </div>
+
+  <div class="facts">
+    <div><b class="num">10</b><span>çek yapısı (1.–10. çek)</span></div>
+    <div><b class="num">42</b><span>radyal / regülatör kapak</span></div>
+    <div><b class="num">84</b><span>hidrolik silindir (piston)</span></div>
+    <div><b class="num">14.465</b><span>m² kumlama + boya</span></div>
+    <div><b class="num">23.000</b><span>litre ISO VG 68 hidrolik yağ</span></div>
+    <div><b class="num">87.000</b><span>m stabilize bakım yolu</span></div>
+  </div>
+
+  <div class="ozet card">
+    <div class="ozhead">
+      <div><div class="eyebrow">Teklif özeti</div><h2>Toplam teklif</h2></div>
+      <a class="btn primary" href="#teklif">Fiyat teklifini aç →</a>
+    </div>
+    <div class="kpis big" id="ozk"></div>
+    <div class="ozbody">
+      <div>
+        <h3>Paranın büyük kısmı nereye gidiyor?</h3>
+        <p class="hint" style="margin:2px 0 10px">İş kalemlerinin teklif içindeki payı (KDV hariç). Bir satıra gelince tutarı görünür.</p>
+        <div class="hbars" id="ozbars"></div>
+      </div>
+      <div>
+        <h3>Teklif nasıl hesaplandı?</h3>
+        <ol class="steps">
+          <li><b>İş kalemleri:</b> Şartnamedeki 15 iş kalemi ve miktarları alındı.</li>
+          <li><b>Birim maliyet:</b> Her kalemin 1 biriminin malzeme, işçilik, makine ve nakliye maliyeti Ekim 2026 fiyatlarıyla hesaplandı.</li>
+          <li><b>Giderler:</b> Şantiye giderleri, vergiler, teminat ve sigorta, risk payı ve kâr eklendi.</li>
+          <li><b>Toplam:</b> Birim fiyat × miktar = kalem tutarı; kalemlerin toplamı teklif tutarıdır.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="guide" aria-label="Sunum akışı">
+    <a href="#paftalar"><b>2 · Çizimler</b><span>36 proje çizimi. Yakınlaştırarak inceleyin; her çizimin altında ne gösterdiği yazıyor.</span></a>
+    <a href="#model"><b>3 · 3D model</b><span>Kapaklar ve parçaları 3 boyutlu; çevirip parçalarına ayırabilirsiniz.</span></a>
+    <a href="#is-kalemleri"><b>4 · Yapılacak işler</b><span>15 iş kalemi: ne yapılacak, ne kadar, birim fiyatı ne.</span></a>
+    <a href="#teklif"><b>5 · Fiyat teklifi</b><span>Toplam tutar, kâr ve teklif belgesi.</span></a>
+  </div>
+
+  <div class="cols">
+    <div class="card">
+      <h3>Dosyada neler var</h3>
+      <ul>
+        <li><b>22 mekanik pafta</b> (MC2-RK-001…023): radyal kapak genel yerleşimi, gömülü elemanlar, ankrajlar, hidrolik silindir şasesi, kapak gövdesi, conta, kol, kolbaşı, korkuluk/merdiven, seviye göstergesi, hidrolik devre şeması.</li>
+        <li><b>Elektrik projesi</b> (10 sayfa): hidrolik kaldırma tertibatı PLC kumanda panosu, güç ve kumanda devreleri, pano ön görünüşü.</li>
+        <li><b>Koruma yapısı</b> montaj resmi ve malzeme listesi (hidrolik güç ünitesi kafesi).</li>
+        <li><b>Stabilize yol</b> tip kesiti ve sol/sağ şev km listesi.</li>
+        <li><b>Örnek hidrolik silindir</b> görselleri (REH-14 için).</li>
+        <li>Birim Fiyat Tarifleri (18 s.) ve Özel Teknik Şartname (15 s.) özetleri, orijinal PDF'ler.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Çek yapıları (ödeme pursantajı)</h3>
+      <div class="tbl-wrap" style="border:0">
+        <table>
+          <thead><tr><th>Çek</th><th>Km</th><th class="r">REH-06/07</th><th class="r">REH-08</th></tr></thead>
+          <tbody id="cekRows"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Okurken bilinmesi gerekenler</h3>
+      <ul>
+        <li>Mekanik paftalar, kanalın <b>Km 130+380 ve 133+080</b> çek yapıları için 2014'te onaylanmış <b>iş sonu (as-built)</b> projeleridir; aynı tip kapakların ölçü, ağırlık ve detayları için referanstır.</li>
+        <li>Paftalarda ölçüler milimetredir. Malzeme listeleri (poz, adet, malzeme, ağırlık) her paftanın sağ üst köşesindedir.</li>
+        <li>Tüm malzemeler için <b>idareden yazılı onay</b> alınmadan sipariş verilemez (en az 3 alternatif numune).</li>
+        <li>Hidrolik sistem: açma 150 bar, kapama 20 bar, kapak hızı 0,3 m/dak.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PAFTALAR ============ -->
+<section class="view" id="v-paftalar" hidden>
+  <div class="dwg">
+    <aside class="rail" aria-label="Pafta listesi">
+      <div class="search"><input id="q" type="search" placeholder="Pafta ara: kod, başlık…" aria-label="Pafta ara"></div>
+      <div id="list"></div>
+    </aside>
+    <div class="stage" id="stage">
+      <div class="mobilepick"><select id="pick" aria-label="Pafta seç"></select></div>
+      <div class="stagehead">
+        <div>
+          <div class="eyebrow" id="dCode">—</div>
+          <h2 id="dTitle">Pafta</h2>
+        </div>
+        <div class="toolbar" role="toolbar" aria-label="Görüntüleyici">
+          <button class="btn icon" id="bPrev" title="Önceki pafta (←)" aria-label="Önceki pafta"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="btn icon" id="bNext" title="Sonraki pafta (→)" aria-label="Sonraki pafta"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+          <button class="btn icon" id="bOut" title="Uzaklaştır (−)" aria-label="Uzaklaştır"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M8 11h6M21 21l-5-5"/></svg></button>
+          <span class="zoomval" id="zv">—</span>
+          <button class="btn icon" id="bIn" title="Yakınlaştır (+)" aria-label="Yakınlaştır"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M8 11h6M11 8v6M21 21l-5-5"/></svg></button>
+          <button class="btn adv" id="b100" title="Gerçek piksel (1:1)">1:1</button>
+          <button class="btn icon" id="bHome" title="Sayfaya sığdır (0)" aria-label="Sayfaya sığdır"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+          <button class="btn icon adv" id="bRot" title="90° döndür (R)" aria-label="Döndür"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></button>
+          <button class="btn adv" id="bNeg" title="Negatif görünüm (karanlıkta okuma)">Negatif</button>
+          <button class="btn adv" id="bHD" title="En yüksek çözünürlük katmanı">Ultra HD</button>
+          <button class="btn" id="bMore" type="button" aria-expanded="false">Diğer araçlar</button>
+          <button class="btn icon" id="bMax" title="Tam ekran (F)" aria-label="Tam ekran"><svg viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg></button>
+          <button class="btn adv" id="bDl" title="Görseli indir">İndir</button>
+        </div>
+      </div>
+      <div id="osd"><span class="loading" id="ld" hidden>yükleniyor…</span></div>
+      <div class="hint">Yakınlaştırmak için fare tekerleği veya iki parmak · gezmek için sürükleyin · ← → ile önceki / sonraki çizim.<span class="edit-only"> Fare tekerleği veya iki parmakla yakınlaştırın · sürükleyerek gezin · çift tıklama yakınlaştırır, Shift + çift tıklama uzaklaştırır · sağ alttaki küçük harita tüm paftayı gösterir · klavye: ← → pafta, + − yakınlık, 0 sığdır, R döndür, F tam ekran.</span></div>
+      <div class="desc">
+        <div>
+          <p id="dDesc"></p>
+          <div class="chips" id="dRel"></div>
+        </div>
+        <div class="meta" id="dMeta"></div>
+      </div>
+      <div class="pa card" id="dPA" hidden></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3D MODEL ============ -->
+<section class="view" id="v-model" hidden>
+  <div>
+    <div class="eyebrow">Blender · şematik ölçülü modeller · 9 montaj</div>
+    <h2>3D montaj modelleri</h2>
+    <p class="hint" style="max-width:82ch;margin:8px 0 0">Genel yerleşim ve alt montajlar paftalardaki ölçülerle modellendi. Sürükleyerek döndürün, tekerlek / iki parmakla yakınlaştırın, sağ tık veya iki parmakla kaydırın. Bir parçaya tıklayınca adı ve grubu görünür.</p>
+  </div>
+  <div class="m3models" id="m3models" role="tablist" aria-label="Montaj seçimi"></div>
+  <div class="m3grid">
+    <div class="m3stage" id="m3stage">
+      <div class="stagehead" style="margin-bottom:8px">
+        <div><div class="eyebrow" id="m3code">—</div><h3 id="m3title" style="font-size:24px">—</h3></div>
+        <div class="toolbar" role="toolbar" aria-label="3D görünüm">
+          <button class="btn" data-cam="iso">İzometrik</button>
+          <button class="btn" data-cam="front">Ön</button>
+          <button class="btn" data-cam="back">Arka</button>
+          <button class="btn" data-cam="side">Yan</button>
+          <button class="btn" data-cam="top">Üst</button>
+          <button class="btn" id="m3Rot">Döndür</button>
+          <button class="btn" id="m3Max">Tam ekran</button>
+        </div>
+      </div>
+      <div id="m3d"><span class="loading" id="m3ld">3D model yükleniyor…</span></div>
+      <div class="m3pick" id="m3pick" hidden></div>
+    </div>
+    <aside class="card m3side">
+      <h3>Parça grupları</h3>
+      <div id="m3groups" class="m3groups"></div>
+      <label class="m3slider">Parçalarına ayır (patlatılmış görünüm)
+        <input id="m3exp" type="range" min="0" max="100" value="0"></label>
+      <label class="m3chk"><input type="checkbox" id="m3grid" checked> Zemin ızgarası (1 m)</label>
+      <h3 style="margin-top:16px">Bu montajda</h3>
+      <ul class="m3dims" id="m3dims"></ul>
+      <div class="chips" id="m3pf" style="margin-top:8px"></div>
+      <p class="hint">Profiller gerçek kesitleriyle (NPI, NPU, L, yapma I, kutu) ve paftalardaki malzeme listelerine göre modellenmiştir; kaynak dikişleri ve pahlar gösterilmez. Ayak üst kotu ve şasenin pim eksenine uzaklığı, silindir boyu RK-013 sınırında kalacak şekilde varsayılmıştır. Modeller yalnızca bu sayfada görüntülenir; indirilemez.</p>
+    </aside>
+  </div>
+  <div>
+    <h3>Blender izometrik render'ları</h3>
+    <div class="m3gal" id="m3gal"></div>
+  </div>
+</section>
+
+<!-- ============ İŞ KALEMLERİ ============ -->
+<section class="view" id="v-is-kalemleri" hidden>
+  <div>
+    <div class="eyebrow">Birim Fiyat Tarifleri · 15 poz</div>
+    <h2>Yapılacak işler (15 iş kalemi)</h2>
+    <p class="hint" style="max-width:75ch;margin-top:8px">Tüm pozlarda malzeme ve zayiatı, işçilik, iş yerine nakil, yatay-düşey taşıma, yükleme-boşaltma, vinç ve iskele, müteahhit genel giderleri ve kârı birim fiyata dahildir; "birim fiyata dahil olmayan masraf" yoktur. Ödeme, teklif cetvelindeki birim fiyat üzerinden yapılır.</p>
+  </div>
+  <div class="note ro-only" style="background:var(--accent-soft);border-left-color:var(--accent)">Birim fiyatlar; malzeme, işçilik, makine, nakliye ve tüm genel giderler dahil olarak hesaplanmıştır. Her kalemin altındaki <b>“Fiyat nasıl hesaplandı?”</b> satırından ayrıntıyı açabilirsiniz.</div>
+  <div class="explain priv-only">
+    <div><b>Birim fiyat nasıl oluşur?</b>
+    <p>Her iş kalemi için 1 birimlik (1 m², 1 kg, 1 adet…) iş; <b>malzeme</b>, <b>işçilik</b>, <b>makine/ekipman</b>, <b>nakliye</b> ve <b>diğer</b> giderlere ayrılır. Satırların toplamı <b>doğrudan maliyettir</b>. Buna şantiye genel giderleri, sözleşme giderleri (damga vergisi, teminat, sigorta, finansman), risk payı ve yüklenici kârı eklenince <b>birim fiyat</b> çıkar; bu payların hesabı <a href="#teklif">Fiyat teklifi</a> sayfasında kalem kalem gösterilir. Birim fiyat × cetveldeki miktar = <b>kalem toplamı</b>.</p></div>
+    <div class="formula"><span class="t-m tt">Malzeme</span> + <span class="t-i tt">İşçilik</span> + <span class="t-e tt">Makine</span> + <span class="t-n tt">Nakliye</span> + <span class="t-d tt">Diğer</span> = Doğrudan maliyet → + genel gider + risk + kâr = <b>Birim fiyat</b> → × miktar = <b>Tutar</b></div>
+  </div>
+  <div class="note edit-only">Analizdeki miktarlar paftalardan ve birim fiyat tariflerinden çıkarılmış <b>mühendislik kabulleridir</b>; fiyatlar <b>Ekim 2026</b> piyasa ve resmî rayiç verilerine göre belirlenmiş, KDV hariç değerlerdir (kaynaklar sayfanın altında). Her hücre düzenlenebilir: değiştirdiğiniz değer yeşil olur, birim fiyat ve teklif cetveli anında güncellenir.</div>
+  <div class="cols2">
+    <div class="card edit-only"><h3>Rayiçler (tüm analizlerde ortak)</h3>
+      <p class="hint" style="margin:0 0 8px">Burada değiştirdiğiniz saat/gün ücreti, o rayici kullanan tüm analiz satırlarına uygulanır.</p>
+      <div class="tbl-wrap" style="border:0"><table class="antable"><thead><tr><th>Rayiç</th><th>Birim</th><th class="r">Fiyat (TL)</th></tr></thead><tbody id="rates"></tbody></table></div>
+      <div class="toolbar" style="margin-top:10px"><button class="btn" id="anReset">Analizleri varsayılana döndür</button></div>
+    </div>
+    <div class="card"><h3>Analiz özeti</h3>
+      <div class="tbl-wrap" style="border:0"><table class="antable"><thead><tr><th>Poz</th><th>İş kalemi</th><th class="r">Miktar</th><th class="r">Birim fiyat</th><th class="r">Tutar</th><th class="r">Pay</th><th title="Cetvel oran aralığına göre">Aralık</th></tr></thead><tbody id="anSum"></tbody></table></div>
+      <p class="hint" style="margin:8px 0 0"><span class="dot in"></span> cetvel oran aralığında · <span class="dot low"></span> altında · <span class="dot high"></span> üstünde</p>
+    </div>
+  </div>
+  <div class="pozlist" id="pozlist"></div>
+</section>
+
+<!-- ============ ŞARTNAME ============ -->
+<section class="view" id="v-sartname" hidden>
+  <div>
+    <div class="eyebrow">Özel Teknik Şartname · 15 sayfa</div>
+    <h2>Şartnamenin işi etkileyen koşulları</h2>
+  </div>
+  <div class="cols">
+    <div class="card"><h3>Madde 2 · Kapsam</h3><ol>
+      <li>Radyal, priz ve tahliye kapaklarının kumlanması ve boyanması.</li>
+      <li>Sızdırmazlık contalarının temini, montajı ve uygulama/detay projelerinin çizilmesi.</li>
+      <li>Çeşitli demir işlerinin projelendirilmesi, imalatı; 1 kat antipas + 2 kat sentetik boya (DSİ yeşili).</li>
+      <li>Çek yapısı radyal kapak seviye göstergelerinin temini, siviç ve kablo bağlantıları.</li>
+      <li>Mevcut seviye göstergelerinin mahal listesine göre onarımı.</li>
+      <li>Hidrolik güç ünitesi mekanik ekipmanlarının yenilenmesi ve çalışır teslimi.</li>
+      <li>Elektrik panolarının ekipman değişimi, iç tesisat düzeni ve fonksiyon testleri.</li>
+      <li>68 no hidrolik sistem yağı temini ve doldurulması.</li>
+      <li>HDPE T-Grip geomembran ile kaplama altı su izolasyonu.</li>
+      <li>Kaplama betonu altı hazırlık, C20/25 kaplama betonu ve derz.</li>
+      <li>Stabilize işletme ve bakım yolu (Mardin Ceylanpınar ve Harran ana kanalları).</li>
+      <li>Radyal kapak hidrolik pistonlarının bakım-onarımı.</li>
+      <li>Yeni hidrolik güç ünitesi ve kumanda teçhizatı temini ve montajı.</li>
+    </ol></div>
+    <div class="card"><h3>Madde 3–4 · Malzeme ve imalat</h3><ul>
+      <li>Tüm malzemeler TSE (baklava dilimli) ve ISO belgeli; TSE/CE/TSEK uygun <b>en az 3 alternatif numune</b> sunulur, idare seçer veya reddeder.</li>
+      <li>Onaysız getirilen malzemeye bedel ödenmez; onaysız montaj söktürülür.</li>
+      <li>İdare ocak yeri ve depo sahası göstermez; malzeme yüklenicinindir.</li>
+      <li>Kurum ve kuruluşlara (TEDAŞ, Karayolları, belediyeler vb.) yapılacak tüm masraflar birim fiyatlara dahildir.</li>
+      <li>Altyapı/üstyapı ve 3. şahıslara verilen zararlardan yüklenici sorumludur.</li>
+      <li>Boya işleri DSİ Boya İşleri Teknik Şartnamesine uygun yürütülür.</li>
+    </ul></div>
+    <div class="card"><h3>Korkuluk ve kaynak işleri</h3><ul>
+      <li>Profiller standarda uygun; şantiyede numune alınıp deneye tabi tutulur.</li>
+      <li>Birleşimler kaynaklı; kaynak ağzı 50 mm geriye kadar temizlenir, düşük hidrojenli elektrot kullanılır.</li>
+      <li>Çatlak, gözenek, batık cüruf, yetersiz nüfuziyet, dalgalı yüzey, yetersiz boğaz kalınlığı kabul edilmez; sökülüp yeniden yapılır.</li>
+      <li>Yağmurlu ve rüzgarlı havada kaynak yapılmaz; küt eklerde kaynak ağzı açılır.</li>
+      <li>Boya öncesi raspa, zımpara, kumlama ve idare onayı.</li>
+    </ul></div>
+    <div class="card"><h3>Geotekstil ve geomembran</h3><ul>
+      <li>Tüm geosentetikler aynı marka/imalatçı; 89/106/EEC uygunluk, EN 13254/13255 ve EN 13361/13362 deneyleri istenebilir.</li>
+      <li>Geotekstil bindirmesi en az 250 mm (membran altında 500 mm); dikişte 100 mm, polipropilen iplik.</li>
+      <li>Geomembran: termik kaynakta 50–100 mm bindirme + vakum deneyi; soğuk kaynakta 150–200 mm; çift dikişli füzyonda >15 mm kontrol kanalı.</li>
+      <li>Şev üzerinde enine ek yapılmaz; tabandaki T kaynaklar şev topuğuna 1,5 m'den yakın olamaz.</li>
+      <li>Ankraj hendekleri açılır, toprakla doldurulup titreşimli silindirle sıkıştırılır.</li>
+      <li>Rüzgara karşı her 10 m²'ye bir kum torbası; kalıcı balast için membran tüp.</li>
+      <li>+50 °C üstü günlerde sabah/akşam çalışılır.</li>
+    </ul></div>
+    <div class="card"><h3>Genel hususlar ve İSG</h3><ul>
+      <li>İmalat sırasını ve önceliğini idare belirler; iş kalemleri artırılabilir, eksiltilebilir.</li>
+      <li>Sulama sezonu dışında öncelikli işler yapılır; kanalda su varken gerekirse baypas yüklenicinin yükümlülüğündedir (ilave ödeme yok).</li>
+      <li>İmalat öncesi, sırası ve sonrası fotoğraflanır, ölçülür, hakedişe eklenir (renkli baskı + dijital, tarih ve yer bilgili).</li>
+      <li>6331 sayılı İSG Kanunu, 4857 sayılı İş Kanunu; DSİ KKD rehberine uygun koruyucu donanım; kalıcı uyarı levhaları.</li>
+      <li>Kontrol teşkilatının sahaya ulaşımı yükleniciye aittir.</li>
+      <li>Çevresel Gürültü Yönetmeliğine uyulur.</li>
+    </ul></div>
+    <div class="card"><h3>Uygulanacak DSİ şartnameleri</h3><ul>
+      <li>Beton İşleri TŞ R02 (2024)</li><li>Boya İşleri TŞ R00</li><li>Demir İşleri TŞ R00</li><li>Izgara ve Kapak İşleri TŞ R00</li>
+      <li>Dolgu, Kazı, İdari ve Müteferrik İşler TŞ R00</li><li>Kalite Kontrol TŞ REV02</li><li>Pompa İstasyonu Proje Yapımı TŞ R01</li>
+      <li>Sanat Yapıları Uygulama Projeleri TŞ R02</li><li>Su Kontrol Elemanları Genel TŞ R02</li><li>Sulama İnşaatı Genel Şartnamesi R01</li>
+      <li>Sulama Tesislerinde Sanat Yapıları TŞ R00</li>
+    </ul><p class="hint">Kaynak: <a href="https://www.dsi.gov.tr/Sayfa/Detay/740" target="_blank" rel="noopener">dsi.gov.tr › Teknik Şartnameler</a></p></div>
+  </div>
+  <div class="card">
+    <h3>Orijinal belgeler</h3>
+    <p class="hint" style="margin:0 0 10px">Tam metinleri indirip okuyabilirsiniz.</p>
+    <div class="toolbar">
+      <button class="btn" data-file="docs/Ozel_Teknik_Sartname.pdf" data-name="Özel_Teknik_Şartname.pdf">Özel Teknik Şartname (PDF)</button>
+      <button class="btn" data-file="docs/Birim_Fiyat_Tarifleri.pdf" data-name="Birim_Fiyat_Tarifleri.pdf">Birim Fiyat Tarifleri (PDF)</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEKLİF ============ -->
+<section class="view" id="v-teklif" hidden>
+  <div class="stagehead">
+    <div>
+      <div class="eyebrow">Birim Fiyat Teklif Cetveli · İKN 2026/2092622</div>
+      <h2>Fiyat teklifi</h2>
+      <p class="hint ro-only" style="max-width:78ch;margin:8px 0 0">Aşağıda önce toplam sonuç, sonra kalem kalem tablo ve teklifin nasıl oluştuğu yer alıyor. <span class="priv-only">Fiyatları değiştirmek için üstteki <b>✎ Fiyatları düzenle</b> düğmesine basın.</span> Birim fiyatlara tüm giderler dahildir.</p>
+      <p class="hint edit-only" style="max-width:78ch;margin:8px 0 0">Düzenleme açık: "Teklif birim fiyat" ve "Miktar" hücrelerini değiştirebilirsiniz. Değişen hücreler yeşil görünür, toplamlar anında güncellenir. Değerler bu tarayıcıda saklanır.</p>
+    </div>
+  </div>
+  <div class="kpis big" id="qk"></div>
+  <p class="hint" id="qkn" style="margin:-8px 0 0"></p>
+  <div class="note edit-only"><b>İki tahmin yan yana.</b> <b>Analiz BF</b>: malzeme + işçilik + makine + nakliye kalemlerinden hesaplanan birim fiyat (Ekim 2026 fiyatları; genel gider, risk ve kâr aşağıdaki dökümde). <b>Cetvel oran aralığı</b>: cetvel dosyasındaki her kaleme ait maliyet payı aralığı (min–max %) × varsayılan toplam maliyet ÷ miktar. İkisi de resmî yaklaşık maliyet değildir; teklif vermeden önce tedarikçi fiyatlarıyla doğrulanmalıdır.</div>
+  <div class="qgrid">
+    <div class="tbl-wrap">
+      <table class="qtable">
+        <thead><tr><th>Sıra</th><th>Poz</th><th>İş kalemi</th><th>Birim</th><th class="r">Miktar</th><th class="r adv">Analiz BF (TL)</th><th class="r adv">Cetvel oran aralığı</th><th class="r">Birim fiyat (TL)</th><th class="r">Tutar (TL)</th><th class="r">Pay</th></tr></thead>
+        <tbody id="qrows"></tbody>
+        <tfoot><tr><td colspan="8" class="tfl" id="qfl">TOPLAM TUTAR (KDV hariç)</td><td class="r num" id="qsum">0</td><td></td></tr></tfoot>
+      </table>
+    </div>
+    <aside class="side">
+      <div class="card edit-only">
+        <h3>Teklif bilgileri</h3>
+        <form class="form" id="qform" onsubmit="return false">
+          <label>Teklif veren firma<input id="fFirma" placeholder="Firma unvanı"></label>
+          <div class="two">
+            <label>Yetkili<input id="fYetkili" placeholder="Ad Soyad"></label>
+            <label>Telefon / e-posta<input id="fIletisim" placeholder="İletişim"></label>
+          </div>
+          <div class="two">
+            <label>Teklif no<input id="fNo"></label>
+            <label>Tarih<input id="fTarih" type="date"></label>
+          </div>
+          <div class="two">
+            <label>Geçerlilik (gün)<input id="fGecer" type="number" min="1" value="30"></label>
+            <label>KDV oranı (%)<input id="fKdv" type="number" min="0" step="1" value="20"></label>
+          </div>
+          <label>Genel indirim (%)<input id="fInd" type="number" min="0" max="100" step="0.1" value="0"></label>
+          <label>Varsayılan toplam maliyet (tahmin tabanı, TL)<input id="fBase" type="number" min="0" step="1000000" value="200000000"></label>
+          <label>Notlar<textarea id="fNot" rows="3" placeholder="Ödeme şekli, teslim, özel koşullar…"></textarea></label>
+        </form>
+      </div>
+      <div class="card total">
+        <div><span>Ara toplam</span><b id="tAra">0</b></div>
+        <div><span id="tIndL">İndirim</span><b id="tInd">0</b></div>
+        <div><span>KDV hariç toplam</span><b id="tNet">0</b></div>
+        <div><span id="tKdvL">KDV</span><b id="tKdv">0</b></div>
+        <div class="grand"><span>Genel toplam</span><span id="tGen">0</span></div>
+        <div class="hint" id="tYazi"></div>
+      </div>
+      <div class="actions">
+        <button class="btn primary" id="aHtml">Teklif belgesini indir (.html)</button>
+        <button class="btn" id="aXlsx">Teklif cetvelini indir (.xlsx)</button>
+        <button class="btn edit-only" id="aCopy">Tabloyu kopyala (Excel'e yapıştır)</button>
+        <button class="btn edit-only" id="aReset">Analiz fiyatlarına dön</button>
+        <div class="hint" id="aMsg"></div>
+      </div>
+    </aside>
+  </div>
+
+  <section class="profit priv-only" id="profit">
+    <div>
+      <div class="eyebrow">Teklifin içi</div>
+      <h2>Kâr ve maliyet dökümü</h2>
+      <p class="hint" style="max-width:80ch;margin:8px 0 0">Teklif tutarı beş parçadan oluşur: işin kendi maliyeti, şantiye giderleri, risk payı, vergi ve sözleşme giderleri, kâr.</p>
+    </div>
+    <div class="pgrid">
+      <div class="card">
+        <h3>Teklif tutarı nasıl oluşuyor?</h3>
+        <div class="tbl-wrap" style="border:0"><table class="wf"><tbody id="wf"></tbody></table></div>
+        <div class="stack big" id="wfbar"></div>
+        <div class="kpis" id="kpis"></div>
+        <div class="note" id="pnote" style="margin-top:12px"></div>
+      </div>
+      <div class="card edit-only">
+        <h3>Oranlar ve genel giderler</h3>
+        <form class="form" onsubmit="return false">
+          <div class="two">
+            <label>Hedef kâr (maliyet üzerine, %)<input id="pKar" type="number" min="0" step="0.5"></label>
+            <label>Risk / öngörülemeyen payı (doğrudan maliyetin %)<input id="pRisk" type="number" min="0" step="0.5"></label>
+          </div>
+        </form>
+        <h4 class="anh">Şantiye genel giderleri (sabit, TL)</h4>
+        <div class="tbl-wrap" style="border:0"><table class="antable"><tbody id="ohf"></tbody></table></div>
+        <h4 class="anh">Sözleşmeye bağlı giderler (teklif tutarının %)</h4>
+        <div class="tbl-wrap" style="border:0"><table class="antable"><tbody id="ohp"></tbody></table></div>
+        <div class="toolbar" style="margin-top:10px"><button class="btn" id="pReset">Oranları varsayılana döndür</button></div>
+      </div>
+    </div>
+    <details class="card"><summary><b>Kalem bazında kâr</b> <span class="hint">(her iş kaleminde ne kadar kâr var)</span></summary>
+      <p class="hint" style="margin:0 0 8px">Maliyet birim fiyatı = doğrudan maliyet + genel gider, sözleşme giderleri ve risk payı (kâr hariç). Teklif birim fiyatı bunun altına düşerse satır kırmızı görünür.</p>
+      <div class="tbl-wrap"><table class="antable"><thead><tr><th>Poz</th><th>İş kalemi</th><th class="r">Maliyet BF</th><th class="r">Teklif BF</th><th class="r">Birim kâr</th><th class="r">Kalem kârı</th><th class="r">Kâr marjı</th></tr></thead><tbody id="ikar"></tbody></table></div>
+    </details>
+    
+  </section>
+</section>
+</main>
+<div class="toast" id="toast" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+/* ---------------- data ---------------- */
+const CEKS=[["1. Çek","7+574",10,11],["2. Çek","15+910",10,11],["3. Çek","29+674",10,10],["4. Çek","46+247",10,10],["5. Çek","55+402",10,10],["6. Çek","59+650",10,11],["7. Çek","66+800",10,9],["8. Çek","73+200",10,9],["9. Çek","77+653",10,12],["10. Çek","83+052",10,9]];
+
+const ITEMS=[
+ {poz:"REH-01",ad:"Radyal, Priz ve Tahliye Kapaklarının Kumlanması ve Boyanması",birim:"metrekare",kisa:"m²",qty:14465,j:.16,k:.30,
+  ozet:"Kapaklardaki pas, kir, korozif kirlilik ve eski boyanın kumlama ile alınması; ardından üç katmanlı epoksi sistemle boyama.",
+  madde:["Dar yüzeyler zımpara ve tel fırça ile; diğerleri Sa 1½ / Sa 3 kum püskürtme. Yağlı yüzeyde önce solvent, sonra Sa 2½ / Sa 3.","Kumlama kontrol teşkilatınca tutanağa bağlanmadan boyaya geçilmez; eski contalar sökülür, yeni conta öncesi boyanır.","Astar: 2 kat çinkoca zengin epoksi (veya çinko silikat) 2×50 = 100 µm KFK.","Ara kat: 2 kat epoksi 2×50 = 100 µm. Son kat: 2 kat iki bileşenli epoksi 2×75 = 150 µm.","Toplam kuru film kalınlığı en az 350 µm; TÜRKAK akrediteli, kalibreli cihazla her parçada en az 3 noktada ölçüm. Eksikse ek kat (ek ödeme yok).","İskele, vinçle kapak/kaldırma mekanizması sökme-takma, kaynak, cıvata-somun birim fiyata dahil."],
+  olcu:"Korkuluklarda bir yüzün düşey izdüşüm alanı (boşluk düşülmez); kolon, kiriş vb. demir imalatta boyanan yüzler.",paftalar:["rk014","rk015","rk016","rk017","rk020"]},
+ {poz:"REH-02",ad:"Radyal Kapak Sızdırmazlık Contaları Temini ve Montajı",birim:"takım",kisa:"takım",qty:42,j:.07,k:.13,
+  ozet:"Radyal kapakların iki yan, alt ve birleşim contalarının sökülüp aynı ebatta yenileriyle değiştirilmesi.",
+  madde:["1 takım = iki yan + alt + birleşim contası.","Kloropren (neopren) kauçuk, Shore sertliği 50–60; akredite laboratuvarda sertlik ve malzeme testi (ek ödeme yok).","Sökülen cıvata, somun, pul ve bağlantı elemanları tutanakla DSİ ambarına teslim; yenileri galvaniz kaplı.","Her çek için uygulama detay projesi hazırlanır; iskele kurulup kaldırılması dahil."],
+  olcu:"Takım.",paftalar:["rk016","rk015","rk014"]},
+ {poz:"REH-03",ad:"Priz ve Tahliye Kapakları Sızdırmazlık Contaları Temini ve Montajı",birim:"takım",kisa:"takım",qty:10,j:.01,k:.03,
+  ozet:"Priz ve tahliye kapaklarının üst, iki yan, alt ve birleşim contalarının yenilenmesi.",
+  madde:["Neopren, Shore 50–60, laboratuvar testleri yükleniciye ait.","Kaldırma mekanizmasının ve kapağın vinçle sökülmesi, sahada veya atölyede conta değişimi, kapağın yeniden takılması.","Kaynaklı veya yeni galvaniz cıvata-somun-pul ile bağlantı; gerekirse iskele."],
+  olcu:"Takım.",paftalar:["rk016"]},
+ {poz:"REH-04",ad:"Çeşitli Demir İşlerinin Yapılması",birim:"kilogram",kisa:"kg",qty:74000,j:.06,k:.11,
+  ozet:"Merdiven, korkuluk, ızgara, kapak, hidrolik güç ünitesi koruma yapısı ve lazer kesim tanıtım levhaları gibi çelik imalat.",
+  madde:["Gerekirse projelendirme ve idare onayı; cıvata, perçin, bulon ve kaynakla birleşim, ankrajlı montaj.","Çek ve priz yapılarına lazer kesim tanıtım levhası.","1 kat antipas (100 µm) + 2 kat sentetik boya (150 µm), DSİ yeşili.","Hidrolik güç ünitesi koruma yapısı: NPU120 profiller, DN42,4×2,6 borular, 10 mm delikli sac, sandviç panel, menteşe ve gömme kilit (bkz. KY-01)."],
+  olcu:"Kontrol teşkilatının tartı tutanağındaki kg. Proje ağırlığına göre en fazla %7 fazlası ödenir.",paftalar:["koruma","rk020"]},
+ {poz:"REH-05",ad:"Çek Yapısı Radyal Kapak Seviye Göstergesi Temini ve Montajı",birim:"adet",kisa:"adet",qty:48,j:.02,k:.03,
+  ozet:"Sözleşme ekindeki seviye göstergesi projesine göre yeni göstergenin temini, boyanması, ankrajla montajı ve elektrik bağlantısı.",
+  madde:["Betona delik delinip ankraj; vinçle kaldırma ve sabit tutma dahil.","Ayarlanabilir kollu makaralı alt ve üst limit siviçleri.","2×1,5 mm TTR kablo ile hidrolik güç ünitesi panosuna bağlantı; TSE ve CE belgeli kablo.","Polyamid PA6 UV dayanıklı Ø16 spiral boru, 0,5 m arayla klips; T ve 90° dönüş parçaları, buat, klemens, konsol, boya dahil."],
+  olcu:"Adet.",paftalar:["rk021","rk022"]},
+ {poz:"REH-06",ad:"Çek Yapısı Radyal Kapak Seviye Göstergesi Bakım Onarımı",birim:"adet",kisa:"adet",qty:1,j:.004,k:.007,
+  ozet:"Mevcut seviye göstergelerindeki eksik ve arızaların projeye göre giderilmesi; 10 çek için toplam 1 iş, çek başına %10 pursantajla ödenir.",
+  madde:["Gösterge cetveli, ağırlık, mil, ok, Ø100 makara, pim, rondela, segman, limit şartelleri ve muhafazası, halat kulağı, en az 6 m çelik halat yenilenir.","Tüm bağlantı elemanları galvanizli olanlarla değişir.","2×1,5 TTR kablo ve PA6 spiral boru ile panoya bağlantı.","Çalışır halde teslim edilmezse ödeme yapılmaz; sahada sonradan tespit edilen eksiklikler için ek ödeme yoktur."],
+  olcu:"Adet (çek bazında %10 pursantaj).",paftalar:["rk021","rk022"]},
+ {poz:"REH-07",ad:"Hidrolik Güç Ünitesi Ekipmanları Temini ve Yerine Montajı",birim:"adet",kisa:"adet",qty:1,j:.016,k:.029,
+  ozet:"10 çek yapısındaki 42 radyal kapağın hidrolik güç ünitelerinin mahal listesine göre çalışır hale getirilmesi.",
+  madde:["Yenilenecekler: geri dönüş filtreleri, yağ seviye göstergeleri, manometreler, yön kontrol valfleri, selenoid valfler, elektrik motorları, frezeli kaplin, nem filtreleri, el pompaları, küresel vanalar.","Sökülen parçalar tutanakla DSİ ambarına.","Yağ doldurma; basınç (açma 150 bar, kapama 20 bar) ve hız (0,3 m/dak) kalibrasyonu; kapak kaldırma testleri."],
+  olcu:"Adet (çek başına %10 pursantaj).",paftalar:["rk023","rk010"]},
+ {poz:"REH-08",ad:"Elektrik Panosu Ekipmanları Temini ve Yerine Montajı",birim:"adet",kisa:"adet",qty:1,j:.009,k:.017,
+  ozet:"1.–10. çeklerdeki elektrik panolarının şalt, kumanda, kablo ve aydınlatma sistemiyle birlikte yenilenmesi.",
+  madde:["Kontaktör, yardımcı kontak, termik, ara röle ve soket, otomatik sigorta, cam sigortalı klemens, sinyal lambası, mandal buton/selektör, paket şalter, trafo, valf soketleri.","YSLY kumanda ve TTR besleme/siviç kabloları, limit siviçler, dişi prizler, PA6 spiral boru ve aksesuarları.","Bakalit transfer panosu (30×40 cm), 50 A TMŞ, 63 A 4 kutuplu pako şalter, 500 V voltmetre, 3 faz komütatör.","Çek içi aydınlatma armatürleri ve tesisatı; fonksiyon testi ve devreye alma."],
+  olcu:"Adet (çek bazında %9–12 pursantaj).",paftalar:["el01","el02","el03","el10"]},
+ {poz:"REH-09",ad:"68 Numara Hidrolik Sistem Yağı Temini ve Yerine Yerleştirilmesi",birim:"litre",kisa:"lt",qty:23000,j:.016,k:.03,
+  ozet:"Kirli yağın boşaltılması, tank ve hatların temizliği (bypass ile), yeni ISO VG 68 HVLP yağın genleşme payıyla doldurulması.",
+  madde:["Yoğunluk 0,86–0,89 g/cm³ (15 °C), parlama 225–250 °C, viskozite 68 mm²/s (40 °C) ve 8,8–10,0 (100 °C), VI > 99, akma < −35 °C.","DIN 51524 Part II (HVLP), Eaton Vickers M-2950-S, Denison HF-0/1/2, Cincinnati P68/69/70.","Temizlik seviyesi NAS 1638'e göre 7–8.","Ambara teslimde 1 varilden numune, akredite analiz birim fiyata dahil. Kullanılmayan miktar temin edilmez."],
+  olcu:"Litre.",paftalar:["rk023"]},
+ {poz:"REH-10",ad:"Kaplama Betonu Altı Hazırlanması, C20/25 Kaplama Betonu ve Derz",birim:"metreküp",kisa:"m³",qty:100,j:.002,k:.003,
+  ozet:"İdarenin gerek gördüğü yerlerde stabilitesini kaybetmiş kaplama betonunun sökülüp el ile yeniden yapılması.",
+  madde:["Eski kaplamanın sökümü, şev/taban tesviye ve sıkıştırma.","Santral betonu, gerekirse katkılar; kür ve dış etkilere karşı koruma.","Derz kesimi dökümden sonra 1–3 gün içinde; derz derinliği beton kalınlığının 1/3–1/4'ü."],
+  olcu:"Projesine göre hesaplanan m³.",paftalar:[]},
+ {poz:"REH-11",ad:"HDPE T-Grip Geomembran ile Kaplama Betonu Altı Su İzolasyonu",birim:"metrekare",kisa:"m²",qty:200,j:.0005,k:.001,
+  ozet:"TS EN 13491'e uygun HDPE T-Grip geomembranın temini ve serimi (malzeme dahil).",
+  madde:["Yüzey temizliği; ek yerlerinde en az 10 cm bindirme ve ısıl kaynak.","Gerekirse çalışma sehpaları kurulup sökülmesi dahil."],
+  olcu:"Yalıtılan yüzey alanı, m².",paftalar:[]},
+ {poz:"REH-12",ad:"Stabilize İşletme ve Bakım Yolu Yapılması",birim:"metre",kisa:"m",qty:87000,j:.28,k:.52,
+  ozet:"Kanal güzergahında her mevsim trafiğe açık, projesindeki genişlikte stabilize servis yolu.",
+  madde:["Kazı-dolgu, ağaç ve kök temizliği, güzergahtaki yıkımlar.","Stabilize malzemenin temini, serilmesi, sulanması, silindirle sıkıştırılması (tip kesitte 0,20 m stabilize).","Gerekli yerlerde 15 cm hendek kazısı, 4 m'den küçük menfez ve büzler, yol kenarı hendekleri ve reglaj.","Depo sahası verilmez; malzeme yüklenici tarafından temin edilir."],
+  olcu:"Projede gösterilen uzunluk, m.",paftalar:["yol"]},
+ {poz:"REH-13",ad:"Hidrolik Güç Ünitesi ve Kumanda Teçhizatının Temini ve Yerine Montajı",birim:"adet",kisa:"adet",qty:1,j:.01,k:.02,
+  ozet:"10. çekteki mevcut üniteler baz alınarak PLC panolu, asil-yedek çalışan yeni hidrolik güç ünitesi ve kumanda panosu.",
+  madde:["Depo, min. seviye şalteri, seviye ve silikajelli göstergeler, dönüş filtresi, kirlilik şalteri.","2 dişli pompa, 2 kaplin, 2 kampana, 2 elektrik motoru; çek, emniyet, ikiz kilit, kilit, kısma valfleri; küresel vanalar; el pompası; manometre; yön valfleri; dişli tip akış bölücü.","Kumanda panosu eklerdeki elektrik projesine göre; koruma yapısı numuneye göre; boya ve bağlantı elemanları dahil.","Açma 150 bar, kapama 20 bar, 0,3 m/dak; yerinde kapak kaldırma testi."],
+  olcu:"Adet.",paftalar:["rk023","koruma","el01","el10"]},
+ {poz:"REH-14",ad:"Radyal Kapakların Hidrolik Piston Millerinin Bakımı ve Onarımı",birim:"adet",kisa:"adet",qty:84,j:.03,k:.06,
+  ozet:"84 hidrolik silindirin vinçle sökülüp atölyede tamir kiti ile revizyonu, eğriliklerin preste düzeltilmesi ve yeniden montajı.",
+  madde:["Keçe ve O-ring takımlarının değişimi, yağ kaçaklarının tamamen giderilmesi.","330 bar ve 275 bar çelik tel örgülü hortumlar rekorlarıyla, küresel vanalar, galvanizli çelik çekme boru ve ek parçaları yenilenir.","Pim, cıvata, somun ve tüm bağlantı elemanları yenisiyle değişir.","Örnek silindirler: CDH1MT4 200/140 strok 4689 mm ve CDH1MP5 220/140 strok 3510 mm; farklı çaplar için ek ödeme yok."],
+  olcu:"Adet (hidrolik silindir).",paftalar:["orn1","orn2","rk010","rk011"]},
+ {poz:"REH-15",ad:"Radyal Kapaklar, Kapak Kaldırma Tertibatı ve Sızdırmazlık Çubuğu Bakım ve Onarımı",birim:"kilogram",kisa:"kg",qty:4000,j:.01,k:.02,
+  ozet:"Kapak ve kaldırma tertibatının profil, sac, mil, dişli, kızak, bronz kovan, yatak ve mesnet gibi parçalarının imali, onarımı ve montajı.",
+  madde:["Torna, freze, planya işleri; boyama; kalas yuvası demirleri.","Muayene ve kabul tecrübeleri dahil."],
+  olcu:"Montaj öncesi tartı; proje ağırlığına göre en fazla %5 fazlası ödenir.",paftalar:["rk014","rk016","rk017","rk018","rk019"]}
+];
+
+/* ---------------- birim fiyat analizleri ---------------- */
+/* Satır: [tür, açıklama, birim, miktar, fiyat | rayiç anahtarı]
+   tür: m = malzeme, i = işçilik, e = makine/ekipman, n = nakliye, d = diğer */
+/* Birim fiyat verisi (tüm giderler dahil). Maliyet ve oranlar şifrelidir. */
+let SEC={"s":"xEGhhNpAf0iijI4EgVHp6w==","i":"HdqfO3iL4Rzr1/9W","d":"POe+8oUlMiij0S+l9/T2X5BR00rokPrgoPx5H8480+xae/QXRq5AyO3bpXzJwQfQYNIih6obBJtO/Y4PFgZF8xKfZ44twDZP+xEjzhOGAMwxFHV8S705u/m1wFyngNas1aUZECRn9lsgTQCZgxGMUHFBCGvaGZg4n47QMOEBjhdlGGhF1k30GFdINeXEeLvvxD28uoTOUZlGuiXWerQFja9CIkZQODmb4Uhn5jTCw1YXA/sDmPGh7W1VbqhEstsyHC6ATXj47iIzeHYo0R6gETqMLOAkHkReoV8cQo+a8g01+i8gMMqlKYvYH4VMczXiQx+7MX7rEYIZ18RsVAJvpKSEQjxmmppKwOvP/B+NQCOTnh8mq99EBtnh9WUDwoeuARtX5GT8FIKMId4nZvbpZP/9UAIzlSbZoaPcpBZhSnYpdP0FCgIvfPcW9KLXgI+bQLizfsR/nWwa4kH+Ouk38/kknBpw/bymnbmVst3kODjdau81/TBB///3z4ebjhsQVja0kR3iSnAe+inonitd6ZrVUSphqdnMyv3IDCztteqrOg0hEOrOsI/S0gWvunKmcUeLo5EnHO4py0qXktwYlJReCAUfIeYfAPvC6puoyZhZGq+rs2GTB7MgjTU/5EeIzQBvNgQhzTlL3P4lNwCR2PgvdTFgRKJoBCJ3m8uyQxhH+I9jkcC2MafKTu/GJ+UrzYknuAsWlv97nZpTNTVGvgrIsxGnOXx0ND2BLNerHH0hsVb2BxvjtrXacghN4Nhayxw6z7+7mBCfkkqvfahYwA31GsjKNbykYi6ibIMENWQuSBSei/zN0kN9CFioknBCqeOK9/p2olfyC/uXVklYhoFpQ4IowZ5ImPnqy5qb3JjPMzifXM0aV5AJcXQA+/w8Vsnc4+9DN2sskAOJtolJA68MU8DhN/IIp9rNS7G2sgsHuvzg9EOo6nyjk1EqKC5ZLiw5kU8mNIgWZ6Dlnu76lGJmnVrfkx/93AGXrjP6Rsa2RxbZ2Dth7/azn/Ym9/OKpz8iZe/AGCaQwi8B7zsccqxbMyf5nADO7kCRACriFFn5E4+aYL9f+eMRF75viSAks3hiS7POHyNnZsi5iNR8AqAgJggM5D++oVsEC1KeXyqrr9kVYCbEfsdtdslKz6y48OK6y9JlnmdTlJ9ioefgn76LMazMkndwm6Ykdj2G2x7xbwn71QpAJ/6aCjcdsepCEqcCpIi/+lGeiKdKu+R8AI8YHSPGvkumHM9PsXmakRIZX9RXQRL0Eg3j4lFg73pXgqGa2OygRTj1JhLbMH0nObgToWWo+/Uwx/edfO7GM6BgS46kowBn9PUJvfPwmhCQ6LL6lw7XSP00JUPpzr/h6a8Vohq0GUAgk/BIZLkeyJmYMGNKCzRLdnnNblb4HQo+WpQwuEeSOODikFvdm48UGHqRFH7eLdCWz4Nb4YSudoK+xMMO5LM08Y+o6OeO4YB3m5PmSUBHkpRKW1skkjlAjOdL9HxVxxJWmz5hmikINttffRdnyj9iHF2X9hOEamn3ANjOKNjr0bFfP8vVTYpvkTN3ctgrqqdLtVLyp0+d2nR9B0qqvKIvd4NsBybrDgSy8+a4uB201us9xvKyawFcdPkTK/gRxwhZj2yEHxGvgX1LLV/ctUZpOR4kC7/czdXKVIRDonomU51hAtE1r0YAJY+HWnwUq41WJ23xTM4nF3Vo+sDsNnAomlkWPBgahT3CL94APqaoFuvDJ3NNg+xwqWOdx37g2JfV52JWtLz9GKARz08pw2gKCuX9czkQqyEYACmBj1lujCFk8/SH6cMYJr9SUUO0GS1juoIr3LaDh/0ffTZ16FN5NMKUicvxdR6TspvzHIb4iqcClJbHjR1pJ4mfcyS5dF9soKZ7fXVEbYCi1A5iAUdcvYjQ38N9PRCiA1LOTxfER1WuVyv8e6qL26ZuHUjdHwtlVMusULWZtIRRR1j4tc7d07wuecd7orFOw48YB1rdlGvmVuiNGy1SGPfWTGCU0ojgmWOaEasR2ns3XVfy23o4j/JPSEpMVDb4AJvS6qCh4P2kkLi262TlIQ2wvs0DrLRzW32bA1WGqeegvYh+uIkEEiHg8piLxyHaYbtcqQEISgG5bPDSXkjef/XH184glddktsUpbk0sDTGPTRelYg5AcQlmvNbm53kHkmII4+05yFCA6u80/PxcWTZMUC/i2a0RuxXdoLndzHG3EgWgM+3D/RL/2PfuFTlAMUNAPodIDO+fSNT1EcNrZEH/+qQQsghKEbD0lCqAg3x5QgUqklAa9lk539aS0FbsHAhIjYXtHmnft5CY7NaE2Ity0RdT+eo+7NtyTkTOZYgUbsXoPUBnQcYPP3gUK4tT7zihXPlDRkhXNmahVj7Yi3KPC7Mwp1KlpNcWbQKJAjX2eze1N9GOKt9Om5MnsmsbTrN4o+xFYB1DG3iMZYLQb2g1FPxCRDcXqo9KjWIkDg/5KGNbTFs/ShFDXcHTELu6HFSgah8m4IHz5HdEysCiw1XYqEsXM+XSSI/cir1b7ziCAVziTkgOiCKKCSMEobzY5tJ4x+FdmfDB6OnVOLiBA9Ze5xxh/LN0LO2Ve8xlAwYOl8XCX8kMxuMl56BIYQYQk+duy5tRMPUTKrrJjYJBCfFfkD0A1HO5dTEfwrs+ukTja6hjIC+aBDDVjLlebqGfwAbE/2FWfQ67NSeTp1FUTDuqncV0JinwLqQ21qxjTnYugDnqUb5KCWWCvLG7vBJp7dY7lx2FHm+RNZywEORmaHJDLMrx0JuGJ/tcmi8PyPgU3/RMbQnyFpqZ/kZ7ud0dngyiUVpLdGW62r3wTFYd9sP87g+VO+nlaCgpe57x7ohOJM+wJw7YR+fCM8suwORPRiZPQ7YXmjUbWbOvrAX4JITNNsfMg4zDPn2amLfHM228MauTHq2kk+3iBtTrvFEfc0MXJNF3A+IhY2QLvklLWn7t5appA3QC+gE+khXyJ7e/b/Cw6Wl0zAROJVnu2zN8ENlxLjd8RlVxa6vDpBVArLzB5xOgrl4ZQmsRiK7Gqh/K3JV6AVdExwQhd0xg3dBjYlvlcVupEkD9mKrO+AsL0VdP6x0zbTDdUbrP8niqAGztcGHhYYcVOG0dZ5rcLcqkhN5UqqMhP6HdxAu9Kj5Z9b1hq2M8ZP59qGld9O4UlWhNY/U2wdC5L4CwqDD2YEWLfpWUuw4v3+JWE1TZp1iVLFpXLngoUpBlTo2AYGiJ7HpCLC5ttI9pgZ5wAtHK9mvYOxgaTtfe/vbhp9aLtFjc42h2YmfdoDZ3O4LCArAOos8mhzLkVyg5Cm4aQvC6LXIarLw03WDv7txvA7z2NAT+STLT5zefEezguq8O93K4xsCr0+wS1jiNpPjl3yztoGJfAFTl6KNmUcIz3l29sGbyU64HK4fMvXAlekh2Yv28joTaSW3g2ODr7G3No/bFjO3k0RFVcEhQ2H3ENUfpaYxyRA276r5U+IDOoXG3+jkrV778DO9U+MvUeiBKSEkpfkQ01myZrnu3xLQ+Ng98tAuTL770na6lQZYiWuKIlkT5pzIWhu+VL2AEFDoLN5YOyukSrz1LnxzRaKWi6NRIw5/M4pj2X3wpVjx6eTdfu6yLSY1+VRKWwbWoyeqqV+TjKXYaoN7CpzYYuZRq0Ex4rll9eaS6AOnpqQktknQ1oNDnEXC4pOSEf+ZKpXjcMpVzY91gm3LX0kWkWPjnr/2zp3FlyViSRZgfXir8iBFa0dVjc7ZzuQuuk+xhGsLIyAyeo3/cJY7yo4pnlNy8+POuzDOJW3ukivB7i+9zwjfGT48YKv4bF66MuujmTiI5chfY+3shN1NvvBRhxDyPmVjihQysHow547OBKNjthQWzjUU0MiRsH8IypCp2E2I/slRdvmyhp97bBcYy1PEdONKGobuHUKGhvEQzn9eLBiJMPGYgWL2tK2r1mGn1op6rQjGYxK7ha9Ar2RXsTMAGigpCFzqYKro1m7c3F6kkUbP7Pbo0kI2GUB/zczdz0DMWWNRpEvyxgbY4UPBUCrXHbl0o/rJgwCLO6OFN3Czv3ayR555xkq6iMJr0HmVH8k554HDKwFGmuvS//bp25GSUv20bgIWA/ficQ5k1rzfpnZUsvmkpqaaMqRhxzu7MCnRr9oKW1VLzaCHfahCio1WoAoRnzs3sIhVLSS0Y1FhqxJfY3PmJNLzPy15Hj5vWJgdpeC5k87BgoqhbV92XPM57MbFjdnYodgsRuBEeHwf5zDdSYaOyLck8iKXCHasLxcbKIOJXo65Ir3BUG+YTyJsbIPdzrPvnTmFatXc/ibLg6rTdhxR3QoebIk6OMiXvECm1sdehLjSrKdEEeiuiwaiYkDsj5CEDzKecshmsBESWK4/CPPpL0h4476xNhzWZFevEFiVWVt5K0WzG+8vTbF0r8PdQR7loqq1Spr4ndmN4hLLPZbdL/5NnuDrK/XxaOiKHWzKJSEZGybnyUX3JlM0yUE8SYrgTZ/OaMfThQHMl3LV4QAM1FAKeh4uZOthc9ExQIWAiKHmFJr+ZKVcDOCl7DPjzWZHZrMzKJcTKD52rI4PUQsgUcmu5Ku2QrB3BYZEq2M+5l0iZGBAoaXvRQgRz3QUqWruNHGPVZdAgQAF8tsHgi3UXganeXKXUjbRdexXcVnXMGbtovrWIZnX0jjmXwMCty7UuJhrNmpwXJUQy6AdoSUzQVaN/rtvjJizjvYJpJXnAE2K5S614+WMsZY4lpt4+DOGBgvH3n2R1gbMIOOZ03nQAP63i5k+l+nuuiWGfQ9PvED+M76Z4P6IGFqO7JAIqtTsFO0IyVtIh1uo+/du71lBnwxvZBoGFqpHkV4UnShN2huBoj60zYLDwAQEeMw7F7QTaZtP5ji88an8Iafy3CGa0lCgRUfy7U//ifNwkJV/cRnsVzYW4Gld+z/rLyU3JUTo/D/jB/k0kDofQUUXGzNeD4nxzZjSg+ywNUwIHftqr6qa8RHIvLV/juIijyv3XMXwMHqxqxcAYcRuaEVv2U0aRvk4JRNyGyjya+7DRsTuiHSGLVnjK75y7Ulgx0nxQSZhLIceOyiHC4egojVWsfLdPELQb6/zCQzvFeBWKt9pAXqS5CUiEzjS1nNKxvPqLe6GWZyYTzO4TRHe+12C72Wh82zGahLGwY18gjJhabPZzPPtDimSDU3qcSVkPBD22a3Wp1MzyuD5xBUxJp883ejK91xXgEpvLcZXxeGmxjsFxcVzgIWr3cz4XkE4Dg9mltHpGbfW8OCdyYNTbGsEes6kDra8kGq3Ir75+i7AWJ3BV3mLY1vy4sEy1r7lYK9atFRwfs0p1jp/O0ET7KCi88s85OUd0gvVPq1/b4Qkq0oPqmJcDIHv6cjMoAx0Zs+W87kf5IIbTciu1UQILa51IuXussAWF+dLI9x6ZMv2Mb2ym8hhVVK8/hzCpeaH58fy7WF1rebgZGy98xjtYHCcnFlMwGMmg1W3arPBvYgSYWgpV5LaeUnQVAvJMrc+VFYAon0WQMp0q3VLgTZhUQf0L8+p0ETDk99tTRpiHmP6rOx7OK3kTN1B65fDajFSi1KEqca5d8Aog+jbnmKseXQJPDvhQ6dhfFLJm88f4u0rX/xxciZJlcMwZt8bI7CXBhg5Yk60V2Ad/03MfjLprFYowIMrvLH9RbMKvIsnyrBoT1Bjo286F/bFKi+jk58262W3SyHOKDhD3kEz3eJSv36QrjaQEQL8PgtCd8j6AkZebFvrw3QVRZBtzkU/q/WLZ3FTLjJXMkJxGNlyHaNzjQX/uad2+J6HcIJs4n+u0JlAj2XWe8xd/YI3TccHtM6RGHBmWiumUyST6vS4vw1yDhie5uXRDYgiao2WMRbSCgJs4dcOtkvEUUJMDDrotEE2Cxga0Kuv7TFwDgBQsCX4HeOPxVg0yexbz7/l4nMnMUH5XnzAdfHJYTPb3uuK74pKT96p0FB7bm4LBXv514JO0cSIgeVhHjYteldkvhOFqaAca8jCdeRmaexUtnh8f7OgTh1IzECqT23WufAoaSS57NT4+3L3xnCBGH64zaRBt+4mcJszO/rGMdJOtZUjBHixNnAEgFRlSA5lyFAeufNee2IZzaN9lpreSUy9jD/YekSdR11+c4XjhJb2iH0gS2vr4DG77V8RE+cpKHQY7uCOYXLRy1oWPpprRTmyq3cRf3jB+eYX8xqycWyyr1/IPvZwfiqZztF6wRx1tdi05m//FHYqvteYpCQh+9OcTzUCXtv2sspK1RWtPdG53UN1t4Klnm0EFKODUHJFfmTdhl4oRUY6pEQJsJEl3cixtof5A8tYfJ5Y/Mtp9IBOLmZjXmdn+QQIcKNLjpk3F9g9lk4HMJO/aDK402na4xCMC5qBssxysBIXZdhAbyYV7MYeZmq2leEpK+GUDpYfCVfhn/Hd6OrgnRaZH9IiGhMSWF7n4mTWfMpuzI2m8zU5gd/Hfn9FhcB1Ti8a1bSX1+52yrmQkpi//nSCcBu2AD179cRPntMDcV0KInavn4DRU4hrs/GvlbfgpzWgbNY4U7vwmFGBmXUIJHWFWFObRChivHM61AUMQ+7vLLY+4z6S16kNEQoQBFe5z6OLgn3uUoHYOnmMA7943+QWXvK4d64dIQzR0oGK/bgSh7jkvlCKPK1PQ6xvhDFur7YjwN29nNhOOkrjydlV0bhTa27uvOUjqd6xJlfQS0e6A1Ym5MiZayaU+MLu/aTLznxyVULM+5xxS3I+wShTvYsM/kQXAjkV4gdV2n3un3J6SMsZx29eQ+/Iw4uSFXSOm6r4nxrcB9ssRREDnFrL5RIiKQwYIRDORoRnX0PxL+WzrsHEiRLVYRs9/C8YKV0GCxLjrRQ4RK8wDAXT9eS5O5qmvbpErefuvW4Rluig/RjPUieTVX6Bm9dG9mcxMkw5laAU+0CFhZUMjbsd2MI1yYiXAeo33zUqb2+p3XrSjpL88QwxElxIqB+Ml6lTWMxSvoT4ZXYZ+gTkwgDj55yhSTvKnkqHGAzmp1/Fi8Omef9sy2GEpibcbBJBA0nGiRPENf9czR8TaqCqC4Aaw615CNC7oyttVjpumTVr/SHXgoATuZ7lq90/d1aBykQkzEmZ2dmwl3J1i4+2j1QGR2QMxiUA1r9DMT4HTCCuNP2Jhv41shi1nZ6/mYeYMlaJZEZXARQgfpznEKvLxZ+1iGCYDoyGfrzuGlUqVQsUhJZboediPTAzqDx4bcbrSK4dinM4p46+j951TWY5ak/V+GKogAQjpo/UTLPLGY+X8pZuXObn8pGN9l+D5Is1nK3jDuUqf1cuMiTjifiA7tLPt9UL9wwA6At6VOZJUGMJ+ts7WKTXZjm/ECQIti88SnlrwQ+23uVn5ktRtodrF95eohjtoPkvsF0en2iLHgb7E8TYFBjsitQkxq2Zd+FIc9M/RyaboBmmIjnZVePwc9Vd6EHJ7L3+C5bOnIC3JSkVBGgSZac3Wy9ExkTlyIDGvm01G7sWHnf9IyeDdKXMDpqEgdj3wf3Qg0Da86PBjhm34864ZhxaymR4fRy3J/bWP79vCkh7rIunoFKBOsQhQkGEV/xsQGAU6/ortEnWdCSuDrHkkG5hUF4EHvrdUKNoi43VLRnB0DazEIZSTzmJ1LnpqaKRIdDjwgdidrPQHJwknYxV4dYmvr0Ti11Qx1ZYti4AAQsGjtzwTmK8bbMnhvE3rrnQTtaLN4VhGDLqyNWKj7Nn4HNYXZGFVFDib2TR7Z+Kfet77VyKjof9pAf9Rh43vDkAtABQqIw+aQFfRza2DZwg73Mj+X0Q3VseD9P0hvx/E5vP/ylEY0oXq2ByUm94ce06cmxP/h0Iu+4NOj6T+wObzOmOGYXtuw8AWNtgFOgmCOi3KZeHM1WUjvFJm7m4t42yuBV7WD4y71AISqqcWWKTrOUblwHw/hwsqv95FYv5gQKJeTtyoK9VsXURBcckdg1HNlAIHj6700dYAC46sRafdoz3JOL8EAs7myLt+2POLE+zoYcP95pSNhu6H5seP3o1DEeHAVulAV1yVVjJ2IUvLGPenovGMvnXNDFE/LI0fAvTk+I3iFWgeDzahL/e5BktOAVbZO85EBEZEq4galG3eMjYJ9jQOTDJFztSceKg7nM0dVtLGH9EQ3yls8B70d6GDh5Lea9QbSmb9BNeMZA8BH/nxx6PMKqMcF0igmgIiz8BqKUa4k9huxEpMC4e4kkMsveckt4K8Q4gnjiB+XlsVAwzDxIxciuQNI6pgjpiAx3B/HTaCl0fGtNLjaMQUqfluTUnRKZxTVQcS4FW2vWhReZP5fFN6vWWqEq65xk+TvNlLfSDA+WjAx40SN8S5kOKX7y32M4+rqarvKG+nmQZX/rb/Yt4EM8rx4mVwSOtOpilZMJ2jWNVnidUBbc0zwoqNJnkD7mfTu5CGk3bC77dP1198BuQ2AhfrqmGydENw8Yuocs4Z2q9bs9qNxfSOj49PNgVAx7Ya45ecgcoOdJlmgTUlTsmB+SlEIPkyL0clIJ+3XwhAaeg49iXLRiFo2f/5HR7ntvWJZQBwvBdQMCwh0xmnkvqeL+68q4dOpjz18poqngFksYB4dpJQHGzN2C7NNoy/SL1epQCGyhTBKFCWbVWO15hpMHAfGRuSOUNYAENH41Hxk19EGJH3zMvtlWaBkg+0dbXTFrV7sKEk+771tQLFPJDUGSaoO7I4s06GMCLorJjuowNLqHV1l+iS/9easqB6d7cQvX9he90Pi5JAJ9fz7bDZSumkFFu1RByGGrA2gjIFskkmnHw7adP1xl3fRBeDGCN37FufE3ptK4cMP6K9xP2+HKHf9jVI8VWLdIdpgQo0j3nL1oMbynWYGAYWdRPpCqGJN05ZuPkJzfYCWDcjXxR8PRj20YMZnwfltLuxuxk8OJbpKp6PRwd8zKjL3G3JjJUzfYHj9d4mK/Tl9CdKPsrX+/rzgNXbF3SyY61fFavL8Dp70oWZjuu8oCNshgYztkkmbz6W+0DzWQ+SAhoBv5VaojCbY31+PGw8GCuSb43UJ8B5r7UhnEcbJTNfKomWQmgt9QUswNF3KcQrNWlmT9scg4gE/9DGmy9L0ngDK6r1VoBjCsvJkbmg+J28jm5jJ+gIueDiQC1tnrh5uKZRg15gCrCdWnGUpU0v0n/LValtHSNncNKIEtNJ+Euf1zUrXK4huJroatJ3+/Jk3j0tpPGgkWG/NRY5hkXe8T7ItkpFFWIfobAG+d7X9+ar8cp3VznMLf4sslWvEmm7/FMWQZRHJ6fEbhrmW1kBNvjTMzjXE+i7tEt6L57nISZVRNlNlT4WgD2go8gNZYJOHmgs1HbskgPUu9r4amiukByL9YbeM8DbiAGjFKV4lpAoLfC+gag+vh1i5RzedbwWQun2EJJ3enjhnGLbyXNeuqkwSTEVLVP0O1EycoK7lMVNz81s0hWv/HTiHc4BCRAB3I+5cAV9wzzErnFutA1rMuy7y29w5M46DSOQj4Qphpf9VgpA3jfoLB5+NiovviBVR1NbeXA61ohLwFarJSOUCjpRkjDOEYSmtsxqQvB/hPwzj6xP4HZTl/VlEAHrTv7Kd7abcr6dE3RmtUGnkGW4l3NRk5EmT+vG1Om7vuyRdIVAsnzrjbPwzKjOTpa9yeHACn7dmSWpKcTmzTgIHH8QC4vc1SJ01SU5+Dx9BjCEM16a503VbdEH5ukMpiaHAn2OTFxxGW7K0aM1iPWarutPtDVEgTQ2GMbQ1ayqqTCi+UXqg0UiiLF58BbMwqIlnoyWO2gjV/TD8H4qgk1rchNaEy3J6sHXCXAuj1QXJRYGq1E4nuSUkd2fgFSzCXYPIY7sZts2ijQFlNuIdcHc8krINR0b92j2vs2NXzIaaUAGRGNoc3OWeoRdcsuPYa34Km9hJGC1PtAdSBv+8ghdPOTezo2oSIbORDS8MSi/fHxfE0bHAdOHPibtqpXFHfzLbmDrbJMzHbfy2EW/1JZ5SVMyUgT2DYK1nq/RrgZJ7EGS9J1USSmFb8IthjU236YspCH4TH56zS77gpR1L2uu3kU6ElChEE78ThMyA9XklkOKa1retwgot6kp16MYo4lnWJTg5J8P6JCA3otyESD5RFczNXZXVZArXLTTjlfeUSmAqzn8lwjks8hMebWPl+zy7t9WeH45EOsNAf8jCj/bEquNDr2tgGwHVxl70kERydHqkXdJtwY8hJDsgmUZl4Ne7tVDh4BfJ2XqktAFbfr++P97RxPsVPzm+Len+JAVTSP59xXs+7MkqOJUNVvTRUgiVqYmB2nigUy+wHbF9Cimyl/TC+b6H2Ai24+voplkwKl/b9VtfRDA6zWkuo5inQXt0fceUVpMWKHHjax0e3Nj9zdcLiq4+uGbsClHOb1Vlu369AbVBrDp9BrkHVK9CFWPyXmINBbk/gywosXDeH468w6yBuSePShbT4+DlWjLf8H4hOUJLmlHyUSn7VbYkTzVsTMqjafLaGgIKvOKAKB9UdcFm8QYXMh9c0lXWZRgsi7OjyhLI4kQRN7NDUjkw/47AdE1DZdhjGpReQu5DlrtlK2qA8lfbGP/U45WfgwT4jT0giQzGKB0wDFgCPC5QUhhKf6DDsrZX9pmjT+NwbpdauHlZvJO+2qW84jfd1DpmZHFeMpc9J9OapBKNQdMsHmfEHWe0c8aITE0LWauUEcMjEFQUJW+NZoHINrPCvwaNT2cRWfc6WDlvu3a173et6ECne0ZefR4XpsUZ11Tkas7SF87qPPz66KjGKsG2KzdUl1dBepR498Fn5YIBxyB6Btn0P6drV0rXdRQyDqejGWwN2wnW5FpmYk5Ah7Qu9Kx1OZO2gD8NDVXgGh0DEhjp4dTFw4VeKbhpa7rdgBw0jINs0N3U4ZDvioqnVdGXejkI/YtgQg8MNLl1GhWQxPBuyM8hFrWCrxgu1y1m7VHJbuWps0jOiuSglECkokUu4DJA74pgiZOy6AV4cRAHPyJ/bMkAp0Y8BQeN7W7AnUmnBkh9v0NvcLQoKFaLWeA2K/Rh89EGPq8zJ0t3pqJVzqObSBletJ6STL8BAicR70L8A/R/l6t3S6+pg1hGlSX0dnsy9B33wC3LSHpjLLO8FOuy92YC8Xs/MnBU7JazfZmVbTOSuMTQZPnXOJ6CzbLpt665JWV+gNhnFarm88QKWcqlO9Z9bTscvvMLn3pGjuFYAZyknWB5vkRv1Z+kod8oEeFvMLNJKWC/aIOstjmQQOniuD34jHTP4/p5eFhOndCNZjCp1osOyOBvkf10yaD4r+HA3hgc0IjwHMJtEAHsGLrpBqOhr7ferbor3/OhPlQ2jLY788IKk4fy3wcxipKo8iIVwsuZKdS1yFlkyfdVtBWB+ZGfl0/VdZelG+YTtZPkAlCh83cdIAQ67alW9cTvDjtEvc5S/b8rHhog5FYm3nUXvmmOowr/y9W6AHdFGWFoec/stufW2rrgXJ5i5D87yYlsfgRsLwSqxNS9lTx/hxT6cQBaXv2eq1ndxmiFt1i/wN9EcJYSSDupi7mf0a8S6vJ04PaB3GAFU+zyTdsE3OrWLDScXbDcrw7JU3g2jWWe2kcziMyXKMfAZ6qX4rOqk60A2oXxOb6EcG9EULXnyvWD0+h76dvmICUnxN6f/FVSWT/PsKpfBCXLB6znVhnDtKeeOiGfxq3NmMAyVNhg5GRm+9fc72qRCcLHgxulY/c4amR2HtZ05ISnX7xoS9tU4WAtLEqde4C6svYDqULZL+CgcbmWhBb4lUcxP4YWqblchRyWs63JXPke3lTFljKukdmxjJsnaX4JigY0wumN/exLXX8oJQwz/L5S8RRLauk00ovIZnhIbTr34men13/ZL+9I/82MJ1CH9vq1EOUMmsMcKOoGfmuGyH/iv0OIjEtVNBj3cJo9EGHlOtgDo4n1CYeMg+qcIOEQ66o4SURilI2p1y6R6e2bWOEyYaslSoA8RaiMco6L7q5Ua8C3wQajEb7bzS8eENQRXtoMJ7Tq+LrwpYKWCz3Lti6882Ge5mthE1WupLlr/QKN9iDfvpFnn+NyElMYi3WVmw6sqFfd8hXoGvbUYPT/Y7qCmn2IQJt6WhbBdXVyoaAyhoZ3G50DxlAT2NZyLag024Q4q0ZtCL8y24y9MGUOHaWMuQtT12R/EuKzdzyiwrokBYT1kxelisrRx98k5HfJyPMHQoM0kLllWGeoHY8cishQEytGyerHMK4ZpZqGOn8Qd3xQMj5V3ynW8lb/lAxIEDEmU5jjjti55AwUDozrnLFooJ4Qv5mqkouNSCvQQH5A07CbMCvLkszN/bcrStyMZ6xRPWast9LrP6Dp9opWyt/aNbQgA7Roq25rzuBh14L8q5BZMBUusAGaBIkj8qHwQgjX46hpDpjO6RydyKn5Lz37DYx/i4y6WMA5GO0Sqc+NmxgTzeKCXW/n1zLABxQg99FzOO6mPDU6JFDKRlIWxmzxZv50O3IdXjemYEDonVfCpn/iVoWzI4ipMl1O6wNymqpAMREphbGF5MG6OzReFjQK/QuEyQ4PmWAOwwpFQhDC2DzQCmXfL0MQLRuVqM/e/0O+pLpvqEjm3aKryHPUW7jgZ2HDPAl/SigtvHIxXboeWNGk3HZpobkVbDuvMJrQEe2XlKHFTA3UzLTUk2rYJVWrVCsLxUXjiW13W2yPRWpNxH15soRgicE/BGdp/BJwlCZGoB0/J62DEBrOJoB3b4NIFxbm9vx78SN2UrqeCZXnmRB31Z7oVRKtGaWyJEnFTU/PSr8dRakRnZSwi7OFd2nOQ7FCwByJhIBrO8bg+WYRiqkHgB9Ari+SUFO+LX/uVNt/EKkeOkrwGyQTNcYrE/Q3of4qyXop1FCSClJIxXlrvXy5N09bqrUF5seLhHedOTJTVPZX60Qi+Jm3gPEnN9qVqpzVScyekLh9uG11zkz4nLcSaG7BjiADPx1ruQUAIKXFncqtUiL/lp6hoNVm/J1dxsTDEkqabYuFVXawAsSC3Z1JAie2z5xGORoEv2b6s/pmCfeXbGjwREr/HnnL3DcHhsdDLxFVtpXbA1dnc0EqG8z9mo4/mgZT4maOJpB5bXnElirQGdC+tapI+XXn0TD1hMPeCSNYNphb2ZB0yzzCpZ6rnowRiyMkgZDhkEiDkWZLuldMFwt2OYM+3xk8CUVXuEw6C9B7IEY/yrc5mEq/oaDJpR9rnnAGpYfxbu4SZZC6tnOMNA2aeArf6H8Uo6CzmAJfEr5C6hziVix1XgmfNKxpiamvvfL7RVXAlv3xrUIE8AU1xVeMCcCCKFDmL3JghJjcQebgzQNKjhqLld+bnK/Ori5it/B9G+JysFyVJ6q9V33uoHM1yiGwWpFJykVpBchCgxrpCc1C6AOwYRuKequN/35Nn0MCURYzxUW0pWbfw83LbmbB6ojKDZWs/0A5VZs5mFkY83FqkyYR5u+x/r5GbP1ImEzHxvRPzJgdb+2ui2bSisUhXRdrFeEHDspRq1Kbo0d57u1mRwgjCXqVALfu34YaYAahUitlHH7kaebVgv2Zy5U3h/2f25hLxUBXgN1x9LwM7g7jX/KccriYp1w20EgNzfgRWm9wesAm7u8Z7/KdeHnXqfvnjOImN3A+rxqBfAuUOZP3BkC5P2l7jVt1dpBfdbeUGiNMO3Hf2VV17pu5kYuxDT2dBoVs+wY0X3jnBqYk5U5cWQTzlkyHI2VyNhrH8jpVKTsEXqi0oi/W/9q0hR4LbsSRN16UWhUJdifN6g4SC7b77tsE0XSI90DyaGeJLluiH/zHPQgrsQV967k6OMls/vVDFKSlArccHwfmNd0xFJszr4DXjOjmy5LW8rnpRA7kH/4uxmV2Q2YoDCc/H/npFqYDlKCue2Qh5gU37mn89e7/slETw+Gy7OuV6+q49aRO9UlXb5BnQFJNRogHb+N+5Fpt86tJ2KLrXsbHtZSFvMxVvBrJGS4BOBfhywYBXZb4eYrqKVgCTfU+JnqHsJOf0nxPkpuO3f1eD6YmHJz/CHr9YmIfsVaELWvjI4BXxaM7shgijfFPL5Mq6jkiQq1iu+ZPFiIbvWV5ZehHhrn6DG9gnBY8QozsNJDcCV5bzXIRuoG/NHHjIK9Qcf81oNINTZkfNdBKfV9DA8WsLM60GbAcmpFTWzjpiW7kecQJ8Z/oTz1UevF1ZQ2Les7KrlfFOzbk056ewpmSa0Z5HaIFCx/vMV0XG8xIpgnpPyL+21DAsipT3Wh6XtUdFoDjpwynXo/r/E3cyYMLoeKs/95zH0XgjVKcmpPbSgoxswBSNWPm+2cVQtN2LnxiSnhM2URUBfnVeSAvsghM9ibdlY95kPttM2HXyWRwhLYt1F5RgjMYxOKghdI9GRdATK6PJrgT+HhCvJyIp764GIF+A7xClqZopCJKXS0OswkeE591NMYw3T0XQFhrt8sFuK70p46/XhhNjQ46VbPxigVebMLwV5M9DiTvoB73yw0rI3xjG+QuFdMSKxz5Yd0hkkdpKx8PhJ7RpS3oOQrtS2obJLpkaua0uTgyq0i59o0pxSn5i82YdQdJ86xzQZXqkyvzSpuMlFlW20w6gzPxbC3HkuhWdhcXZeOFAnPXJFV2rHAuCoZpSUev9wl7bcbSZDCwz5AJIZbiH0A198VAW06lxqrmPAqdz0PYCRRiMvBzJWt+dN7hoAi2nKOymwqeEn+l5XJeikLu7ZYDuAll5p5LVpL2+cjJWVlsh8vNQ9hTXIZyxkir38HQQT2Qc+v+BNfhz8themUdof/jOAJf9ai3Ve1f0X3xOeRZjh+xWQNVSjqif1j39luIEbA9ReirZTdbCcuBGWPqIwtHnfgA5Syr3/voalxNC5M5+RZb1byV1hQeWYeu9UA9irk43R42J7vYrr6A1DRwVdELVFSXkuQESV+rEwHFq/XV7xRNJPh4F8Zc2CBNM/eEJJ28V/vGK70GBgqz7E7hPjKTc7GtsFfYxnQfRyXMvbDNIwfk43wvbhEFxw+9sBcQ9qk8+kZ0JjDLX9q/4HXJ+zxjdNUfBOrLRMUzI1MrUz3NYFV35v8c2GTM7IVrwey/vwzGNl7LHLRQvUadbN7gVZT/FyZMH0x8XWLm4Xi8fXR3SpLjKs2ctPiMybfC2jhAdaAzesJfVgQh5LXojgRJCtN+o+MJbXnSUHOP3JMCy3jp2DtmCo+ab98JXr/n0GlEamDdQqeV6NrcscSMraPXvfEyi4mdIwp1Itw+itx4bI9AVvGuPS7JoVsMlwieW+9eyw4PuztoMlRGlsY+6yjtnj2rZxdfWxBVBrmgH2HGKXusJE+qMw84sj07wOUGlH8Qj+gNVLWLa0qhRamXYMCZaRjB2/3wAK86IMTPWvdzsqrr1uYCUzNjUxi/hq5SFZlsJHRWl2EIPCgRXV4mVW/x1LT+AVa8Sxvo5WA7WV+QqSrDU2OFA0W4YScFcCoq0JnQ8d7vR7rWs9n2/u3gmuP+LnK6zzEN1kQ6qt4BxOPMTqprOx9nsnqPxsbatVPGZ9B0nq5zFmpQeohgDVDPGjMt6+JV4SPjBDezhvg3KHAA2ddAICUzshk8ll9FRdBSft3REm5TnrsuV2VI8cT8ich2JeoXDxYp4nCaefRrJsqlOiGm5tS5P3GLAwqkLylamsuN9Hl7vOI/KXGCro8dQTOLcN4SCY8GpL+mo2EGdP/IW0oQPF3LA0lYmSIGqlCrvNIJtZtTvDlC/ThNKOl8ZdsNDlbJJJ4MUPp6FcuLGhoQtcFbCR+s71BmOHVxxN1KTKuBbn3ThxGTYeT/O87ASajluM9A7blAilsElJGZcvp5xZD5zr0EMz/Ruk+nMXEKZHRH6xtLBlexU1RuyYD1ozEyKOZjzS1nMH7J83xZLCi9QF+IT7v0p8h/t1KGozrxMHhkxDQumBPal8vtkkuO+geweM5Lr1uHhQrRXquswMC5mTjbmDxU+ACXC0ox0ZaaME5E9I96DHk7QHeiWasJpsylfYh4CqmY5dzbLzgoJk00XRNfqLM9+cZzCIDLPYs/2rBi763USdVhzNzSjCF4LTAaCk82euCaGB6NQ5Yj+ow3MhdxwHFtkX/jogh0ZID+2lsAzawUfGfY1xehPyw6y9jwh2Wfhu7y9tF1xbihXeYU1gXdhALlDhAUWnPnkToGvjdBE5XOqnIb6k3O5bDCj94V8MBAQ4ADyoK+APsVsPZyaNossTSbFAIiRIXXeY4l5xVL7yxvGIuO6lats/UbyaJ8z9S2OurjUnyNaSjogpAf1BK5VkP+Sv7jVNocMrHSPmx9c8Puu887Y/3tix0h94bHZfW0QDLtIcDoCe2DBrf93E1gk9opppqrl9BRP+R+AQnPI7fyd+kiAgeFL907tqndkZT7NOUaszTvzmQNbDaH8h/SMXKaELv8y5saJwy9ltcviDdxkXj2wR/uHmwWlLje03XoxIeacMk1Rom0TiwC/lIu9OxrVR8l4KAQQauA7uyZ+6Nl/xxI/qW4hIjzmlZBK3yttYV1UgHX82VQ/TvEmXb9tePJtG/3pLRcU17+NXrw1QXyWEJMjz3J719QJlh2juLKdiIT9NTXPPtXX1UxHmJJhwd07VY2VpclsENbShus4ecrrCkj+4Nc4nBhW04UpwmBzDvyPqT0Tohl+FxusgcSoD6PZLvkU001vYBDSXe6XzxLpjnI7s3v9AHMjxMBEH5SdtncXIMhheYm9u2wN7ob5+X+KF1uGwJTxQG/YLiOY92da8bieHG+j5U9JzD0QagpnUfC0jfYYv/oUaTfBaTUr+eKcAnkbu0k3x9i5C2o401sp/YO9LsOUzg9MzMDAXj/yt8d+whl+5WQGTrJMIf+jJ3gMUJ7c1GmBwirGIMBX4HN2Hk881tuT1Uk3djtdM/oIKx1pMkcUcXebBlX55mngvJ2/jXqxdS++UeGxzusSiVjLyqtUD6S8h/RKSedTrZPietG2Ezy8aUSk+7vb4kEcdAF46nVemJoemaILaj0qtZFb3G4jSMVVphME6EIa1NQie4fXGmPKv/hkF5KSX/qN+8Em+gP/SWz12dtyg1MVI1LfTX28lk2rky/yeqIe8MlgpGgCLemC63230qhEEr0kHcQJMAbFd2u8VvorCudu+GHGB7VyAXraIXOfGjgQjcT50WDlFCa3JGWwjtW0LyeAtJ/f76Tlv7scdJsMJnRZQ+DKt/fYM1RDUY+cJ0r54KrGVJH3Nj3o28MVjkrqlDiyUddYfMbiJUxngNaiu/qyLnw9HC/If8qD33F/hTPLGZhJoCTVnkFGcPBWYh9KGceiU7a/FKSiZ6KN9kJwHggTsNJxRquP4tESk/fCRV30GeRteyixds/WuQVdWjs+ZJlYZ4uhcpriPI4vwgZ5EOT54zRtBZRARHtrXOEUG/KqtLa9jWFatFkfTPjc+Vhi7xhLT1YE7CUvlZqrQ2cQ7FPhQ/BtBfG4KGnHWOG6tv8gP0aiRB1F/jMwDqq3Udr65pFaBmVj9MEnt/LKYHqiImTkMcjuNhJD+xs/qOEPsSC2rOHmhF8vQinihkxx1fEQsi3rzru6KYlrYCrgQ/NJUApgu//EhQV8HfpwrzeREHNRdHc3w7pMpd6a9boS2i/GtoCmJF7TMx09Jp7bAGhPu57FZbqdXgQYTgHxUeAuTWC7dVUjaiJoyI95Qp9Ih6BRprAJYiCo1lZ6qAkZknhpBF8/2LoXL5KJXJxMnld1qHDaa2KULQpGxIEXY6uxtyocFjh8LKnFWeZ4t17XQYyFMyk4/bTbI+OF0Sy/k6YWrkV9eEEN/9Aptaa2GpOXExnO0uI9F+oS6xHX5UYNEzLDw1Lgvumf3qpCpeEjSfc7KqRyxA6WOw2YAdsKCGg55/Z/cdikqVUmFNcy7WbZahXeTC8BoaoTwL8xHodjoJRzGnIaEzq4MiaFy6gpmBjqK1RBZceye/HwlNMQwgiPDhmw3feX2al9jh2ZhvC6EpYQqvQbRidkFjhEx9ljdJdbb5IJMIeDyeQH5rHRXdOrD5xuLtymGmx8de/Vt30tqSrEUjrtTnN2jswWmiLJMXONy8RtIDKzO1lXVrhsQkPuiYzolsWBqiHZgOat+FnHUzQRD1htAMqa0y7yRQn2AJiR3f97vkhlmHiY2i6uNifAxjHsUOUaURASJi0zVYT1WqzzskERQs9Z64kbYoKUZGH5PjXd3iPLtw3oCbZpXNVDNUK3ct3T5/AKRNFA/yNx7X6f/9Ow/WoSyzX3nM1ZjPLNPoZW/cOocXwSJfuLDavmiWIMek2X7AiBLfyJcsVxqQFZOGe9uNP4BCCl2KLDmaXmlR7mDCFV7Fw8Ea22X3/+m933PQFDNx4nobpj1SaFGoEAfhz3rJaVkUyMDeY0DrSctmqIAkYpeckj2SVXQzfPcg10k33uQSbsC/2xRqpI/DPrLMK/8JPZ+tLoGU+tS3BtYJXpB4jad+JjpIwqyxiSnm73naD2cbsDKNziXkhKxhQPaJM9GDJRnr3mc0G6bMiUBjX7s1j/dNjfOy02rYj3IC5c2C+2H7uR0p+PSH0iin1yBWRB5bQjDbpyuvvkiwh5r86eGmkUiXBUztw2YbnXTPAz50aC3c0ecRoPjEYNyCpUlpJvtLteoEmMpOOZH5e229mp+7pbtMWGxt4rxiIlEXaQmvprZgCWA5vPfM7tHOAsSKbaoMDnUiAmoIbisi3TURJrPix5X3AgF7reBQfP4Lafcyt3WfgABZp5IGNlkDuoIcCascuqgVEeIPHQU+LK0opaT+JQfBsrc6Vs5bVDuotpoMIpz6fjCahB2nROITLIDkJUx5Yvzvq2aByoiWIn5mW3DhM5d9sJF+8GxzbRFGZD6W9FlVnUXBCpRH0qlCKDqSyu+vXwktouKMBRbBYShJVJ2qVsAeEua9MOJtG3kZXKtFwyPl3lx+PBWUm+SN2XSVgOOGvesNcFu/oI/O8n3suSaX02/uS2hlLuOs4yhpIuupT4lszmdY8s+++w7Tgt0V8k9BjRtoI8EIyWpbswrPuyXIsVrN1/Q2+z5QToBh8YCEfSbDCijoLHdyFdKAa2Q38Ypf5etIkyZkR3zhHW7rhKplrSmdT76VYqe7RsRie+7f4zHiwku4RsKxVKEr4zjq5rHj6QyNJiWHDVHDMh/IvOlDVV7noT8Gwt4i3d/FbfB+uu33yVwpIU+x1IfaQ2w8oFJqxIkbmjf9sqqqc8RRoTG6O5EK53bX6/mAEOQYhsLtwT1NJ44QpKG5LRWGt2DBtNd2Wq7WMNhuhRCXoyjUnAStJgdhBZWcxX7QofT7j7Ao3x5dqqcE4AL4XI2j1ulY60gPRAkxnPloPAjypM0voA4YTF1rUKPyrBP6ypfySXg6BQHXCAVSMw4t8/2pE3OsxwbtxJXAl1arYZpwwyPEykxxWgAOTcQ4c6Awvmkt4rSOQ7VnFbzs81KHTINKTGPXCzgggcvoNu9yax2TWQ89Z4HoVA9Wyj83So+9U4HPBklY1QW7LId83E3N9N0l0NFzXxjq//ZLLAdzCrKUpSEkNj4LTNegb5ggh2J/eEdFPUrS4qM6oH0oADp3tfCYeWhsleFRvwNcJy3aBRzQEhhlYvj1q3i/+q0rCgjlvcYnzoqHDQkYyfOMUZqctGVnLwiGeA5/VrI9n3c5CgOaf6YIUEXpnkQJ73PqEOpB/1IlkZwL7w/878NsMUtFlg+4fRkaaayCBjyqSD1vYFSnNCFOm5l2D5JltB9Iumfw2R6mHF79w/4D5HVE6vuwFHhXNqBJ9ttzRgpIqfotW0kEdWLDvB+sMyJrAc8PbnH06O8MR843M7Rbit1vHRYQ3aoIdCAnQ1aMhV+GFMSLOGU3+GAeUhVaN8vVdU3FS4BlL9CRKg6GJhgeZGiAcejTs1Mj5t26zDVAAluq69sUxxNlZsmD7vZU/GUCtGyf1vnZLX8eGUF+/Bd75GH/AiHqvCzpyoajZ2UoiHIwJG16YFz573g4RWEmLgzNcdf/12xA8z63TAtGRjF9q1pI/32nGuIJ7urwgXhW22vN6uqMaAlBTCKwKWozuJZchiY3v7e2QX1/l9fdm0OdZJHck6SAxPYUl+VbVhQh3DWvN8ZI8lxtl3z7altAMdv850DUQz5hNfM2Yt/lxqGQKWcQjqPggRHsMgTRdw2P5bQVywzMVy9ra14XXUWKUAEuqX9UmBKuuasiN3OZEgFyDffyLqI7zxaTlsgPzzRyE2PgrNZidrU742kdgW/8hrjXcnOnJB1b4e7HTbBlhNILJV9gpHBOuuoCyJh0RvEx1+zegsMm6WcPo5w4lDeNudUjftPmwUTwg0UEdKqEKQjrKHewm5gqwSbWvy367cSTw2ohPi/E7z7R5xHykBzYZpQ0naGl2/cwbzao/gKIZtcME1wavSku2qPo8X2b0JQ7SUK1b9Efqz/T2VZ6+dpq808wgW2phJ/DSuafZe0s9imH52xLZRl/57v3YzPVv26ozqeqI6/D1i3xNkA1AY7DgANNUEVKidlWYJjVo6MOkVnPwd8jqrJt/hxOxIjw3lWkaiH3m238EVte3+5Ww/yM0zC4AL+7sSP8XdpnxY0YL+4luj5qYVzx9/TqRKTHRB9B3z11CkhiG1QoG5aNO/rU7YOdTETyf5If5ISsLGFu2T1d7sfi/EtCfJVG6pGMTZTETQLzwVJLJ1JXpeZVJJPxPkYoiuQYx5xMGWwvfk23a9TH2QQCSlmLMUD/kzjZpwj7CXvubfD3ZGVZdq9zx/eoKsqBUwpL5WtXKIdA/MXAOCfHs6kVDoUoREGEMuEo76R5R8h6mUNzLm8Fyv02Uu+SwjHDztEJqak31/za/ZQM3veDrmMGZ37/sXTN+67GNQorljQkpotgWAD9XzVzVPaxV2X6aBEkN/GfN7Vm7B5Qo+53EvoQDbLAkVKC659sjHQ9+LpDQMP46reXehI2Ims1ZBrRMvi9v6T6ZhNCd/OKGiaJ6xmFvfUCIzvBQU21g/A46CcSCJPuz8HbY2Tufq2TpcbKcryom0So8/+5PRMkm3rvf+QzQddzVz5U17cLp/f4rdo1iGaQpG5SnhYdqCYxVWqGOFHXzJcHzanDhZxpYtoIjbxCGUFmrjUJHQadIkUrTxCMT+ZhZYk8xvTrslukKxvrLtikHRNoexaAFgWV6UJ29A67C+h9yy0CnTyMzaOcGB7lzwz4XB+Yor+fwBKXXpTqZLti7kvRYjh66cTAj0aa3CsSLrcmCSEUTm4mJfo5DqxiNobqziEu3fTbm9NRiGAhihyBK2vAVvGnUQnv4WRTGg5Olq1PtYhUfVqBzVukBHvT9djfYuHHsxQn0+ZH2/3CXOSKg00BEssewdo+KUaGjcqZC9DeR8B5r/w9/3Qnq9g50ozgHaoKeLHzuWeJGkADVT3pN6OE4onOTWFiWyyegVgk3l5HLen+wK9uv6gZ4BvUywUbJJJxjpNgkv89LaAKw4PGskifmV527vnN/UUmP/0jjTvGLaT8B/fkgSaBLS9ZBG6sEEc0j4mh6Q0TDFxV5wkbKLHaEtNmInDvdwi7dhHxZHFuORUZZjbAoe69HHPtOhloRHNH3GTQd+hneMIQS7r08TZK0gSYjQrFWkQjMMJ91nB4+h19JdRtNjpo1ObDFm8VFMDM9t7tD3Ggc7vtsoigP7QPdIiqvXNqPWhGipUFg8MwZSpYRYWZrCitJbZr6Jltzm2mbH8Q4vHhZ/ggg1iQYOR5UEa/jCCaPa2ZzsnZx23cLrCMgvWIuyeSC7Go0ENxIK9XWLICz6p/8/M=","n":250000};
+let RATES={},OH_FIX=[],OH_PCT=[],RISK_DEFAULT=0,KAR_DEFAULT=0;const GG_DEFAULT=25;
+let AN={"REH-01":{"birim":"m²","kabul":["Paftaya göre bir radyal kapağın boyanacak yüzeyi ≈ 220–260 m² (15.146 kg çelik); 14.465 m² ≈ 42 kapak + priz/tahliye kapakları ile uyumlu.","Değerler 1 m² kapak yüzeyi içindir; kapak çeliği yerinde, iskele ve vinçle kapak/mekanizma söküm-takma payı dahil.","Boya sarfiyatı: kuru film kalınlığı ÷ katı madde oranı + %40 uygulama kaybı (kumlanmış, profilli yüzey).","Kumlama hızı tek nozul ile ≈ 15–18 m²/gün kabul edildi."],"bf":3328,"L":[["m","Aşındırıcı (çelik grit / garnet), geri kazanım kaybı dahil","kg",18,18.89],["m","Solvent ile yağ giderme","lt",0.05,242.94],["m","Çinkoca zengin epoksi astar, 2 × 50 µm (katı %60; ≈345 TL/kg)","lt",0.3,1147.19],["m","Epoksi ara kat (MIO), 2 × 50 µm (katı %65)","lt",0.26,701.81],["m","İki bileşenli epoksi son kat, 2 × 75 µm (katı %65)","lt",0.38,809.78],["m","Tiner ve temizlik","lt",0.12,215.94],["i","Kumlama işçiliği — usta","saat",0.35,877.27],["i","Kumlama işçiliği — yardımcı","saat",0.45,539.86],["i","Boya işçiliği (6 kat) — usta","saat",0.3,877.27],["i","Boya işçiliği — yardımcı","saat",0.2,539.86],["e","Kumlama seti + kompresör","gün",0.06,10122.31],["e","Airless boya pompası","gün",0.03,3374.1],["e","İskele, branda, toz/kum koruması","m²",1,148.46],["e","Vinçle kapak/mekanizma söküm-takma payı","gün",0.005,51286.35],["d","Kalibreli DFT ölçümü, kontrol, tutanak","m²",1,80.98]]},"REH-02":{"birim":"takım","kabul":["1 takım = 2 yan + 1 alt + 2 birleşim (köşe) contası. Paftalardan: kapak net açıklığı 5.000 mm, gövde genişliği 4.960 mm, yarıçap R7.900; yan conta L = 7.037 mm × 2, alt conta L = 4.960 mm (MC2-RK-014/015/016).","Yan conta nota (J) profil Ø40 başlık, 95 × 20 mm, Shore ≈ 60; alt conta 30 mm kalın yassı kauçuk; birleşim contası 10 × 95 × 135 mm. Şartname: kloropren, Shore 50–60.","Özel kalıptan çekilmiş profil ve az adet nedeniyle metre fiyatı yüksek tutuldu; ekip 2 usta + 2 yardımcı, kapak başına ≈ 2,5 gün."],"bf":270090,"L":[["m","Yan conta, nota (J) profil neopren Ø40/95×20 (2 × 7,04 m + %5 fire)","m",14.8,3509.07],["m","Alt conta, 30 mm yassı neopren (4,96 m + %5 fire)","m",5.2,2969.21],["m","Birleşim / köşe contası 10×95×135 (kalıp)","adet",2,6073.38],["m","Galvaniz cıvata-somun-pul seti (M16–M20), conta baskı","takım",160,121.47],["m","Conta baskı laması onarım / yenileme (paslanmaz/galvaniz)","kg",90,188.95],["d","Akredite laboratuvar testi payı (sertlik, kloropren)","takım",1,5398.56],["i","Söküm ve montaj — usta","saat",40,877.27],["i","Söküm ve montaj — yardımcı","saat",48,539.86],["e","Mobil vinç","gün",1,51286.35],["e","İş iskelesi / çalışma platformu","takım",1,16195.69],["n","Ekip ve malzeme nakli","takım",1,12146.77],["d","Uygulama detay projesi","takım",1,8097.84]]},"REH-03":{"birim":"takım","kabul":["Priz ve tahliye kapakları (düşey kayar tip) vinçle sökülüp sahada veya atölyede conta değiştirilir.","1 takım ≈ 14 m conta (üst, iki yan, alt, birleşim) kabul edildi."],"bf":223501,"L":[["m","Conta seti, neopren (üst, yan, alt, birleşim)","m",14,2564.32],["m","Galvaniz bağlantı elemanları","takım",120,114.72],["d","Laboratuvar testi payı","takım",1,4048.92],["i","Kapak ve mekanizma söküm-takma, conta değişimi — usta","saat",32,877.27],["i","Yardımcı","saat",40,539.86],["e","Mobil vinç (söküm + montaj)","gün",1.5,51286.35],["n","Atölyeye gidiş-dönüş nakliye","sefer",2,12146.77],["m","Kaynak, cıvata yenileme sarfı","takım",1,5398.56],["e","İş iskelesi","takım",1,8097.84],["d","Uygulama detay projesi","takım",1,5398.56]]},"REH-04":{"birim":"kg","kabul":["Merdiven, korkuluk, ızgara, koruma yapısı gibi hafif-orta çelik imalat; 1 kg bitmiş ve monte edilmiş imalat için.","Çelik profil/sac fiyatı 2026 Q4 piyasa tahmini; %5 fire.","Ödeme tartıya göre yapılır; proje ağırlığının en çok %7 fazlası ödenir."],"bf":242.46,"L":[["m","Profil / sac / boru çelik (S235–S275), %5 fire dahil","kg",1.05,56.68],["m","Kaynak elektrodu, gaz, kesme ve taşlama sarfı","kg",1,7.42],["m","Lazer kesim (levha ve tanıtım levhası payı)","kg",1,4.05],["m","1 kat antipas + 2 kat sentetik boya (DSİ yeşili)","m²",0.03,215.94],["m","Galvaniz cıvata, ankraj, kimyasal dübel","kg",1,4.72],["i","Atölye imalatı — usta","saat",0.075,877.27],["i","Atölye imalatı — yardımcı","saat",0.06,539.86],["i","Sahada montaj — usta","saat",0.03,877.27],["i","Sahada montaj — yardımcı","saat",0.04,539.86],["n","Vinç, nakliye, yükleme-boşaltma payı","kg",1,12.15],["d","Projelendirme ve onay payı","kg",1,2.02]]},"REH-05":{"birim":"adet","kabul":["Yeni seviye göstergesi MC2-RK-021/022 projesine göre: 24 parçalı bir takımın ağırlığı 104 kg (pafta malzeme listesi). Makara, halat ve siviçler ayrı satırlarda.","Kablo ve spiral boru boyu gösterge başına ≈ 45 m (kapak — HGÜ panosu arası)."],"bf":123674,"L":[["m","Gösterge kolonu, cetvel, ok, kılavuz, ağırlık (çelik imalat, boyalı)","kg",104,310.42],["m","Ø100 makara, mil, pim, rulman, segman seti","takım",1,8772.66],["m","Galvaniz çelik halat Ø6","m",8,161.96],["m","Halat kulağı, kilit, karşı ağırlık","takım",1,4723.74],["m","Ayarlanabilir kollu makaralı limit siviç (IP67)","adet",2,5128.63],["m","Limit siviç muhafazası","adet",2,1619.57],["m","2 × 1,5 mm² TTR kablo","m",45,51.29],["m","PA6 UV dayanıklı Ø16 spiral boru","m",45,74.23],["m","Spiral boru klipsi (0,5 m arayla)","adet",90,12.15],["m","T / 90° ek parça, buat, rakor, klemens","takım",1,2969.21],["m","Kimyasal ankraj M12","adet",8,296.92],["i","Mekanik montaj — usta","saat",16,877.27],["i","Elektrik bağlantısı — teknisyen","saat",10,1012.23],["i","Yardımcı","saat",16,539.86],["e","Mobil vinç payı","gün",0.25,51286.35],["n","Nakliye, iskele payı","adet",1,5398.56]]},"REH-06":{"birim":"adet","kabul":["Tek kalem: 10 çekteki mevcut göstergelerin onarımı (çek başına %10 ödenir). Mahal listesi elimizde olmadığından 42 göstergenin tamamında parça seti, yarısında limit siviç değişimi kabul edildi.","Kablo + spiral boru toplam ≈ 1.200 m."],"bf":1579404,"L":[["m","Gösterge onarım parça seti (cetvel, ok, mil, makara, pim, segman, rondela)","set",42,10122.31],["m","Limit siviç (alt / üst)","adet",42,5128.63],["m","Galvaniz çelik halat (6 m / gösterge)","m",252,161.96],["m","Galvaniz bağlantı elemanları","set",42,1214.68],["m","2 × 1,5 mm² TTR kablo","m",1200,51.29],["m","PA6 UV Ø16 spiral boru","m",1200,74.23],["m","Klips, ek parça, buat, klemens","takım",1,40489.22],["i","Mekanik onarım — usta","saat",200,877.27],["i","Elektrik — teknisyen","saat",120,1012.23],["i","Yardımcı","saat",200,539.86],["e","Mobil vinç","gün",3,51286.35],["n","Ekip aracı (10 çek arası)","gün",8,12146.77]]},"REH-07":{"birim":"adet","kabul":["Tek kalem: 10 çekteki hidrolik güç ünitelerinin eksiklerinin tamamlanması. Mahal listesi elimizde olmadığından çek başına 2 filtre, 2 yön valfi, 2 selenoid, 2 manometre, 4 küresel vana ve toplam 8 motor değişimi kabul edildi.","Kalibrasyon: açma 150 bar, kapama 20 bar, hız 0,3 m/dak; kapak kaldırma testleri dahil."],"bf":3294473,"L":[["m","Geri dönüş filtresi + filtre elemanı","adet",20,12821.59],["m","Yağ seviye / sıcaklık göstergesi","adet",10,3778.99],["m","Gliserinli manometre 0–250 bar + test rakoru","adet",20,2969.21],["m","Yön kontrol valfi NG10","adet",20,32391.38],["m","Selenoid bobin / valf","adet",20,8772.66],["m","Elektrik motoru 5,5 kW, 1500 d/d, B35 (RK-023)","adet",8,51286.35],["m","Frezeli kaplin + elastik eleman","adet",20,6073.38],["m","Nem (silikajel) filtresi","adet",10,4723.74],["m","Manuel el pompası","adet",10,18894.97],["m","Yüksek basınç küresel vana","adet",40,5128.63],["m","Conta, O-ring, rakor, hortum ucu sarfı","çek",10,16195.69],["i","Hidrolik montaj — teknisyen","saat",400,1012.23],["i","Yardımcı","saat",400,539.86],["i","Kalibrasyon ve kaldırma testleri — mühendis","saat",80,1484.6],["n","Ekip aracı ve malzeme nakli","gün",20,12146.77]]},"REH-08":{"birim":"adet","kabul":["Tek kalem: 1.–10. çeklerdeki 10 elektrik panosunun yenilenmesi (çek başına %9–12 ödenir).","Adetler pano başına tipik ihtiyaçtan türetildi; onaylı mahal listesi gelince güncellenmeli."],"bf":3199998,"L":[["m","Kontaktör seti (motor + yardımcı kontak)","pano",10,24293.53],["m","Termik röle","adet",20,2969.21],["m","Ara röle + soket","adet",120,877.27],["m","Otomatik sigorta","adet",150,512.86],["m","Cam sigortalı klemens + yuva","adet",300,215.94],["m","Sinyal lambası, mandal buton / selektör","adet",200,607.34],["m","Paket şalter","adet",30,1619.57],["m","Kumanda trafosu","adet",10,6073.38],["m","Valf (bobin) bağlantı soketi","adet",40,472.37],["m","Transfer panosu (bakalit 30×40, 50 A TMŞ, 63 A pako, voltmetre, komütatör)","takım",10,29692.1],["m","YSLY kumanda kablosu","m",1500,87.73],["m","TTR besleme / siviç kablosu","m",1500,114.72],["m","Limit siviç","adet",40,5128.63],["m","Dişi priz","adet",20,809.78],["m","PA6 UV spiral boru, klips ve ek parçalar","m",2000,94.47],["m","Çek içi LED projektör armatür","adet",60,3239.14],["m","Aydınlatma tesisatı","çek",10,8097.84],["i","Elektrik tesisatı — teknisyen","saat",560,1012.23],["i","Yardımcı","saat",400,539.86],["i","Fonksiyon testleri, devreye alma — mühendis","saat",60,1484.6],["n","Ekip aracı ve malzeme nakli","gün",20,12146.77]]},"REH-09":{"birim":"lt","kabul":["ISO VG 68 HVLP (DIN 51524-2) varil yağ; %3 doldurma kaybı.","Eski yağın lisanslı firmaya bertarafı, tank temizliği ve bypass filtrasyon litre başına dağıtıldı."],"bf":300.56,"L":[["m","ISO VG 68 HVLP hidrolik yağ, varil (≈ 205 lt/180 kg)","lt",1.03,256.43],["d","Atık yağ boşaltma ve lisanslı bertaraf","lt",1,8.1],["e","Tank / hat temizliği, bypass filtrasyon","lt",1,10.8],["n","Nakliye, ambar, varil elleçleme","lt",1,5.4],["d","Akredite laboratuvar analizi payı","lt",1,0.67],["i","Doldurma — teknisyen","saat",0.006,1012.23],["i","Yardımcı","saat",0.01,539.86]]},"REH-10":{"birim":"m³","kabul":["El ile, küçük alanlarda onarım betonu; kaplama kalınlığı ≈ 20 cm (1 m³ ≈ 5 m² kaplama).","C20/25 hazır beton bölgesel fiyat tahmini; %5 kayıp."],"bf":12525,"L":[["d","Bozuk kaplamanın kırılması ve atımı","m³",1,1214.68],["i","Şev/taban tesviye ve sıkıştırma","m²",5,80.98],["m","C20/25 hazır beton (Mardin bölgesi, santral teslim + mikser)","m³",1.05,4993.67],["e","Beton pompası / taşıma payı","m³",1,607.34],["m","Kalıp, derz kesimi ve derz dolgusu","m³",1,877.27],["m","Kür malzemesi ve koruma","m³",1,161.96],["i","Döküm ve perdah — usta","saat",1.5,877.27],["i","Yardımcı","saat",4,539.86],["d","Su baypası / kuru çalışma alanı payı","m³",1,539.86]]},"REH-11":{"birim":"m²","kabul":["2 mm HDPE T-Grip geomembran; bindirme ve fire %12."],"bf":969.85,"L":[["m","HDPE T-Grip geomembran","m²",1.12,512.86],["m","Ekstrüzyon / ısıl kaynak sarfı","m²",1,47.24],["i","Yüzey temizliği ve hazırlık — yardımcı","saat",0.15,539.86],["i","Serim ve kaynak — usta","saat",0.12,877.27],["i","Serim — yardımcı","saat",0.15,539.86],["e","Kaynak makinesi, jeneratör","m²",1,53.99],["n","Nakliye","m²",1,26.99]]},"REH-12":{"birim":"m","kabul":["Tip kesit (YOL-01): sağ şevde 6,0 m üst genişlik içinde 4,5 m yol, 0,20 m sıkıştırılmış stabilize; kanal şevleri 1,5/1.","1 m yol için 0,9 m³ sıkı stabilize ≈ 1,1 m³ gevşek malzeme; ortalama taşıma 15 km."],"bf":1183,"L":[["e","Ağaç, kök ve bitkisel toprak temizliği","m²",6,8.1],["e","Kazı-dolgu ve greyder tesviyesi","m²",6,24.29],["m","Stabilize malzeme (ocak / satın alma)","m³",1.1,377.9],["n","Stabilize nakliyesi (≈15 km)","m³",1.1,296.92],["e","Serme, sulama, silindirle sıkıştırma","m³",0.9,128.22],["m","Su (arazöz)","m³",0.15,161.96],["e","Yan hendek ve ince tesviye (reglaj)","m",2,29.69],["d","Küçük menfez / büz payı","m",1,47.24]]},"REH-13":{"birim":"adet","kabul":["10. çekteki mevcut ünite örnek alınarak, tek depo üzerinde asil + yedek iki pompa-motor grubu, PLC panolu.","Koruma yapısı KY-01 malzeme listesinden ≈ 1.870 kg (delikli sac 100 mm şerit kabulüyle); sac paneller 1 m genişse ≈ 4.370 kg olur. Güvenli tarafta 2.200 kg alındı.","Hidrolik yağ REH-09 kaleminde ayrıca ödenir."],"bf":2307211,"L":[["m","Hidrolik tank (~400 lt), kapak, seviye göstergeleri, min. seviye şalteri","adet",1,161956.89],["m","Dişli pompa (HEMA tipi, 210 bar)","adet",2,60733.83],["m","Elektrik motoru 5,5 kW, 1500 d/d (RK-023)","adet",2,51286.35],["m","Kampana + kaplin","adet",2,12146.77],["m","Valf grubu (çek, emniyet, ikiz kilit, kilit, kısma, yön valfleri, akış bölücü, blok)","takım",1,350906.59],["m","Filtre, kirlilik şalteri, manometre, küresel vanalar, el pompası","takım",1,94474.85],["m","Hortum ve boru tesisatı, rakorlar","takım",1,114719.46],["m","PLC kumanda panosu 600×800×250 (PLC, 14 giriş / 4 çıkış, şalt, 12 sinyal lambası)","adet",1,512863.47],["m","Koruma yapısı çelik imalatı (KY-01)","kg",2200,242.94],["m","Sandviç panel çatı","m²",21,1484.6],["m","Boya ve bağlantı elemanları","takım",1,33741.02],["i","Montaj ve devreye alma — teknisyen","saat",80,1012.23],["i","Test ve kalibrasyon — mühendis","saat",24,1484.6],["i","Yardımcı","saat",60,539.86],["e","Mobil vinç","gün",1,51286.35],["n","Nakliye","sefer",2,12146.77]]},"REH-14":{"birim":"adet","kabul":["1 hidrolik silindir atölyede revizyon. Paftaya göre silindir Rexroth CDH1MT4 Ø200/Ø140, strok 4.689 mm, ağırlık 1.303 kg, kapalı boy 5.224 / açık boy 8.756 mm; kapak başına 2 adet.","Mil düzeltme ve honlama her silindirde gerekmeyeceği için ortalama pay alındı; bir kapaktaki iki silindir vinç gününü paylaşır."],"bf":153724,"L":[["m","Sızdırmazlık / tamir kiti (keçe, O-ring, aşınma bandı)","takım",1,32391.38],["m","Çelik tel örgülü hortum 330 / 275 bar, rekorlu","adet",4,4723.74],["m","Galvanizli çelik çekme boru ve ek parçaları","takım",1,12146.77],["m","Küresel vana","adet",2,5128.63],["m","Pim, cıvata, somun, bağlantı elemanları","takım",1,7423.02],["d","Mil düzeltme (pres), honlama / krom payı","adet",1,8097.84],["i","Atölye revizyonu — usta","saat",16,877.27],["i","Basınç testi — teknisyen","saat",8,1012.23],["i","Sahada söküm-montaj — usta","saat",8,877.27],["i","Yardımcı","saat",12,539.86],["e","Mobil vinç payı","gün",0.3,51286.35],["n","Taşıyıcı araç, atölye gidiş-dönüş","sefer",1,9447.49],["d","İSG, yüksekte çalışma, iskele payı","adet",1,4048.92]]},"REH-15":{"birim":"kg","kabul":["Mil, dişli, kızak, bronz kovan, yatak, mesnet gibi talaşlı imalat ağırlıklı parçalar; 1 kg monte edilmiş parça için.","Malzeme fiyatı çelik + bronz karışımı ortalaması."],"bf":447.41,"L":[["m","Malzeme (çelik + bronz ortalaması), fire dahil","kg",1.1,148.46],["i","Talaşlı imalat (torna/freze/planya, tezgah + operatör)","saat",0.08,1214.68],["i","Kaynak ve montaj — usta","saat",0.05,877.27],["i","Yardımcı","saat",0.04,539.86],["m","Kumlama + epoksi boya","m²",0.025,3239.14],["n","Söküm-montaj, vinç, nakliye payı","kg",1,33.74],["d","Muayene ve kabul tecrübeleri","kg",1,6.75]]}};
+
+const DESC={
+ rk001:"Çek yapısındaki radyal kapakların plan ve A-A kesitinde genel yerleşimi: kapak gövdesi, kollar, hidrolik silindir şasesi, korkuluklu servis platformu, merdiven ve ankraj detayları. Teknik özellik tablosu kapak tipini, açıklığı, kaldırma tipini ve yük değerlerini verir.",
+ rk002:"Birinci kademe betonuna gömülen eşik ve yan kızak elemanları: radyal kapak yan kesiti, A-A / B-B / C-C kesitleri ve Detay-1. Gömülü profillerin konum ve ankraj aralıkları.",
+ rk003:"İkinci kademe gömülü elemanları: yan sızdırmazlık plakaları ve kızak profilinin radyal eğri boyunca yerleşimi, beton boşlukları.",
+ rk004:"İkinci kademe gömülü elemanlarının kesit detayları: ayar cıvataları, ankraj demirleri, beton boşluk ölçüleri ve kaynak detayları.",
+ rk005:"Orta ayak (pier) üzerindeki kol mesnedi ankraj komplesi: ankraj bulon grupları, plaka ve kesitler, malzeme listesi.",
+ rk006:"Kenar ayak ankraj komplesi: kenar duvardaki kol mesnedi ankrajı, A-A, B-B, C-C, D-D kesitleri ve malzeme listesi.",
+ rk008:"Kenar ve orta ayak ankraj parçalarının imalat detayları: plaka, bulon, rondela ve ankraj demirleri ölçüleri.",
+ rk009:"Ankraj bulonlarının yerleşimi için şablon (şehba) detayı ve bulon listeleri; orta ve kenar ayak için ayrı tablolar.",
+ rk010:"Hidrolik silindirin kapak üzerindeki şase ve yerleşimi: orta ve kenar ayak silindir şaseleri, korkuluk planı, kesitler, malzeme listesi.",
+ rk011:"Hidrolik silindir şasesinin çelik konstrüksiyon detayları (çaprazlı kafes elemanlar, kutu profiller).",
+ rk012:"Orta ve kenar ayak hidrolik silindir yataklama kirişi oturma şasesi kompleleri, kesitler ve parça listesi.",
+ rk013:"Silindir yataklama kirişi, mafsal yuvaları, pimler ve poz detayları; silindir ve yatak malzeme listesi.",
+ rk014:"Radyal kapağın genel komplesi: A-A ve B-B kesitleri, membağ ve mansap görünüşleri, kapak ağırlık/malzeme tablosu, çapraz ve merdiven yerleşimi.",
+ rk015:"Kapak ön paneli (cilt sacı) ve düşey kirişler: membağ/mansap görünüşü, alt ve yan conta birleşim detayı, kesitler.",
+ rk016:"Kılavuz teker grubu ve conta detayları: yan teker, mil, burç ve conta sıkıştırma lamaları (REH-02/03 için ölçüler).",
+ rk017:"Yatay kirişler ve kollar: kol kafes sistemi, plan, kesitler ve poz detayları; geniş malzeme listesi.",
+ rk018:"Kolbaşı (mafsal) komplesi ve parçaları: yatak gövdesi, burç, pim ve kaynak detayları.",
+ rk019:"Kol pedestal ayağı: mafsal mesnedi, ankraj plakası ve bulon detayları.",
+ rk020:"Çapraz bağlantılar, korkuluk ve merdiven detayları (REH-04 kapsamındaki demir işleri için referans).",
+ rk021:"Radyal kapak seviye (açıklık) göstergesi komplesi: gösterge kolonu, makara, halat, ağırlık ve limit şalter yerleşimi; plan ve kesitler. REH-05/06'nın esas projesi.",
+ rk022:"Seviye göstergesi parça detayları: gösterge cetveli, kılavuz, makara, pim ve poz ölçüleri.",
+ rk023:"Hidrolik devre şeması: pompa-motor grupları, filtreler, emniyet ve yön valfleri, kilit valfler, akış bölücü ve iki silindire bağlantı; piston açık/kapalı konum çizimi.",
+ el01:"Elektrik projesi kapağı: tek kapak (Tip-1), 2 valfli; çalışma şekli kapak aç = motor + Y1, kapak kapat = motor + Y2; 2×4 kW.",
+ el02:"Güç devresi: motor beslemeleri, koruma elemanları.",el03:"Güç ve kumanda devresi devamı.",el04:"Kumanda devresi: yerel/uzak kumanda, start-stop.",
+ el05:"Kumanda devresi: kontaktör ve röle mantığı.",el06:"Sinyal ve limit şalter devreleri.",el07:"Limit şalter ve valf (Y1/Y2) bağlantıları.",
+ el08:"PLC giriş listesi ve bağlantıları.",el09:"PLC çıkış listesi ve bağlantıları.",el10:"Pano ön görünüşü 600×800×250 mm, buton/lamba yerleşimi ve etiket listesi.",
+ koruma:"Hidrolik güç ünitesi koruma yapısı taslağı (ölçek 1:100): 6200 × 3460 × 2286 mm. NPU120 profiller, DN42,4×2,6 boru ızgara, 10 mm delikli sac, 50×100×2,5 dikdörtgen profil, sandviç panel çatı, menteşe ve gömme kilit. Farklı boyutlarda üretilecektir.",
+ yol:"Tel çit uygulamalı kanal tip kesiti (MC-1954-1, 3. Kısım, km 159–195): sağ şevde 600 cm üst genişlik ve 450 cm stabilize yol, sol şevde 400 cm (250 cm platform); 0,20 m stabilize; sol/sağ şev km listeleri.",
+ orn1:"REH-14 kapsamındaki tipte örnek hidrolik silindir görseli.",orn2:"Örnek hidrolik piston boyu ölçü görseli."
+};
+const GROUPS={mek:"Mekanik · Radyal kapak paftaları",hid:"Hidrolik",elk:"Elektrik projesi",kor:"Koruma yapısı",yol:"Bakım yolu",orn:"Örnek görseller"};
+const fmt=new Intl.NumberFormat('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const fmt0=new Intl.NumberFormat('tr-TR',{maximumFractionDigits:0});
+const $=s=>document.querySelector(s);
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function toast(t){const e=$('#toast');e.textContent=t;e.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>e.hidden=true,2600)}
+const store={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+
+/* ---------------- routing ---------------- */
+const VIEWS=['genel','paftalar','model','is-kalemleri','sartname','teklif'];
+function route(){
+  const h=(location.hash||'#genel').slice(1);
+  let v=VIEWS.includes(h)?h:'genel';
+  if(h.startsWith('pafta-')){v='paftalar';const id=h.slice(6);if(window.MAN)openDwg(id,false);else pendingId=id}
+  VIEWS.forEach(x=>$('#v-'+x).hidden=x!==v);
+  document.querySelectorAll('nav.tabs a').forEach(a=>a.setAttribute('aria-current',a.getAttribute('href')==='#'+v?'page':'false'));
+  if(v==='paftalar')ensureViewer();
+  if(v==='model')ensure3D();
+  window.scrollTo(0,0);
+}
+addEventListener('hashchange',route);
+
+/* ---------------- overview ---------------- */
+$('#cekRows').innerHTML=CEKS.map(c=>`<tr><td>${c[0]}</td><td class="mono">MC Km ${c[1]}</td><td class="r num">%${c[2]}</td><td class="r num">%${c[3]}</td></tr>`).join('');
+
+/* ---------------- drawings ---------------- */
+let MAN=null,viewer=null,cur=null,rot=0,hd=false,pendingId=null,PA={};
+fetch('pafta_analiz.json').then(r=>r.ok?r.json():{}).then(j=>{PA=j||{};if(cur)renderPA(cur.id)}).catch(()=>{});
+function renderPA(id){
+  const a=PA[id],el=$('#dPA');if(!a){el.hidden=true;return}
+  const li=arr=>(arr&&arr.length)?'<ul>'+arr.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'';
+  let h='<div class="eyebrow">Pafta çözümlemesi</div><h3 style="margin-top:4px">Bu paftada ne var?</h3>';
+  if(a.ozet)h+='<p style="max-width:80ch;margin:6px 0 0">'+esc(a.ozet)+'</p>';
+  if(a.gorunusler&&a.gorunusler.length)h+='<h4>Görünüşler ve kesitler</h4>'+li(a.gorunusler);
+  if(a.ana_olculer&&a.ana_olculer.length)h+='<h4>Önemli ölçüler ve değerler</h4>'+li(a.ana_olculer);
+  if(a.malzeme_listesi&&a.malzeme_listesi.length){
+    h+='<h4>Malzeme / parça listesi</h4><div class="tbl-wrap"><table><thead><tr><th>Poz</th><th>Adı</th><th class="r">Adet</th><th>Malzeme</th><th class="r">Ağırlık</th></tr></thead><tbody>'+
+    a.malzeme_listesi.map(m=>'<tr><td class="mono">'+esc(m.poz||'')+'</td><td>'+esc(m.ad||'')+'</td><td class="r num">'+esc(m.adet||'')+'</td><td>'+esc(m.malzeme||'')+'</td><td class="r num">'+esc(m.agirlik||'')+'</td></tr>').join('')+'</tbody></table></div>';}
+  if(a.toplam_agirlik)h+='<p><b>Toplam ağırlık:</b> '+esc(a.toplam_agirlik)+'</p>';
+  if(a.notlar&&a.notlar.length)h+='<h4>Paftadaki notlar</h4>'+li(a.notlar);
+  if(a.okuma_ipucu)h+='<div class="tip"><b>Nasıl okunur:</b> '+esc(a.okuma_ipucu)+'</div>';
+  el.innerHTML=h;el.hidden=false;
+}
+const smallDevice=(navigator.maxTouchPoints>0)&&Math.min(screen.width,screen.height)<900;
+hd=!smallDevice;
+fetch('manifest.json').then(r=>r.json()).then(m=>{MAN=m;window.MAN=m;buildList();if(typeof renderPoz==='function')renderPoz();if(pendingId){openDwg(pendingId,false);pendingId=null}else if(!$('#v-paftalar').hidden)openDwg(MAN[0].id,false)}).catch(()=>{$('#list').innerHTML='<p class="hint" style="padding:12px">Pafta listesi yüklenemedi. Sayfayı yenileyin.</p>'});
+function buildList(q=''){
+  q=q.toLocaleLowerCase('tr');
+  let html='',opts='',last='';
+  MAN.forEach(d=>{
+    const hit=!q||(d.code+' '+d.title+' '+(DESC[d.id]||'')).toLocaleLowerCase('tr').includes(q);
+    if(d.group!==last){opts+=(last?'</optgroup>':'')+`<optgroup label="${esc(GROUPS[d.group])}">`;}
+    opts+=`<option value="${d.id}">${esc(d.code)} · ${esc(d.title)}</option>`;
+    if(hit){if(d.group!==last||!html.includes('data-g="'+d.group+'"'))html+=`<div class="grp" data-g="${d.group}">${esc(GROUPS[d.group])}</div>`;
+      html+=`<button class="item" data-id="${d.id}"${cur&&cur.id===d.id?' aria-current="true"':''}><img loading="lazy" src="${d.levels[0].url}" alt=""><div><code>${esc(d.code)}</code><span>${esc(d.title)}</span></div></button>`;}
+    last=d.group;
+  });
+  $('#list').innerHTML=html||'<p class="hint" style="padding:12px">Eşleşen pafta yok.</p>';
+  if(!$('#pick').options.length){$('#pick').innerHTML=opts+'</optgroup>'}
+}
+$('#q').addEventListener('input',e=>buildList(e.target.value));
+$('#list').addEventListener('click',e=>{const b=e.target.closest('.item');if(b)openDwg(b.dataset.id,true)});
+$('#pick').addEventListener('change',e=>openDwg(e.target.value,true));
+
+function ensureViewer(){
+  if(viewer||typeof OpenSeadragon==='undefined')return;
+  viewer=OpenSeadragon({element:document.getElementById('osd'),showNavigationControl:false,showNavigator:true,navigatorPosition:'BOTTOM_RIGHT',navigatorSizeRatio:.18,
+    maxZoomPixelRatio:4,minZoomImageRatio:.5,visibilityRatio:.4,animationTime:.5,springStiffness:9,zoomPerScroll:1.35,zoomPerClick:2,
+    gestureSettingsMouse:{clickToZoom:false,dblClickToZoom:true,flickEnabled:true},gestureSettingsTouch:{pinchRotate:false,flickEnabled:true},
+    imageSmoothingEnabled:true,preserveImageSizeOnResize:true,background:'transparent'});
+  viewer.addHandler('animation',updZoom);viewer.addHandler('open',()=>{viewer.viewport.setRotation(rot);updZoom()});
+  viewer.world.addHandler('add-item',e=>{$('#ld').hidden=false;e.item.addOnceHandler('fully-loaded-change',()=>{$('#ld').hidden=true})});
+  if(MAN&&!cur)openDwg(MAN[0].id,false);else if(cur)openDwg(cur.id,false,true);
+}
+function updZoom(){if(!viewer||!viewer.world.getItemAt(0))return;const it=viewer.world.getItemAt(0);const z=it.viewportToImageZoom(viewer.viewport.getZoom(true));
+  $('#zv').textContent=Math.round(z*it.source.dimensions.x/cur.srcSize[0]*100)+'%'}
+function levelsFor(d){let L=d.levels;if(!hd&&L.length>2)L=L.slice(0,2);return L.map(l=>({url:l.url,width:l.width,height:l.height}))}
+function openDwg(id,push,force){
+  const d=MAN&&MAN.find(x=>x.id===id);if(!d)return;
+  if(cur&&cur.id===id&&!force&&viewer&&viewer.world.getItemCount())return;
+  if(!cur||cur.id!==id)rot=0;
+  cur=d;
+  if(push&&location.hash!=='#pafta-'+id)history.replaceState(null,'','#pafta-'+id);
+  document.querySelectorAll('.item').forEach(b=>b.setAttribute('aria-current',b.dataset.id===id?'true':'false'));
+  const act=document.querySelector('.item[data-id="'+id+'"]');if(act)act.scrollIntoView({block:'nearest'});
+  $('#pick').value=id;$('#dCode').textContent=d.code+' · '+GROUPS[d.group];$('#dTitle').textContent=d.title;
+  $('#dDesc').textContent=DESC[d.id]||'';renderPA(d.id);
+  const rel=ITEMS.filter(it=>it.paftalar.includes(d.id));
+  $('#dRel').innerHTML=rel.length?'<span class="hint" style="align-self:center">İlgili iş kalemleri:</span>'+rel.map(it=>`<a class="chip" href="#is-kalemleri" data-poz="${it.poz}">${it.poz}</a>`).join(''):'';
+  const top=d.levels[d.levels.length-1];
+  $('#dMeta').innerHTML=`<div><span>Kaynak dosya</span><span class="mono" style="text-align:right;word-break:break-all">${esc(d.source)}</span></div><div><span>Tarama çözünürlüğü</span><span class="num">${d.dpi} dpi</span></div><div><span>Orijinal boyut</span><span class="num">${fmt0.format(d.srcSize[0])} × ${fmt0.format(d.srcSize[1])} px</span></div><div><span>HD katman</span><span class="num">${fmt0.format(top.width)} × ${fmt0.format(top.height)} px</span></div>`;
+  $('#bHD').classList.toggle('on',hd);
+  if(viewer){viewer.open({type:'legacy-image-pyramid',levels:levelsFor(d)})}
+}
+document.addEventListener('click',e=>{const c=e.target.closest('.chip[data-poz]');if(c){setTimeout(()=>{const el=document.getElementById('poz-'+c.dataset.poz);if(el)el.scrollIntoView({block:'start'})},30)}});
+function step(n){if(!MAN||!cur)return;const i=MAN.findIndex(x=>x.id===cur.id);const j=(i+n+MAN.length)%MAN.length;openDwg(MAN[j].id,true)}
+$('#bPrev').onclick=()=>step(-1);$('#bNext').onclick=()=>step(1);
+$('#bIn').onclick=()=>viewer&&viewer.viewport.zoomBy(1.6);
+$('#bOut').onclick=()=>viewer&&viewer.viewport.zoomBy(1/1.6);
+$('#bHome').onclick=()=>viewer&&viewer.viewport.goHome();
+$('#b100').onclick=()=>{if(!viewer)return;const it=viewer.world.getItemAt(0);if(!it)return;viewer.viewport.zoomTo(it.imageToViewportZoom(cur.srcSize[0]/it.source.dimensions.x))};
+$('#bRot').onclick=()=>{rot=(rot+90)%360;viewer&&viewer.viewport.setRotation(rot)};
+$('#bNeg').onclick=e=>{$('#osd').classList.toggle('neg');e.currentTarget.classList.toggle('on')};
+$('#bHD').onclick=()=>{hd=!hd;toast(hd?'Ultra HD açık: en yüksek çözünürlük yakınlaştıkça yüklenir':'Ultra HD kapalı: daha hafif katman (4096 px)');if(cur)openDwg(cur.id,false,true)};
+function toggleMax(){const s=$('#stage');const on=!s.classList.contains('max');s.classList.toggle('max',on);$('#bMax').classList.toggle('on',on);document.body.style.overflow=on?'hidden':'';
+  if(on&&viewer&&document.documentElement.requestFullscreen){document.documentElement.requestFullscreen().catch(()=>{})}else if(!on&&document.fullscreenElement){document.exitFullscreen().catch(()=>{})}}
+$('#bMax').onclick=toggleMax;
+document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement&&$('#stage').classList.contains('max'))toggleMax()});
+document.addEventListener('keydown',e=>{
+  if($('#v-paftalar').hidden||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;
+  const k=e.key;
+  if(k==='ArrowRight'&&!e.altKey){step(1);e.preventDefault()}else if(k==='ArrowLeft'&&!e.altKey){step(-1);e.preventDefault()}
+  else if(k==='+'||k==='='){$('#bIn').click()}else if(k==='-'){$('#bOut').click()}else if(k==='0'){$('#bHome').click()}
+  else if(k==='r'||k==='R'){$('#bRot').click()}else if(k==='f'||k==='F'){toggleMax()}else if(k==='Escape'&&$('#stage').classList.contains('max'))toggleMax();
+});
+
+/* ---------------- 3D model ---------------- */
+const M3MODELS=[
+ {id:'m01_genel_yerlesim',ad:'Genel yerleşim',kod:'MC2-RK-001',pf:['rk001'],cam:[-1,0.75,1.25],
+  d:['3 göz × 5.000 mm net açıklık; 2 orta ayak (1.500 mm) ve 2 kenar ayak','Gömülü yan saclar 12×260, paslanmaz conta yüzeyi 5×80, eşik sacları 12×250 + paslanmaz 5×120','3 radyal kapak, 6 hidrolik silindir (kapak başına 2)','Her ayak üstünde silindir şase kulesi ve servis platformu','Kapak mili eşikten ≈ 6.310 mm yukarıda, yatayda 4.750 mm (RK-002/010)','Bir çek yapısının toplam çeliği 121.570 kg (RK-001 tablosu)']},
+ {id:'m02_kapak_komplesi',ad:'Kapak genel komplesi',kod:'MC2-RK-014 … 017',pf:['rk014','rk015','rk016','rk017'],cam:[-1.1,0.7,1],
+  d:['Ön panel 3 sac (10×1980 + 10×1000 + 10×1980), R7.900, yay boyu 6.984 mm','10 adet NPI160 düşey kiriş, 18 berkitme ≠8×160×494','2 yatay kiriş: yapma I (≠12×468 gövde, ≠18×180 başlık) L=4.900','Kollar: yapma I (≠12×375 gövde, ≠18×180 başlık), uç levhaları ≠30×394×490, L100×100×10 örgü','Korkuluk ve 13 basamaklı merdiven (kutu 50×50), NPL100×10 diyagoneller','Kolbaşı kovanı Ø500, mil Ø240 × 700','Kılavuz teker Ø200 × 40 (her yanda 2)','Yan conta 2 × 7.037 mm nota profil, alt conta 4.960 mm','Bir kapak 15.146 kg']},
+ {id:'m03_orta_ayak_ankraj',ad:'Orta ayak ankraj komplesi',kod:'MC2-RK-005 / 008',pf:['rk005','rk008','rk009'],cam:[-1.2,0.7,0.9],
+  d:['Mesnet plakası 3.240 × 1.440 mm, t = 50','16 eğik ankraj bulonu Ø80 × 6.400 (≈ 38°), uç plakası 240 × 240','8 düşey ankraj bulonu Ø80 × 3.938','Somunlar Ø160, M80 × 6; bulon aralığı 300 mm','İç sandık 1.300 × 1.400 × 240 mm (20 + 200 + 20)','Bulonlar betona gömülen 1 m ve açık kısımları bitümlenir']},
+ {id:'m04_kenar_ayak_ankraj',ad:'Kenar ayak ankraj komplesi',kod:'MC2-RK-006 / 008',pf:['rk006','rk008','rk009'],cam:[-1.2,0.7,0.9],
+  d:['Mesnet plakası 2.195 × 1.440 mm, t = 50','12 eğik ankraj bulonu Ø80 × 6.400','6 düşey ankraj bulonu Ø80 × 3.938','İç sandık 1.050 × 1.400 mm','2 × 6.135 = 12.270 kg (RK-001 değeri)']},
+ {id:'m05_silindir_sase',ad:'Hidrolik silindir şase komplesi',kod:'MC2-RK-010 … 013',pf:['rk010','rk011','rk012','rk013'],cam:[-1.2,0.6,1],
+  d:['Şase kulesi: NPU200 dikmeler, eksen aralığı 950 mm, yükseklik ≈ 2.318 mm','Yataklama kutu kirişleri 300 × 360 × 2.843 mm, aralık 1.450 mm','Silindir Rexroth CDH1MT4 Ø200/Ø140, strok 4.689 mm, 1.303 kg','Kapalı boy 5.224 mm, açık boy 8.756 mm; muylu Ø90, SKF GE 90 ES yatak','Platform 2.000 mm, korkuluk 1.180 mm']},
+ {id:'m06_kolbasi',ad:'Kolbaşı komplesi',kod:'MC2-RK-018',pf:['rk018'],cam:[-1,0.8,1.2],
+  d:['Kovan Ø500 / Ø290 × 528 mm, Gs45 döküm','2 bronz burç Ø290 / Ø240 × 239 mm (Gbz14), aralarında 50 mm','Kol başı sacı 18 × 897 × 1.496 mm, kol bağlantı genişliği 375 mm','Gresörlük M12 × 1,5; cıvatalar M24 (8.8)','Kaynak sonrası 600 °C gerilim giderme tavı','Adet ağırlığı 1.231 kg, kapak başına 2']},
+ {id:'m07_pedestal',ad:'Kol pedestal ayağı',kod:'MC2-RK-019',pf:['rk019'],cam:[1.2,0.6,1],
+  d:['Mil Ø240 × 700 mm (St50.2)','Burç Ø380 / Ø240 × 40 (Gbz14), kapak Ø420 × 30','Sac 60 × 880 × 1.210, 2 × 60 × 635 × 1.210, takviye 80 × 100 × 570','16 ankraj çubuğu Ø30 × 765, M30 somunlu','Beton ile arası Nordbak (veya eşdeğeri) dolgu','Adet ağırlığı 1.627 kg, kapak başına 2']},
+ {id:'m08_seviye_gostergesi',ad:'Seviye göstergesi komplesi',kod:'MC2-RK-021 / 022',pf:['rk021','rk022'],cam:[-1.2,0.5,1.4],
+  d:['Gövde 250 mm, yükseklik 1.929 mm, sac t = 3; taban flanşı 310 × 230','Alüminyum cetvel 1.716 × 60 mm, 0–6 m kapak açıklığı','Makara Ø120 / Ø100, pim Ø20 × 80; çelik halat L = 5.800','Karşı ağırlık 180 × 130 × 100 mm (19 kg)','Alt ve üst limit siviç; kaide NPU120 × 740','Bir takım 104 kg (REH-05: 48 adet)']},
+ {id:'m09_koruma_yapisi',ad:'HGÜ koruma yapısı',kod:'KY-01',pf:['koruma'],cam:[-1,0.8,1.3],
+  d:['Dış ölçü 6.200 × 3.460 × 2.286 mm','NPU120 çerçeve (6.200 / 3.460 / 2.176 boylar)','DN42,4 × 2,6 boru ızgara (151 adet, ≈ 120 mm aralık)','10 mm delikli sac şeritler, 50 × 100 × 2,5 çatı profilleri (11 adet)','Sandviç panel çatı, menteşeli kapı ve gömme kilit','Tahmini çelik ≈ 1.870 kg (sac genişliğine göre 4.370 kg’a çıkabilir)']}
+];
+let M3=null,M3cur=null;
+function loadScript(src){return new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>rej(new Error(src));document.head.appendChild(s)})}
+function m3Tabs(){
+  $('#m3models').innerHTML=M3MODELS.map(m=>`<button class="m3tab" role="tab" data-m="${m.id}"><img src="3d/${m.id}.webp" alt="" loading="lazy"><span>${esc(m.ad)}<small>${esc(m.kod)}</small></span></button>`).join('');
+  $('#m3gal').innerHTML=M3MODELS.map(m=>`<figure><img src="3d/${m.id}.webp" alt="${esc(m.ad)} izometrik render" loading="lazy"><figcaption>${esc(m.kod)} · ${esc(m.ad)}</figcaption></figure>`).join('');
+  $('#m3models').addEventListener('click',e=>{const b=e.target.closest('[data-m]');if(b)m3Open(b.dataset.m)});
+}
+m3Tabs();
+async function ensure3D(){
+  if(M3){if(!M3cur)m3Open(M3MODELS[0].id);return} M3={};
+  const B='https://cdn.jsdelivr.net/npm/three@0.147.0/';
+  try{await loadScript(B+'build/three.min.js');await loadScript(B+'examples/js/controls/OrbitControls.js');await loadScript(B+'examples/js/loaders/GLTFLoader.js')}
+  catch(e){$('#m3ld').textContent='3D kütüphanesi yüklenemedi. Sayfayı yenileyin.';M3=null;return}
+  const el=$('#m3d');const W=()=>el.clientWidth,H=()=>el.clientHeight;
+  const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(W(),H());
+  renderer.outputEncoding=THREE.sRGBEncoding;renderer.shadowMap.enabled=true;el.appendChild(renderer.domElement);
+  const scene=new THREE.Scene();const cam=new THREE.PerspectiveCamera(35,W()/H(),0.01,1000);
+  const ctr=new THREE.OrbitControls(cam,renderer.domElement);ctr.enableDamping=true;ctr.dampingFactor=.08;
+  scene.add(new THREE.HemisphereLight(0xffffff,0x8a8a80,0.75));
+  const sun=new THREE.DirectionalLight(0xffffff,0.95);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.bias=-0.0008;sun.shadow.normalBias=0.04;scene.add(sun);scene.add(sun.target);
+  const fill=new THREE.DirectionalLight(0xffffff,0.35);scene.add(fill);
+  const grid=new THREE.GridHelper(1,1);scene.add(grid);
+  M3={renderer,scene,cam,ctr,sun,fill,grid,root:null,groups:[],box:null};
+  $('#m3groups').addEventListener('change',e=>{const i=e.target.dataset.g;if(i!=null&&M3.groups[i])M3.groups[i].node.visible=e.target.checked});
+  $('#m3exp').addEventListener('input',e=>m3Explode(+e.target.value/100));
+  $('#m3grid').addEventListener('change',e=>{M3.grid.visible=e.target.checked});
+  document.querySelectorAll('[data-cam]').forEach(b=>b.onclick=()=>m3View(b.dataset.cam));
+  $('#m3Rot').onclick=e=>{ctr.autoRotate=!ctr.autoRotate;ctr.autoRotateSpeed=1.2;e.currentTarget.classList.toggle('on',ctr.autoRotate)};
+  $('#m3Max').onclick=e=>{const s=$('#m3stage');const on=!s.classList.contains('max');s.classList.toggle('max',on);e.currentTarget.classList.toggle('on',on);document.body.style.overflow=on?'hidden':'';setTimeout(resize,30)};
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#m3stage').classList.contains('max'))$('#m3Max').click()});
+  const ray=new THREE.Raycaster(),mv=new THREE.Vector2();let down=null,hl=null;
+  renderer.domElement.addEventListener('pointerdown',e=>{down=[e.clientX,e.clientY]});
+  renderer.domElement.addEventListener('pointerup',e=>{if(!down||Math.hypot(e.clientX-down[0],e.clientY-down[1])>5||!M3.root)return;
+    const r=renderer.domElement.getBoundingClientRect();mv.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(mv,cam);
+    const hits=ray.intersectObject(M3.root,true).filter(h=>h.object.isMesh&&isVis(h.object));
+    if(hl&&hl.material.emissive){hl.material.emissive.setHex(0)}hl=null;
+    if(!hits.length){$('#m3pick').hidden=true;return}
+    const o=hits[0].object;hl=o;if(o.material.emissive)o.material.emissive.setHex(0x335533);
+    let n=o;while(n.parent&&!M3.groups.some(g=>g.node===n))n=n.parent;const G=M3.groups.find(g=>g.node===n);
+    let nm=o.userData.lbl||o.name;nm=nm.replace(/_/g,' ').replace(/\.?\d{3}$/,'').replace(/\s\d+$/,'');
+    $('#m3pick').innerHTML=`<b>${esc(nm)}</b>${G?esc(G.label):''}`;$('#m3pick').hidden=false});
+  function isVis(o){while(o){if(!o.visible)return false;o=o.parent}return true}
+  function resize(){renderer.setSize(W(),H());cam.aspect=W()/H();cam.updateProjectionMatrix()}
+  M3.resize=resize;new ResizeObserver(resize).observe(el);
+  (function loop(){requestAnimationFrame(loop);if($('#v-model').hidden)return;ctr.update();renderer.render(scene,cam)})();
+  m3Open((M3cur&&M3cur.id)||M3MODELS[0].id);
+}
+function m3Decode(o){const bin=Uint8Array.from(atob(o.d),c=>c.charCodeAt(0));let x=(0x5A17C3E9^o.n)>>>0;
+  for(let i=0;i<bin.length;i++){x^=(x<<13)>>>0;x>>>=0;x^=x>>>17;x^=(x<<5)>>>0;x>>>=0;bin[i]^=x&255}
+  const dv=new DataView(bin.buffer);const jl=dv.getUint32(12,true);const j=JSON.parse(new TextDecoder().decode(bin.subarray(20,20+jl)));return{buf:bin.buffer,j}}
+function m3Open(id){
+  const m=M3MODELS.find(x=>x.id===id);if(!m)return;M3cur=m;
+  document.querySelectorAll('.m3tab').forEach(b=>b.setAttribute('aria-selected',b.dataset.m===id?'true':'false'));
+  $('#m3code').textContent=m.kod;$('#m3title').textContent=m.ad;
+  $('#m3dims').innerHTML=m.d.map(x=>'<li>'+esc(x)+'</li>').join('');
+  $('#m3pf').innerHTML='<span class="hint" style="align-self:center">Paftalar:</span>'+m.pf.map(p=>`<a class="chip" href="#pafta-${p}">${esc(titleOf(p))}</a>`).join('');
+  $('#m3pick').hidden=true;$('#m3exp').value=0;
+  if(!M3||!M3.renderer)return;
+  $('#m3ld').hidden=false;$('#m3ld').textContent='3D model yükleniyor…';
+  if(M3.root){M3.scene.remove(M3.root);M3.root.traverse(o=>{if(o.geometry)o.geometry.dispose()});M3.root=null}
+  fetch('3d/'+id+'.json').then(r=>r.json()).then(o=>{
+    const dec=m3Decode(o),j=dec.j;
+    const names=(j.scenes[0].nodes||[]).map(i=>j.nodes[i].name||'');
+    new THREE.GLTFLoader().parse(dec.buf,'',g=>{
+      if(M3cur.id!==id)return;
+      const root=g.scene;M3.root=root;
+      root.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;if(o.material){o.material=o.material.clone();o.material.side=THREE.DoubleSide}}});
+      M3.groups=[];
+      root.children.forEach((n,i)=>{const lbl=(names[i]||n.name).replace(/^GRUP:\s*/,'').replace(/\.\d{3}$/,'');if(/^GRUP/i.test(names[i]||n.name)){let col='#888';n.traverse(o=>{if(o.isMesh&&col==='#888'&&o.material&&o.material.color)col='#'+o.material.color.getHexString()});M3.groups.push({node:n,label:lbl,col,base:n.position.clone()})}});
+      scene_add(root);
+      $('#m3groups').innerHTML=M3.groups.map((G,i)=>`<label><input type="checkbox" data-g="${i}" checked><span class="sw" style="background:${G.col}"></span><span>${esc(G.label)}</span></label>`).join('');
+      $('#m3ld').hidden=true;
+    },()=>{$('#m3ld').textContent='Model dosyası okunamadı.'})}).catch(()=>{$('#m3ld').textContent='Model dosyası yüklenemedi.'});
+  function scene_add(root){
+    M3.scene.add(root);const box=new THREE.Box3().setFromObject(root);M3.box=box;const c=box.getCenter(new THREE.Vector3()),s=box.getSize(new THREE.Vector3()),d=s.length();
+    M3.groups.forEach(G=>{const gb=new THREE.Box3().setFromObject(G.node);const gc=gb.isEmpty()?c.clone():gb.getCenter(new THREE.Vector3());let v=gc.sub(c);if(v.length()<d*0.05)v.set(0,1,0);G.dir=v.normalize().multiplyScalar(d*0.35)});
+    M3.grid.geometry.dispose();M3.scene.remove(M3.grid);const gs=Math.max(4,Math.ceil(d*1.6));M3.grid=new THREE.GridHelper(gs,gs,0x8f9a98,0xc4cbc9);M3.grid.position.set(c.x,box.min.y-0.01,c.z);M3.grid.visible=$('#m3grid').checked;M3.scene.add(M3.grid);
+    M3.sun.position.set(c.x-d*0.6,c.y+d*1.1,c.z+d*0.7);M3.sun.target.position.copy(c);Object.assign(M3.sun.shadow.camera,{left:-d,right:d,top:d,bottom:-d,near:0.1,far:d*4});M3.sun.shadow.camera.updateProjectionMatrix();
+    M3.fill.position.set(c.x+d,c.y+d*0.4,c.z-d);M3.center=c;M3.diag=d;m3View('iso');
+  }
+}
+function m3View(k){if(!M3||!M3.center)return;const c=M3.center,d=M3.diag*1.75;const m=M3cur;
+  const v={iso:m.cam,front:[0,0.25,1],back:[0,0.25,-1],side:[-1,0.2,0],top:[0.001,1,0.001]}[k]||m.cam;
+  const dir=new THREE.Vector3(...v).normalize();M3.cam.position.copy(c).addScaledVector(dir,d);M3.cam.near=d/200;M3.cam.far=d*20;M3.cam.updateProjectionMatrix();M3.ctr.target.copy(c);M3.ctr.update()}
+function m3Explode(f){if(!M3)return;M3.groups.forEach(G=>{G.node.position.copy(G.base).addScaledVector(G.dir||new THREE.Vector3(),f)})}
+
+/* ---------------- downloads ---------------- */
+let DL=null;
+(async()=>{try{DL=window.claude&&await window.claude.use('downloads')}catch(e){DL=null}})();
+async function saveFile(filename,data){
+  if(!DL){try{const blob=data instanceof Blob?data:new Blob([data],{type:'text/html;charset=utf-8'});const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000);toast('İndiriliyor: '+filename);return true}catch(e){toast('Dosya indirilemedi.');return false}}
+  try{await DL.save({filename,data});toast('İndirme başlatıldı: '+filename);return true}
+  catch(e){const c=e&&e.code;if(c==='declined')toast('İndirme iptal edildi.');else if(c==='rate_limited')toast('Önceki indirme onayı açık; biraz sonra tekrar deneyin.');else toast('Dosya indirilemedi ('+(c||'hata')+').');return false}
+}
+async function saveUrl(url,name){try{const r=await fetch(url);if(!r.ok)throw 0;await saveFile(name,await r.blob())}catch(e){toast('Dosya alınamadı.')}}
+$('#bDl').onclick=()=>{if(!cur)return;const l=cur.levels[cur.levels.length-1];saveUrl(l.url,cur.code+' '+cur.title.replace(/[\\/:*?"<>|]/g,'')+'.webp')};
+document.querySelectorAll('[data-file]').forEach(b=>b.onclick=()=>saveUrl(b.dataset.file,b.dataset.name));
+
+/* ---------------- state ---------------- */
+const FIELDS=['fFirma','fYetkili','fIletisim','fNo','fTarih','fGecer','fKdv','fInd','fBase','fNot'];
+let UNLOCKED = !SEC;   // kaynak sürüm açık, yayın sürümü kilitli başlar
+let Q=store.get('ceyl.quote.v2',null)||{};
+['prices','qty','f','an','rates','ohf','ohp'].forEach(k=>{if(!Q[k]||typeof Q[k]!=='object')Q[k]={}});
+const QFULL=Q;
+if(!UNLOCKED)Q={prices:{},qty:{},f:QFULL.f,an:{},rates:{},ohf:{},ohp:{}};
+function save(){if(UNLOCKED)store.set('ceyl.quote.v2',Q);else{QFULL.f=Q.f;store.set('ceyl.quote.v2',QFULL)}}
+FIELDS.forEach(id=>{if(Q.f[id]!=null)$('#'+id).value=Q.f[id]});
+if(!$('#fTarih').value)$('#fTarih').value=new Date().toISOString().slice(0,10);
+if(!$('#fNo').value)$('#fNo').value='TKF-'+new Date().getFullYear()+'-001';
+const has=v=>v!=null&&v!=='';
+const TYP={m:'Malzeme',i:'İşçilik',e:'Makine / ekipman',n:'Nakliye',d:'Diğer'};
+function rate(k){return has(Q.rates[k])?+Q.rates[k]:RATES[k].fiyat}
+function ov(poz,i){return (Q.an[poz]||{})[i]||{}}
+function lineQ(poz,i){const o=ov(poz,i);return has(o.q)?+o.q:AN[poz].L[i][3]}
+function lineP(poz,i){const o=ov(poz,i),L=AN[poz].L[i];if(has(o.p))return +o.p;return typeof L[4]==='string'?rate(L[4]):L[4]}
+function r2(x){return x>=1000?Math.round(x):Math.round(x*100)/100}
+function anDir(poz){const by={m:0,i:0,e:0,n:0,d:0};let dir=0;AN[poz].L.forEach((L,i)=>{const t=lineQ(poz,i)*lineP(poz,i);by[L[0]]+=t;dir+=t});return{dir,by}}
+function ohF(i){return has((Q.ohf||{})[i])?+Q.ohf[i]:OH_FIX[i][1]}
+function ohP(i){return has((Q.ohp||{})[i])?+Q.ohp[i]:OH_PCT[i][1]}
+function riskP(){return has(Q.risk)?+Q.risk:RISK_DEFAULT}
+function karP(){return has(Q.kar)?+Q.kar:KAR_DEFAULT}
+function Dtot(){let d=0;ITEMS.forEach(it=>d+=anDir(it.poz).dir*qtyOf(it));return d}
+function model(){const Dt=Dtot();let F=0;OH_FIX.forEach((x,i)=>F+=ohF(i));let pp=0;OH_PCT.forEach((x,i)=>pp+=ohP(i));
+  const p=pp/100,r=riskP()/100,k=karP()/100;const base=Dt*(1+r)+F;const C=base*(1+k)/(1-p*(1+k));
+  return{Dt,F,p,pp,r,k,R:Dt*r,C,cost:base+p*C,kar:C-(base+p*C),U:Dt?C/Dt:1,BE:base/(1-p)}}
+function U(){return model().U}
+function anCalc(poz){const a=anDir(poz);const u=U();return{dir:a.dir,by:a.by,g:a.dir*(u-1),bf:(!UNLOCKED&&AN[poz].bf!=null)?AN[poz].bf:r2(a.dir*u)}}
+function gg(){return ((U()-1)*100).toFixed(1)}
+function base(){return +$('#fBase').value||0}
+function est(it){const b=base();const r=v=>{const x=v*b/it.qty;return x>=1000?Math.round(x/10)*10:Math.round(x*100)/100};return{min:r(it.j),max:r(it.k),mid:r((it.j+it.k)/2)}}
+function qtyOf(it){return has(Q.qty[it.poz])?+Q.qty[it.poz]:it.qty}
+function priceOf(it){return has(Q.prices[it.poz])?+Q.prices[it.poz]:anCalc(it.poz).bf}
+function lineT(it){return Math.round(qtyOf(it)*priceOf(it)*10)/10}
+function cmp(it,bf){const e=est(it);if(bf<e.min)return['low','Cetvel oran aralığının altında'];if(bf>e.max)return['high','Cetvel oran aralığının üstünde'];return['in','Cetvel oran aralığında']}
+
+/* ---------------- items + analysis ---------------- */
+function titleOf(id){const d=MAN&&MAN.find(x=>x.id===id);return d?d.code:id}
+function renderRates(){
+  $('#rates').innerHTML=Object.entries(RATES).map(([k,r])=>`<tr><td>${esc(r.ad)}</td><td>${r.birim}</td><td class="r"><input id="rt_${k}" class="${has(Q.rates[k])?'changed':''}" type="number" min="0" step="any" value="${rate(k)}" aria-label="${esc(r.ad)} birim fiyat"></td></tr>`).join('')+
+   `<tr><td colspan="3" class="hint">Genel gider, risk ve kâr oranları <a href="#teklif">Fiyat teklifi › Kâr ve maliyet dökümü</a> bölümünden ayarlanır. Şu an doğrudan maliyete eklenen toplam pay: <b>%${gg()}</b>.</td></tr>`;
+}
+function renderPoz(){
+  $('#pozlist').innerHTML=ITEMS.map(it=>{const a=AN[it.poz];return `<article class="poz" id="poz-${it.poz}">
+   <div class="code"><b>${it.poz}</b><span>${fmt0.format(it.qty)} ${it.kisa}</span><span class="bfbig num" id="abf_${it.poz}"></span><span class="hint">1 ${a.birim} birim fiyatı</span></div>
+   <div class="body"><h3>${esc(it.ad)}</h3><p style="margin:0 0 6px;max-width:80ch">${esc(it.ozet)}</p>
+   <details class="more"><summary>Şartnamede istenenler (birim fiyat tarifi özeti)</summary><ul>${it.madde.map(m=>`<li>${esc(m)}</li>`).join('')}</ul><p><b>Ölçü ve ödeme:</b> ${esc(it.olcu)}</p></details>
+   ${it.paftalar.length?`<div class="chips" style="margin-top:8px"><span class="hint" style="align-self:center">İlgili paftalar:</span>${it.paftalar.map(p=>`<a class="chip" href="#pafta-${p}">${esc(titleOf(p))}</a>`).join('')}</div>`:''}
+   <div class="pozsum"><span><b>Miktar:</b> ${fmt0.format(it.qty)} ${it.kisa}</span><span><b>Birim fiyat:</b> <span id="psb_${it.poz}"></span></span><span><b>Tutar:</b> <span id="pst_${it.poz}"></span></span></div>
+   <details class="calc"><summary>Fiyat nasıl hesaplandı? (malzeme, işçilik, makine…)</summary>
+   <h4 class="anh">Birim fiyat analizi — 1 ${a.birim} için</h4>
+   <div class="kabul"><b>Kabuller:</b><ul>${a.kabul.map(k=>`<li>${esc(k)}</li>`).join('')}</ul></div>
+   <div class="tbl-wrap"><table class="antable"><thead><tr><th>Tür</th><th>Kalem</th><th>Birim</th><th class="r">Miktar</th><th class="r">Birim fiyat (TL)</th><th class="r">Tutar (TL)</th></tr></thead><tbody>
+   ${a.L.map((L,i)=>`<tr><td><span class="tt t-${L[0]}">${TYP[L[0]]}</span></td><td>${esc(L[1])}${typeof L[4]==='string'?` <span class="hint">· rayiç</span>`:''}</td><td>${esc(L[2])}</td>
+     <td class="r"><input data-a="${it.poz}" data-i="${i}" data-k="q" class="qty edin${has(ov(it.poz,i).q)?' changed':''}" type="number" min="0" step="any" value="${lineQ(it.poz,i)}" aria-label="miktar"><span class="rov num">${fmtN.format(lineQ(it.poz,i))}</span></td>
+     <td class="r"><input data-a="${it.poz}" data-i="${i}" data-k="p" class="edin ${has(ov(it.poz,i).p)?'changed':''}" type="number" min="0" step="any" value="${lineP(it.poz,i)}" aria-label="birim fiyat"><span class="rov num">${fmtN.format(lineP(it.poz,i))}</span></td>
+     <td class="r num" id="al_${it.poz}_${i}"></td></tr>`).join('')}
+   </tbody><tfoot>
+     <tr class="priv-only"><td colspan="5">Doğrudan maliyet <span class="hint" id="aby_${it.poz}"></span></td><td class="r num" id="ad_${it.poz}"></td></tr>
+     <tr class="priv-only"><td colspan="5">Genel gider + risk + kâr payı (%<span id="agp_${it.poz}"></span>) <span class="hint">· ayrıntısı teklif sayfasında</span></td><td class="r num" id="ag_${it.poz}"></td></tr>
+     <tr class="bfrow"><td colspan="5">Birim fiyat (1 ${a.birim})</td><td class="r num" id="ab_${it.poz}"></td></tr>
+     <tr><td colspan="5">× Miktar <span class="num">${fmt0.format(it.qty)} ${it.kisa}</span> = Kalem toplamı</td><td class="r num" id="at_${it.poz}"></td></tr>
+   </tfoot></table></div>
+   <div class="stack" id="as_${it.poz}"></div>
+   <div class="cmp" id="ac_${it.poz}"></div>
+   </details>
+   </div></article>`}).join('');
+  updAll();
+}
+function updPoz(poz){
+  const it=ITEMS.find(x=>x.poz===poz),a=AN[poz],c=anCalc(poz);
+  a.L.forEach((L,i)=>{$('#al_'+poz+'_'+i).textContent=fmt.format(lineQ(poz,i)*lineP(poz,i))});
+  $('#ad_'+poz).textContent=fmt.format(c.dir);$('#agp_'+poz).textContent=gg();$('#ag_'+poz).textContent=fmt.format(c.g);
+  $('#ab_'+poz).textContent=fmt.format(c.bf)+' TL';$('#abf_'+poz).textContent=fmt.format(c.bf)+' TL';
+  $('#at_'+poz).textContent=fmt.format(c.bf*it.qty)+' TL';const psb=$('#psb_'+poz);if(psb){psb.textContent=fmt.format(c.bf)+' TL / '+a.birim;$('#pst_'+poz).textContent=fmt.format(c.bf*it.qty)+' TL'}
+  $('#as_'+poz).innerHTML=Object.keys(TYP).filter(k=>c.by[k]>0).map(k=>`<i class="t-${k}" style="flex:${c.by[k]}" title="${TYP[k]} %${(c.by[k]/c.dir*100).toFixed(0)}"></i>`).join('');
+  $('#aby_'+poz).textContent='· '+Object.keys(TYP).filter(k=>c.by[k]>0).map(k=>TYP[k]+' %'+(c.by[k]/c.dir*100).toFixed(0)).join(' · ');
+  const e=est(it),[cls,txt]=cmp(it,c.bf);
+  $('#ac_'+poz).className='cmp '+cls;$('#ac_'+poz).innerHTML=`<b>${txt}.</b> Cetvel dosyasındaki oranlara göre tahmin aralığı ${fmt0.format(e.min)} – ${fmt0.format(e.max)} TL / ${a.birim} (orta ${fmt0.format(e.mid)}).`;
+  const sum=$('#anSum');if(sum)renderSum();
+}
+function renderSum(){
+  let tot=0;const rows=ITEMS.map(it=>{const c=anCalc(it.poz);const t=c.bf*it.qty;tot+=t;return [it,c,t]});
+  $('#anSum').innerHTML=rows.map(([it,c,t])=>{const [cls]=cmp(it,c.bf);return `<tr><td class="mono"><a href="#is-kalemleri" class="chiplink" data-poz="${it.poz}">${it.poz}</a></td><td>${esc(it.ad)}</td><td class="r num">${fmt0.format(it.qty)} ${it.kisa}</td><td class="r num">${fmt.format(c.bf)}</td><td class="r num">${fmt.format(t)}</td><td class="r num">%${(t/tot*100).toFixed(1)}</td><td><span class="dot ${cls}"></span></td></tr>`}).join('')+
+   `<tr class="bfrow"><td></td><td>Analize göre toplam (KDV hariç)</td><td></td><td></td><td class="r num">${fmt.format(tot)}</td><td class="r">%100</td><td></td></tr>`;
+}
+function updAll(){ITEMS.forEach(it=>updPoz(it.poz));renderSum();if($('#qrows').children.length)calc();if(typeof renderRates==='function'&&$('#rates'))renderRatesNote()}
+function renderRatesNote(){const r=$('#rates tr:last-child td');if(r&&r.colSpan===3)r.innerHTML='Genel gider, risk ve kâr oranları <a href="#teklif">Fiyat teklifi › Kâr ve maliyet dökümü</a> bölümünden ayarlanır. Şu an doğrudan maliyete eklenen toplam pay: <b>%'+gg()+'</b>.'}
+$('#pozlist').addEventListener('input',e=>{const t=e.target;if(!t.dataset.a)return;const poz=t.dataset.a,i=t.dataset.i,k=t.dataset.k;
+  Q.an[poz]=Q.an[poz]||{};Q.an[poz][i]=Q.an[poz][i]||{};
+  const L=AN[poz].L[i];const def=k==='q'?L[3]:(typeof L[4]==='string'?rate(L[4]):L[4]);
+  if(t.value===''||+t.value===def)delete Q.an[poz][i][k];else Q.an[poz][i][k]=t.value;
+  t.classList.toggle('changed',has(Q.an[poz][i][k]));save();updAll();refreshQ()});
+$('#rates').addEventListener('input',e=>{const t=e.target;if(!t.id)return;const k=t.id.slice(3);
+  {if(t.value===''||+t.value===RATES[k].fiyat)delete Q.rates[k];else Q.rates[k]=t.value;t.classList.toggle('changed',has(Q.rates[k]));
+    document.querySelectorAll('#pozlist input[data-k="p"]').forEach(inp=>{const L=AN[inp.dataset.a].L[inp.dataset.i];if(L[4]===k&&!has(ov(inp.dataset.a,inp.dataset.i).p))inp.value=rate(k)})}
+  save();updAll();refreshQ()});
+let anResetArmed=false;
+$('#anReset').onclick=e=>{if(!anResetArmed){anResetArmed=true;e.currentTarget.textContent='Emin misiniz? Tekrar tıklayın';setTimeout(()=>{anResetArmed=false;$('#anReset').textContent='Analizleri varsayılana döndür'},3500);return}
+  anResetArmed=false;e.currentTarget.textContent='Analizleri varsayılana döndür';Q.an={};Q.rates={};save();renderRates();renderPoz();refreshQ();toast('Analiz miktarları, rayiçler ve genel gider varsayılana döndü.')};
+
+/* ---------------- quote ---------------- */
+function renderQ(){
+  $('#qrows').innerHTML=ITEMS.map((it,i)=>{const e=est(it);return `<tr>
+   <td class="num">${i+1}</td><td class="mono">${it.poz}</td><td class="name"><a href="#is-kalemleri" data-poz="${it.poz}" class="chiplink">${esc(it.ad)}</a></td><td>${it.birim}</td>
+   <td class="r"><input class="qty edin${has(Q.qty[it.poz])?' changed':''}" id="q_${it.poz}" type="number" min="0" step="any" value="${qtyOf(it)}" aria-label="${it.poz} miktar"><span class="rov num" id="qv_${it.poz}"></span></td>
+   <td class="r num adv" id="an_${it.poz}"></td>
+   <td class="r range num adv">${fmt0.format(e.min)} – ${fmt0.format(e.max)}</td>
+   <td class="r"><input class="edin ${has(Q.prices[it.poz])?'changed':''}" id="p_${it.poz}" type="number" min="0" step="any" value="${priceOf(it)}" aria-label="${it.poz} teklif birim fiyat"><span class="rov num" id="pv_${it.poz}"></span></td>
+   <td class="r num" id="t_${it.poz}"></td><td class="r"><div class="bar" title=""><i id="b_${it.poz}"></i></div></td></tr>`}).join('');
+  calc();
+}
+function refreshQ(){ITEMS.forEach(it=>{const p=$('#p_'+it.poz);if(p&&!has(Q.prices[it.poz]))p.value=priceOf(it)});calc()}
+function calc(){
+  let s=0;ITEMS.forEach(it=>s+=lineT(it));
+  ITEMS.forEach(it=>{const t=lineT(it);$('#t_'+it.poz).textContent=fmt.format(t);const qv=$('#qv_'+it.poz);if(qv){qv.textContent=fmt0.format(qtyOf(it));$('#pv_'+it.poz).textContent=fmt.format(priceOf(it))}$('#an_'+it.poz).textContent=fmt.format(anCalc(it.poz).bf);const b=$('#b_'+it.poz);b.style.width=(s?t/s*100:0)+'%';b.parentNode.title='%'+(s?(t/s*100).toFixed(1):0)});
+  const ind=Math.min(100,Math.max(0,+$('#fInd').value||0)),kdv=Math.max(0,+$('#fKdv').value||0);
+  const indT=s*ind/100,net=s-indT,kdvT=net*kdv/100,gen=net+kdvT;
+  $('#qsum').textContent=fmt.format(s);$('#tAra').textContent=fmt.format(s);$('#tIndL').textContent='İndirim (%'+ind+')';$('#tInd').textContent='−'+fmt.format(indT);
+  $('#tNet').textContent=fmt.format(net);$('#tKdvL').textContent='KDV (%'+kdv+')';$('#tKdv').textContent=fmt.format(kdvT);$('#tGen').textContent=fmt.format(gen)+' TL';
+  $('#tYazi').textContent='Yazıyla: '+yazi(gen);
+  if($('#wf'))renderProfit(net);
+  renderOzet(s,net,gen,kdv);
+  return{s,ind,indT,net,kdv,kdvT,gen};
+}
+$('#qrows').addEventListener('input',e=>{const t=e.target;if(!t.id)return;const poz=t.id.slice(2);const it=ITEMS.find(x=>x.poz===poz);
+  if(t.id.startsWith('p_')){if(t.value===''||+t.value===anCalc(poz).bf)delete Q.prices[poz];else Q.prices[poz]=t.value;t.classList.toggle('changed',has(Q.prices[poz]))}
+  else{if(t.value===''||+t.value===it.qty)delete Q.qty[poz];else Q.qty[poz]=t.value;t.classList.toggle('changed',has(Q.qty[poz]))}
+  save();updAll();refreshQ()});
+document.addEventListener('click',e=>{const c=e.target.closest('a.chiplink[data-poz]');if(c){setTimeout(()=>{const el=document.getElementById('poz-'+c.dataset.poz);if(el)el.scrollIntoView({block:'start'})},30)}});
+FIELDS.forEach(id=>$('#'+id).addEventListener('input',()=>{Q.f[id]=$('#'+id).value;save();if(id==='fBase'){renderQ();updAll()}else calc()}));
+function renderOH(){
+  $('#pKar').value=karP();$('#pKar').classList.toggle('changed',has(Q.kar));
+  $('#pRisk').value=riskP();$('#pRisk').classList.toggle('changed',has(Q.risk));
+  $('#ohf').innerHTML=OH_FIX.map((x,i)=>`<tr><td>${esc(x[0])}</td><td class="r"><input data-oh="f" data-i="${i}" class="${has((Q.ohf||{})[i])?'changed':''}" type="number" min="0" step="1000" value="${ohF(i)}" style="width:130px" aria-label="${esc(x[0])}"></td></tr>`).join('');
+  $('#ohp').innerHTML=OH_PCT.map((x,i)=>`<tr><td>${esc(x[0])}</td><td class="r"><input data-oh="p" data-i="${i}" class="${has((Q.ohp||{})[i])?'changed':''}" type="number" min="0" step="0.01" value="${ohP(i)}" style="width:90px" aria-label="${esc(x[0])}">&nbsp;%</td></tr>`).join('');
+}
+function renderProfit(T){
+  const m=model();if(T==null){T=0;ITEMS.forEach(it=>T+=lineT(it))}
+  const sz=m.p*T, b0=m.Dt+m.F+m.R, cost=b0+sz, kar=T-cost, marj=T?kar/T*100:0, mk=cost?kar/cost*100:0;
+  const sub=(a,b)=>`<tr class="sub"><td>${esc(a)}</td><td class="r num">${fmt.format(b)}</td></tr>`;
+  let h=`<tr><td><span class="tt t-m">1</span> Doğrudan maliyet (15 iş kalemi analizi)</td><td class="r num">${fmt.format(m.Dt)}</td></tr>`;
+  h+=`<tr><td><span class="tt t-oh">2</span> Şantiye genel giderleri (sabit)</td><td class="r num">${fmt.format(m.F)}</td></tr>`+OH_FIX.map((x,i)=>sub(x[0],ohF(i))).join('');
+  h+=`<tr><td><span class="tt t-rk">3</span> Risk / öngörülemeyen payı (%${riskP()})</td><td class="r num">${fmt.format(m.R)}</td></tr>`;
+  h+=`<tr><td><span class="tt t-sz">4</span> Sözleşmeye bağlı giderler (teklifin %${m.pp.toFixed(2)})</td><td class="r num">${fmt.format(sz)}</td></tr>`+OH_PCT.map((x,i)=>sub(x[0],ohP(i)/100*T)).join('');
+  h+=`<tr class="tot"><td>Toplam maliyet (1+2+3+4)</td><td class="r num">${fmt.format(cost)}</td></tr>`;
+  h+=`<tr class="kar"><td>5 · Kâr</td><td class="r num">${fmt.format(kar)}</td></tr>`;
+  h+=`<tr class="tot"><td>Teklif tutarı (KDV hariç)</td><td class="r num">${fmt.format(T)}</td></tr>`;
+  $('#wf').innerHTML=h;
+  const parts=[['t-m',m.Dt,'Doğrudan maliyet'],['t-oh',m.F,'Şantiye genel gideri'],['t-rk',m.R,'Risk'],['t-sz',sz,'Sözleşme giderleri'],['t-kr',Math.max(0,kar),'Kâr']];
+  $('#wfbar').innerHTML=parts.filter(x=>x[1]>0).map(x=>`<i class="${x[0]}" style="flex:${x[1]}" title="${x[2]} %${(x[1]/T*100).toFixed(1)}"></i>`).join('');
+  $('#kpis').innerHTML=`<div><b class="num">${fmt0.format(kar)} TL</b><span>Tahmini kâr</span></div><div><b class="num">%${marj.toFixed(1)}</b><span>Kâr marjı (kâr ÷ teklif)</span></div><div><b class="num">%${mk.toFixed(1)}</b><span>Maliyet üzerine kâr</span></div><div><b class="num">${fmt0.format(m.BE)} TL</b><span>Başabaş teklif (kâr = 0)</span></div>`;
+  const cet=base();const diff=T-cet;
+  let n=`Teklif, cetvel dosyasındaki <b>${fmt0.format(cet)} TL</b> varsayımının <b>${diff>=0?'%'+(diff/cet*100).toFixed(1)+' üstünde':'%'+(-diff/cet*100).toFixed(1)+' altında'}</b>. `;
+  if(kar<0)n+='<b>Bu fiyatlarla iş zarar ediyor.</b> Teklif birim fiyatlarını yükseltin veya maliyetleri gözden geçirin.';
+  else if(marj<8)n+='Kâr marjı düşük (%8 altı); fiyat artışı ve gecikme riskine karşı dar bir tampon kalıyor.';
+  else n+=`İhalede indirim yapmanız gerekirse, teklifi en fazla <b>%${((T-m.BE)/T*100).toFixed(1)}</b> düşürdüğünüzde kâr sıfırlanır.`;
+  $('#pnote').innerHTML=n;
+  const cf=m.Dt?cost/m.Dt:1;
+  $('#ikar').innerHTML=ITEMS.map(it=>{const d=anDir(it.poz).dir,cb=d*cf,tb=priceOf(it),uk=tb-cb,q=qtyOf(it),mr=tb?uk/tb*100:0;
+    return `<tr class="${uk<0?'neg':''}"><td class="mono">${it.poz}</td><td>${esc(it.ad)}</td><td class="r num">${fmt.format(cb)}</td><td class="r num">${fmt.format(tb)}</td><td class="r num km">${fmt.format(uk)}</td><td class="r num km">${fmt.format(uk*q)}</td><td class="r num km">%${mr.toFixed(1)}</td></tr>`}).join('');
+}
+$('#pKar').addEventListener('input',e=>{const v=e.target.value;if(v===''||+v===KAR_DEFAULT)delete Q.kar;else Q.kar=v;e.target.classList.toggle('changed',has(Q.kar));save();updAll();refreshQ()});
+$('#pRisk').addEventListener('input',e=>{const v=e.target.value;if(v===''||+v===RISK_DEFAULT)delete Q.risk;else Q.risk=v;e.target.classList.toggle('changed',has(Q.risk));save();updAll();refreshQ()});
+['ohf','ohp'].forEach(id=>$('#'+id).addEventListener('input',e=>{const t=e.target;if(!t.dataset.oh)return;const i=t.dataset.i,f=t.dataset.oh==='f';const def=f?OH_FIX[i][1]:OH_PCT[i][1];const o=f?Q.ohf:Q.ohp;
+  if(t.value===''||+t.value===def)delete o[i];else o[i]=t.value;t.classList.toggle('changed',has(o[i]));save();updAll();refreshQ()}));
+let pResetArmed=false;
+$('#pReset').onclick=e=>{if(!pResetArmed){pResetArmed=true;e.currentTarget.textContent='Emin misiniz? Tekrar tıklayın';setTimeout(()=>{pResetArmed=false;$('#pReset').textContent='Oranları varsayılana döndür'},3500);return}
+  pResetArmed=false;e.currentTarget.textContent='Oranları varsayılana döndür';Q.ohf={};Q.ohp={};delete Q.kar;delete Q.risk;save();renderOH();updAll();refreshQ();toast('Genel gider, risk ve kâr oranları varsayılana döndü.')};
+let resetArmed=false;
+$('#aReset').onclick=e=>{if(!resetArmed){resetArmed=true;e.currentTarget.textContent='Emin misiniz? Tekrar tıklayın';setTimeout(()=>{resetArmed=false;$('#aReset').textContent='Analiz fiyatlarına dön'},3500);return}
+  resetArmed=false;e.currentTarget.textContent='Analiz fiyatlarına dön';Q.prices={};Q.qty={};save();renderQ();toast('Teklif fiyatları analiz sonuçlarına, miktarlar cetvele döndü.')};
+const fmtN=new Intl.NumberFormat('tr-TR',{maximumFractionDigits:3});
+function setMode(edit){if(!UNLOCKED)edit=false;document.body.classList.toggle('ro',!edit);$('#qfl').colSpan=edit?8:6;const b=$('#modeBtn');b.textContent=edit?'✓ Düzenlemeyi kapat':'✎ Fiyatları düzenle';b.classList.toggle('on',edit);b.setAttribute('aria-pressed',edit?'true':'false');store.set('ceyl.edit',edit);renderPoz();renderQ()}
+$('#modeBtn').onclick=()=>setMode(document.body.classList.contains('ro'));
+$('#bMore').onclick=e=>{const t=e.currentTarget.closest('.toolbar');const on=!t.classList.contains('showadv');t.classList.toggle('showadv',on);e.currentTarget.setAttribute('aria-expanded',on?'true':'false');e.currentTarget.classList.toggle('on',on)};
+function renderOzet(s,net,gen,kdv){
+  const m=model(),sz=m.p*net,cost=m.Dt+m.F+m.R+sz,kar=net-cost,marj=net?kar/net*100:0;
+  const k=`<div><b class="num">${fmt0.format(net)} TL</b><span>Teklif tutarı (KDV hariç)</span></div><div><b class="num">${fmt0.format(gen)} TL</b><span>KDV dahil (%${kdv})</span></div>`+
+    (UNLOCKED?`<div><b class="num">${fmt0.format(kar)} TL</b><span>Tahmini kâr (yalnız yönetici)</span></div><div><b class="num">%${marj.toFixed(1)}</b><span>Kâr marjı (yalnız yönetici)</span></div>`
+             :`<div><b class="num">15</b><span>iş kalemi</span></div><div><b class="num">450 gün</b><span>iş süresi</span></div>`);
+  if($('#ozk'))$('#ozk').innerHTML=k; if($('#qk'))$('#qk').innerHTML=k;
+  if($('#qkn'))$('#qkn').textContent='Yazıyla (KDV dahil): '+yazi(gen)+'.'+(UNLOCKED?' Kârsız (başabaş) teklif tutarı ≈ '+fmt0.format(m.BE)+' TL.':'');
+  const rows=ITEMS.map(it=>({it,t:lineT(it)})).sort((a,b)=>b.t-a.t);const top=rows.slice(0,6),rest=rows.slice(6).reduce((a,r)=>a+r.t,0);
+  const mx=top[0]?top[0].t:1;
+  const bar=(l,t,title)=>`<div class="hbar" title="${esc(title)}: ${fmt0.format(t)} TL (%${(t/s*100).toFixed(1)})"><span class="lbl">${esc(l)}</span><span class="trk"><i style="width:${(t/mx*100).toFixed(1)}%"></i></span><span class="v">%${(t/s*100).toFixed(1)}</span></div>`;
+  if($('#ozbars'))$('#ozbars').innerHTML=top.map(r=>bar(r.it.ad.replace(/ Yapılması$| Temini ve (Yerine )?Montajı$/,''),r.t,r.it.poz+' '+r.it.ad)).join('')+bar('Diğer 9 iş kalemi',rest,'Diğer 9 iş kalemi');
+}
+function labelTables(root){
+  (root||document).querySelectorAll('table.qtable, table.antable, .pa table, #v-genel table, #v-sartname table').forEach(t=>{
+    t.classList.add('mstack');
+    const heads=[...t.querySelectorAll('thead th')].map(th=>th.textContent.trim());
+    if(!heads.length)return;
+    t.querySelectorAll('tbody tr').forEach(tr=>{let i=0;[...tr.children].forEach(td=>{const span=td.colSpan||1;if(!td.hasAttribute('data-l'))td.setAttribute('data-l',heads[i]||'');
+      if(i===0&&(heads[0]==='İş kalemi'||heads[0]==='Kalem'||heads[0]==='Rayiç'||heads[0]==='Adı'))td.classList.add('lead-cell');i+=span})});
+    // iş kalemi / kalem adı sütununu kartın başlığı yap
+    const ni=heads.findIndex(h=>h==='İş kalemi'||h==='Kalem'||h==='Adı');
+    if(ni>0)t.querySelectorAll('tbody tr').forEach(tr=>{const c=tr.children[ni];if(c)c.classList.add('lead-cell')});
+  });
+}
+new MutationObserver(m=>{if(m.some(x=>x.addedNodes.length))labelTables()}).observe(document.querySelector('main'),{childList:true,subtree:true});
+document.body.classList.add('ro');
+document.body.classList.toggle('priv',UNLOCKED);
+renderOH();renderRates();renderPoz();renderQ();
+setMode(UNLOCKED&&!!store.get('ceyl.edit',false));
+/* ---- yönetici girişi: şifreli maliyet verisini çöz ---- */
+function b64u8(x){return Uint8Array.from(atob(x),c=>c.charCodeAt(0))}
+async function unlock(pw){
+  const km=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+  const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b64u8(SEC.s),iterations:SEC.n,hash:'SHA-256'},km,{name:'AES-GCM',length:256},false,['decrypt']);
+  const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64u8(SEC.i)},key,b64u8(SEC.d));
+  const D=JSON.parse(new TextDecoder().decode(pt));
+  RATES=D.RATES;OH_FIX=D.OH_FIX;OH_PCT=D.OH_PCT;RISK_DEFAULT=D.RISK_DEFAULT;KAR_DEFAULT=D.KAR_DEFAULT;AN=D.AN;
+  UNLOCKED=true;Q=QFULL;document.body.classList.add('priv');
+  FIELDS.forEach(id=>{if(Q.f[id]!=null)$('#'+id).value=Q.f[id]});
+  renderOH();renderRates();renderPoz();renderQ();setMode(false);updLock();
+}
+function updLock(){const b=$('#lockBtn');b.textContent=UNLOCKED?(SEC?'🔓 Yönetici çıkışı':'Kaynak sürüm (açık)'):'🔒 Yönetici girişi';b.hidden=!SEC&&UNLOCKED}
+updLock();
+$('#lockBtn').onclick=()=>{if(UNLOCKED){if(SEC)location.reload();return}$('#lockDlg').hidden=false;$('#lockErr').textContent='';$('#lockPw').value='';setTimeout(()=>$('#lockPw').focus(),30)};
+$('#lockCancel').onclick=()=>{$('#lockDlg').hidden=true};
+$('#lockDlg').addEventListener('click',e=>{if(e.target.id==='lockDlg')$('#lockDlg').hidden=true});
+$('#lockForm').addEventListener('submit',async e=>{e.preventDefault();$('#lockGo').disabled=true;$('#lockErr').textContent='Kontrol ediliyor…';
+  try{await unlock($('#lockPw').value);$('#lockDlg').hidden=true;toast('Yönetici görünümü açıldı: maliyet, kâr ve oranlar görünür.')}
+  catch(err){$('#lockErr').textContent='Parola yanlış.'}finally{$('#lockGo').disabled=false}});
+
+/* number to Turkish words */
+function yazi(n){
+  const b=['','bir','iki','üç','dört','beş','altı','yedi','sekiz','dokuz'],o=['','on','yirmi','otuz','kırk','elli','altmış','yetmiş','seksen','doksan'],g=['','bin','milyon','milyar','trilyon'];
+  function uc(x){const y=Math.floor(x/100),r=x%100;return (y?(y>1?b[y]:'')+'yüz':'')+o[Math.floor(r/10)]+b[r%10]}
+  let tl=Math.floor(n),kr=Math.round((n-tl)*100);if(kr===100){tl++;kr=0}
+  if(tl===0)return 'sıfır TL';let s='',i=0;
+  while(tl>0){const p=tl%1000;if(p){let w=uc(p);if(i===1&&p===1)w='';s=w+g[i]+s}tl=Math.floor(tl/1000);i++}
+  return s+' TL'+(kr?' '+uc(kr)+' kuruş':'');
+}
+
+/* exports */
+function info(){const o={};FIELDS.forEach(id=>o[id]=$('#'+id).value);return o}
+function rows(){return ITEMS.map((it,i)=>({i:i+1,poz:it.poz,ad:it.ad,birim:it.birim,qty:qtyOf(it),bf:priceOf(it),t:lineT(it)}))}
+$('#aCopy').onclick=async()=>{
+  const r=rows(),T=calc();const lines=[['Sıra No','İş Kalemi No','İş Kaleminin Adı','Birimi','Miktarı','Teklif Edilen Birim Fiyat','Tutarı'].join('\t')]
+   .concat(r.map(x=>[x.i,x.poz,x.ad,x.birim,String(x.qty).replace('.',','),String(x.bf).replace('.',','),String(x.t).replace('.',',')].join('\t')),['','','TOPLAM TUTAR (KDV Hariç)','','','',String(T.s.toFixed(2)).replace('.',',')].join('\t'));
+  const txt=lines.join('\n');
+  try{await navigator.clipboard.writeText(txt);toast('Tablo kopyalandı; Excel\'e yapıştırabilirsiniz.')}
+  catch(e){const ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(_){}ta.remove();toast(ok?'Tablo kopyalandı.':'Kopyalanamadı; tarayıcınız izin vermiyor.')}
+};
+$('#aXlsx').onclick=()=>{
+  if(typeof XLSX==='undefined'){toast('Excel kütüphanesi yüklenemedi.');return}
+  const f=info(),T=calc(),r=rows();
+  const aoa=[['BİRİM FİYAT TEKLİF CETVELİ'],['İhale Kayıt Numarası (İKN) : 2026/2092622'],['İşin Adı : Mardin Ceylanpınar Ovaları Sulaması Ana Kanal Rehabilitasyonu 3. Kısım'],['Teklif veren : '+(f.fFirma||''),'', '', '', 'Teklif no: '+(f.fNo||''),'', 'Tarih: '+(f.fTarih||'')],[],
+   ['Sıra No','İş Kalemi No','İş Kaleminin Adı ve Kısa Açıklaması','Birimi','Miktarı','Teklif Edilen Birim Fiyat','Tutarı']];
+  r.forEach(x=>aoa.push([x.i,x.poz,x.ad,x.birim,x.qty,x.bf,x.t]));
+  const first=7,last=first+r.length-1;
+  aoa.push(['','','TOPLAM TUTAR (KDV Hariç)','','','',T.s]);
+  aoa.push([]);aoa.push(['','','İndirim (%'+T.ind+')','','','',-T.indT]);aoa.push(['','','KDV hariç net','','','',T.net]);aoa.push(['','','KDV (%'+T.kdv+')','','','',T.kdvT]);aoa.push(['','','GENEL TOPLAM (KDV dahil)','','','',T.gen]);
+  if(f.fNot){aoa.push([]);aoa.push(['Notlar: '+f.fNot])}
+  const ws=XLSX.utils.aoa_to_sheet(aoa);
+  for(let R=first;R<=last;R++){ws['G'+R]={t:'n',v:aoa[R-1][6],f:`ROUND(E${R}*F${R},1)`}}
+  ws['G'+(last+1)]={t:'n',v:T.s,f:`SUM(G${first}:G${last})`};
+  ws['!cols']=[{wch:7},{wch:11},{wch:70},{wch:11},{wch:12},{wch:20},{wch:20}];
+  for(let R=first;R<=last+6;R++){['E','F','G'].forEach(c=>{const cell=ws[c+R];if(cell&&cell.t==='n')cell.z='#,##0.00'})}
+  const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,'Teklif Cetveli');
+  const A=[['BİRİM FİYAT ANALİZLERİ (Ekim 2026, KDV hariç)'],['Satır fiyatlarına tüm giderler dahildir.'],[]];const u=U();
+  ITEMS.forEach(it=>{const a=AN[it.poz],c=anCalc(it.poz);
+    A.push([it.poz+' — '+it.ad+' (1 '+a.birim+')']);A.push(['Tür','Kalem','Birim','Miktar','Birim fiyat','Tutar']);
+    a.L.forEach((L,i)=>{const pp=Math.round(lineP(it.poz,i)*u*100)/100;A.push([TYP[L[0]],L[1],L[2],lineQ(it.poz,i),pp,Math.round(lineQ(it.poz,i)*pp*100)/100])});
+    A.push(['','BİRİM FİYAT','','','',c.bf]);A.push(['','Kabuller: '+a.kabul.join(' | ')]);A.push([]);});
+  const ws2=XLSX.utils.aoa_to_sheet(A);ws2['!cols']=[{wch:16},{wch:70},{wch:9},{wch:11},{wch:14},{wch:16}];
+  XLSX.utils.book_append_sheet(wb,ws2,'Birim Fiyat Analizleri');
+  if(UNLOCKED){const m=model();const Tn=T.s;const sz=m.p*Tn,cost=m.Dt+m.F+m.R+sz,kar=Tn-cost;
+   const P=[['KÂR VE MALİYET DÖKÜMÜ (iç kullanım)'],[],['Doğrudan maliyet',m.Dt],['Şantiye genel giderleri',m.F]];OH_FIX.forEach((x,i)=>P.push(['   '+x[0],ohF(i)]));
+   P.push(['Risk payı %'+riskP(),m.R]);P.push(['Sözleşmeye bağlı giderler %'+m.pp.toFixed(2),sz]);OH_PCT.forEach((x,i)=>P.push(['   '+x[0]+' (%'+ohP(i)+')',ohP(i)/100*Tn]));
+   P.push(['Toplam maliyet',cost]);P.push(['Kâr',kar]);P.push(['Teklif tutarı (KDV hariç)',Tn]);P.push(['Kâr marjı (kâr / teklif)',Tn?kar/Tn:0]);P.push(['Başabaş teklif',m.BE]);
+   const ws3=XLSX.utils.aoa_to_sheet(P);ws3['!cols']=[{wch:70},{wch:20}];XLSX.utils.book_append_sheet(wb,ws3,'Kâr Dökümü (iç)');}
+  const out=XLSX.write(wb,{bookType:'xlsx',type:'array'});
+  saveFile('Birim_Fiyat_Teklif_Cetveli_'+(f.fNo||'teklif')+'.xlsx',new Blob([out]));
+};
+$('#aHtml').onclick=()=>{
+  const f=info(),T=calc(),r=rows();
+  const tr=r.map(x=>`<tr><td>${x.i}</td><td>${x.poz}</td><td>${esc(x.ad)}</td><td>${x.birim}</td><td class=r>${fmt.format(x.qty)}</td><td class=r>${fmt.format(x.bf)}</td><td class=r>${fmt.format(x.t)}</td></tr>`).join('');
+  const doc=`<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Fiyat Teklifi ${esc(f.fNo)}</title><style>
+body{font-family:Arial,Helvetica,sans-serif;color:#111;margin:32px;font-size:12px}h1{font-size:20px;margin:0 0 4px}h2{font-size:13px;margin:18px 0 6px}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid #888;padding:5px 6px;vertical-align:top}th{background:#e8eeec;text-align:left}td.r{text-align:right;white-space:nowrap}
+.hd{display:flex;justify-content:space-between;gap:20px;border-bottom:2px solid #1d6b57;padding-bottom:10px;margin-bottom:14px}.box td{border:0;padding:2px 6px}
+.tot{width:auto;margin-left:auto;margin-top:10px}.tot td{padding:4px 10px}.g td{font-weight:bold;font-size:14px;border-top:2px solid #111}.sig{display:flex;justify-content:space-between;margin-top:50px}
+.sig div{width:40%;border-top:1px solid #111;padding-top:6px;text-align:center}.np{background:#fff7e6;border:1px solid #e0b566;padding:8px;margin-bottom:14px}@media print{.np{display:none}body{margin:12mm}}
+</style></head><body><div class="np">Yazdırmak veya PDF olarak kaydetmek için tarayıcıda Ctrl+P (Mac: Cmd+P) kullanın.</div>
+<div class="hd"><div><h1>FİYAT TEKLİFİ</h1><div>Mardin Ceylanpınar Ovaları Sulaması Ana Kanal Rehabilitasyonu 3. Kısım</div><div>İdare: DSİ GAP 15. Bölge Müdürlüğü · İKN 2026/2092622</div></div>
+<table class="box"><tr><td>Teklif no</td><td><b>${esc(f.fNo)}</b></td></tr><tr><td>Tarih</td><td>${esc(f.fTarih)}</td></tr><tr><td>Geçerlilik</td><td>${esc(f.fGecer)} gün</td></tr></table></div>
+<table class="box" style="width:auto;margin-bottom:12px"><tr><td>Teklif veren</td><td><b>${esc(f.fFirma||'—')}</b></td></tr><tr><td>Yetkili</td><td>${esc(f.fYetkili||'—')}</td></tr><tr><td>İletişim</td><td>${esc(f.fIletisim||'—')}</td></tr></table>
+<h2>Birim Fiyat Teklif Cetveli</h2><table><thead><tr><th>Sıra</th><th>Poz</th><th>İş kaleminin adı</th><th>Birim</th><th>Miktar</th><th>Birim fiyat (TL)</th><th>Tutar (TL)</th></tr></thead><tbody>${tr}</tbody>
+<tfoot><tr><td colspan=6><b>TOPLAM TUTAR (KDV hariç)</b></td><td class=r><b>${fmt.format(T.s)}</b></td></tr></tfoot></table>
+<table class="tot"><tr><td>Ara toplam</td><td class=r>${fmt.format(T.s)} TL</td></tr>${T.ind?`<tr><td>İndirim (%${T.ind})</td><td class=r>−${fmt.format(T.indT)} TL</td></tr>`:''}<tr><td>KDV hariç toplam</td><td class=r>${fmt.format(T.net)} TL</td></tr><tr><td>KDV (%${T.kdv})</td><td class=r>${fmt.format(T.kdvT)} TL</td></tr><tr class="g"><td>GENEL TOPLAM</td><td class=r>${fmt.format(T.gen)} TL</td></tr></table>
+<p><b>Yazıyla:</b> ${esc(yazi(T.gen))}</p>
+<h2>Koşullar</h2><ul><li>Birim fiyatlar ihale dokümanındaki Birim Fiyat Tarifleri ve Özel Teknik Şartname kapsamındaki tüm giderleri içerir.</li><li>Fiyatlar Türk Lirası cinsindendir.</li><li>Teklif ${esc(f.fGecer)} gün geçerlidir.</li>${f.fNot?`<li>${esc(f.fNot).replace(/\n/g,'<br>')}</li>`:''}</ul>
+<div class="sig"><div>Teklif veren (kaşe / imza)</div><div>Onay</div></div>
+<h2 style="page-break-before:always;margin-top:30px">Ek: Birim Fiyat Analizleri</h2><p>Miktarlar 1 birim iş içindir. Satır fiyatlarına tüm giderler dahildir. Fiyatlar Ekim 2026, KDV hariç.</p>${ITEMS.map(it=>{const a=AN[it.poz],c=anCalc(it.poz),u=U();return `<h2>${it.poz} — ${esc(it.ad)} (1 ${a.birim})</h2><table><thead><tr><th>Tür</th><th>Kalem</th><th>Birim</th><th>Miktar</th><th>Birim fiyat</th><th>Tutar</th></tr></thead><tbody>${a.L.map((L,i)=>`<tr><td>${TYP[L[0]]}</td><td>${esc(L[1])}</td><td>${esc(L[2])}</td><td class=r>${fmt.format(lineQ(it.poz,i))}</td><td class=r>${fmt.format(lineP(it.poz,i)*u)}</td><td class=r>${fmt.format(lineQ(it.poz,i)*lineP(it.poz,i)*u)}</td></tr>`).join('')}</tbody><tfoot><tr><td colspan=5><b>Birim fiyat</b></td><td class=r><b>${fmt.format(c.bf)}</b></td></tr></tfoot></table><p style="color:#555">Kabuller: ${a.kabul.map(esc).join(' · ')}</p>`}).join('')}
+</body></html>`;
+  saveFile('Fiyat_Teklifi_'+(f.fNo||'teklif')+'.html',doc);
+};
+
+route();
+</script>

@@ -1,0 +1,1154 @@
+[
+ {
+  "id": "rk001",
+  "group": "mek",
+  "code": "MC2-RK-001",
+  "title": "Radyal Kapaklar – Genel Yerleşim",
+  "dpi": 300,
+  "source": "images_20140610_0022.TIF",
+  "levels": [
+   {
+    "url": "img/rk001_s.webp",
+    "width": 1600,
+    "height": 1108,
+    "kb": 151
+   },
+   {
+    "url": "img/rk001_m.webp",
+    "width": 4096,
+    "height": 2838,
+    "kb": 1078
+   },
+   {
+    "url": "img/rk001_f.webp",
+    "width": 10608,
+    "height": 7349,
+    "kb": 986
+   }
+  ],
+  "srcSize": [
+   10608,
+   7349
+  ]
+ },
+ {
+  "id": "rk002",
+  "group": "mek",
+  "code": "MC2-RK-002",
+  "title": "I. Kademe Gömülü Elemanları",
+  "dpi": 400,
+  "source": "images_20140610_0001.TIF",
+  "levels": [
+   {
+    "url": "img/rk002_s.webp",
+    "width": 1600,
+    "height": 1125,
+    "kb": 119
+   },
+   {
+    "url": "img/rk002_m.webp",
+    "width": 4096,
+    "height": 2879,
+    "kb": 992
+   },
+   {
+    "url": "img/rk002_f.webp",
+    "width": 13850,
+    "height": 9736,
+    "kb": 1658
+   }
+  ],
+  "srcSize": [
+   13850,
+   9736
+  ]
+ },
+ {
+  "id": "rk003",
+  "group": "mek",
+  "code": "MC2-RK-003",
+  "title": "II. Kademe Gömülü Elemanları",
+  "dpi": 400,
+  "source": "images_20140610_0002.TIF",
+  "levels": [
+   {
+    "url": "img/rk003_s.webp",
+    "width": 1600,
+    "height": 1123,
+    "kb": 127
+   },
+   {
+    "url": "img/rk003_m.webp",
+    "width": 4096,
+    "height": 2874,
+    "kb": 1006
+   },
+   {
+    "url": "img/rk003_f.webp",
+    "width": 13876,
+    "height": 9736,
+    "kb": 1671
+   }
+  ],
+  "srcSize": [
+   13876,
+   9736
+  ]
+ },
+ {
+  "id": "rk004",
+  "group": "mek",
+  "code": "MC2-RK-004",
+  "title": "II. Kademe Gömülü Elemanları Detayları",
+  "dpi": 400,
+  "source": "images_20140610_0003.TIF",
+  "levels": [
+   {
+    "url": "img/rk004_s.webp",
+    "width": 1600,
+    "height": 1117,
+    "kb": 167
+   },
+   {
+    "url": "img/rk004_m.webp",
+    "width": 4096,
+    "height": 2859,
+    "kb": 1362
+   },
+   {
+    "url": "img/rk004_f.webp",
+    "width": 13948,
+    "height": 9736,
+    "kb": 2535
+   }
+  ],
+  "srcSize": [
+   13948,
+   9736
+  ]
+ },
+ {
+  "id": "rk005",
+  "group": "mek",
+  "code": "MC2-RK-005",
+  "title": "Orta Ayak Ankraj Komplesi",
+  "dpi": 400,
+  "source": "images_20140610_0004.TIF",
+  "levels": [
+   {
+    "url": "img/rk005_s.webp",
+    "width": 1600,
+    "height": 1112,
+    "kb": 197
+   },
+   {
+    "url": "img/rk005_m.webp",
+    "width": 4096,
+    "height": 2847,
+    "kb": 1312
+   },
+   {
+    "url": "img/rk005_f.webp",
+    "width": 14007,
+    "height": 9736,
+    "kb": 1925
+   }
+  ],
+  "srcSize": [
+   14007,
+   9736
+  ]
+ },
+ {
+  "id": "rk006",
+  "group": "mek",
+  "code": "MC2-RK-006",
+  "title": "Kenar Ayak Ankrajı Komplesi",
+  "dpi": 300,
+  "source": "images_20140610_0005.TIF",
+  "levels": [
+   {
+    "url": "img/rk006_s.webp",
+    "width": 1600,
+    "height": 1120,
+    "kb": 179
+   },
+   {
+    "url": "img/rk006_m.webp",
+    "width": 4096,
+    "height": 2868,
+    "kb": 1277
+   },
+   {
+    "url": "img/rk006_f.webp",
+    "width": 10431,
+    "height": 7304,
+    "kb": 1157
+   }
+  ],
+  "srcSize": [
+   10431,
+   7304
+  ]
+ },
+ {
+  "id": "rk008",
+  "group": "mek",
+  "code": "MC2-RK-008",
+  "title": "Kenar ve Orta Ayak Ankraj Detayları",
+  "dpi": 300,
+  "source": "images_20140610_0006.TIF",
+  "levels": [
+   {
+    "url": "img/rk008_s.webp",
+    "width": 1600,
+    "height": 1120,
+    "kb": 140
+   },
+   {
+    "url": "img/rk008_m.webp",
+    "width": 4096,
+    "height": 2868,
+    "kb": 751
+   },
+   {
+    "url": "img/rk008_f.webp",
+    "width": 10432,
+    "height": 7304,
+    "kb": 505
+   }
+  ],
+  "srcSize": [
+   10432,
+   7304
+  ]
+ },
+ {
+  "id": "rk009",
+  "group": "mek",
+  "code": "MC2-RK-009",
+  "title": "Orta ve Kenar Ayak Ankraj Bulonları Şablon Detayı",
+  "dpi": 300,
+  "source": "images_20140610_0007.TIF",
+  "levels": [
+   {
+    "url": "img/rk009_s.webp",
+    "width": 1600,
+    "height": 1111,
+    "kb": 193
+   },
+   {
+    "url": "img/rk009_m.webp",
+    "width": 4096,
+    "height": 2844,
+    "kb": 1224
+   },
+   {
+    "url": "img/rk009_f.webp",
+    "width": 10608,
+    "height": 7365,
+    "kb": 1142
+   }
+  ],
+  "srcSize": [
+   10608,
+   7365
+  ]
+ },
+ {
+  "id": "rk010",
+  "group": "mek",
+  "code": "MC2-RK-010",
+  "title": "Hidrolik Silindir Şase Komplesi",
+  "dpi": 300,
+  "source": "images_20140610_0008.TIF",
+  "levels": [
+   {
+    "url": "img/rk010_s.webp",
+    "width": 1600,
+    "height": 1110,
+    "kb": 204
+   },
+   {
+    "url": "img/rk010_m.webp",
+    "width": 4096,
+    "height": 2842,
+    "kb": 1283
+   },
+   {
+    "url": "img/rk010_f.webp",
+    "width": 10608,
+    "height": 7360,
+    "kb": 1194
+   }
+  ],
+  "srcSize": [
+   10608,
+   7360
+  ]
+ },
+ {
+  "id": "rk011",
+  "group": "mek",
+  "code": "MC2-RK-011",
+  "title": "Hidrolik Silindir Şase Detayları (1)",
+  "dpi": 300,
+  "source": "images_20140610_0009.TIF",
+  "levels": [
+   {
+    "url": "img/rk011_s.webp",
+    "width": 1600,
+    "height": 1119,
+    "kb": 122
+   },
+   {
+    "url": "img/rk011_m.webp",
+    "width": 4096,
+    "height": 2863,
+    "kb": 654
+   },
+   {
+    "url": "img/rk011_f.webp",
+    "width": 10448,
+    "height": 7304,
+    "kb": 502
+   }
+  ],
+  "srcSize": [
+   10448,
+   7304
+  ]
+ },
+ {
+  "id": "rk012",
+  "group": "mek",
+  "code": "MC2-RK-012",
+  "title": "Hidrolik Silindir Şase Detayları (2)",
+  "dpi": 300,
+  "source": "images_20140610_0010.TIF",
+  "levels": [
+   {
+    "url": "img/rk012_s.webp",
+    "width": 1600,
+    "height": 1114,
+    "kb": 179
+   },
+   {
+    "url": "img/rk012_m.webp",
+    "width": 4096,
+    "height": 2852,
+    "kb": 958
+   },
+   {
+    "url": "img/rk012_f.webp",
+    "width": 10608,
+    "height": 7386,
+    "kb": 711
+   }
+  ],
+  "srcSize": [
+   10608,
+   7386
+  ]
+ },
+ {
+  "id": "rk013",
+  "group": "mek",
+  "code": "MC2-RK-013",
+  "title": "Hidrolik Silindir Şase Detayları (3)",
+  "dpi": 300,
+  "source": "images_20140610_0011.TIF",
+  "levels": [
+   {
+    "url": "img/rk013_s.webp",
+    "width": 1600,
+    "height": 1114,
+    "kb": 140
+   },
+   {
+    "url": "img/rk013_m.webp",
+    "width": 4096,
+    "height": 2851,
+    "kb": 777
+   },
+   {
+    "url": "img/rk013_f.webp",
+    "width": 10608,
+    "height": 7383,
+    "kb": 579
+   }
+  ],
+  "srcSize": [
+   10608,
+   7383
+  ]
+ },
+ {
+  "id": "rk014",
+  "group": "mek",
+  "code": "MC2-RK-014",
+  "title": "Kapak Genel Komplesi",
+  "dpi": 300,
+  "source": "images_20140610_0012.TIF",
+  "levels": [
+   {
+    "url": "img/rk014_s.webp",
+    "width": 1600,
+    "height": 1110,
+    "kb": 152
+   },
+   {
+    "url": "img/rk014_m.webp",
+    "width": 4096,
+    "height": 2843,
+    "kb": 878
+   },
+   {
+    "url": "img/rk014_f.webp",
+    "width": 10608,
+    "height": 7362,
+    "kb": 708
+   }
+  ],
+  "srcSize": [
+   10608,
+   7362
+  ]
+ },
+ {
+  "id": "rk015",
+  "group": "mek",
+  "code": "MC2-RK-015",
+  "title": "Kapak Ön Paneli ve Düşey Kirişler",
+  "dpi": 300,
+  "source": "images_20140610_0013.TIF",
+  "levels": [
+   {
+    "url": "img/rk015_s.webp",
+    "width": 1600,
+    "height": 1111,
+    "kb": 162
+   },
+   {
+    "url": "img/rk015_m.webp",
+    "width": 4096,
+    "height": 2844,
+    "kb": 873
+   },
+   {
+    "url": "img/rk015_f.webp",
+    "width": 10608,
+    "height": 7365,
+    "kb": 723
+   }
+  ],
+  "srcSize": [
+   10608,
+   7365
+  ]
+ },
+ {
+  "id": "rk016",
+  "group": "mek",
+  "code": "MC2-RK-016",
+  "title": "Kılavuz Teker Grubu ve Conta Detayları",
+  "dpi": 300,
+  "source": "images_20140610_0014.TIF",
+  "levels": [
+   {
+    "url": "img/rk016_s.webp",
+    "width": 1600,
+    "height": 1113,
+    "kb": 109
+   },
+   {
+    "url": "img/rk016_m.webp",
+    "width": 4096,
+    "height": 2849,
+    "kb": 566
+   },
+   {
+    "url": "img/rk016_f.webp",
+    "width": 10608,
+    "height": 7379,
+    "kb": 430
+   }
+  ],
+  "srcSize": [
+   10608,
+   7379
+  ]
+ },
+ {
+  "id": "rk017",
+  "group": "mek",
+  "code": "MC2-RK-017",
+  "title": "Yatay Kiriş ve Kol Detayları",
+  "dpi": 300,
+  "source": "images_20140610_0015.TIF",
+  "levels": [
+   {
+    "url": "img/rk017_s.webp",
+    "width": 1600,
+    "height": 1111,
+    "kb": 164
+   },
+   {
+    "url": "img/rk017_m.webp",
+    "width": 4096,
+    "height": 2845,
+    "kb": 892
+   },
+   {
+    "url": "img/rk017_f.webp",
+    "width": 10608,
+    "height": 7367,
+    "kb": 700
+   }
+  ],
+  "srcSize": [
+   10608,
+   7367
+  ]
+ },
+ {
+  "id": "rk018",
+  "group": "mek",
+  "code": "MC2-RK-018",
+  "title": "Kolbaşı Komple ve Detayları",
+  "dpi": 300,
+  "source": "images_20140610_0016.TIF",
+  "levels": [
+   {
+    "url": "img/rk018_s.webp",
+    "width": 1600,
+    "height": 1114,
+    "kb": 149
+   },
+   {
+    "url": "img/rk018_m.webp",
+    "width": 4096,
+    "height": 2851,
+    "kb": 804
+   },
+   {
+    "url": "img/rk018_f.webp",
+    "width": 10608,
+    "height": 7383,
+    "kb": 625
+   }
+  ],
+  "srcSize": [
+   10608,
+   7383
+  ]
+ },
+ {
+  "id": "rk019",
+  "group": "mek",
+  "code": "MC2-RK-019",
+  "title": "Kol Pedestal Ayak Detayları",
+  "dpi": 300,
+  "source": "images_20140610_0017.TIF",
+  "levels": [
+   {
+    "url": "img/rk019_s.webp",
+    "width": 1600,
+    "height": 1110,
+    "kb": 144
+   },
+   {
+    "url": "img/rk019_m.webp",
+    "width": 4096,
+    "height": 2842,
+    "kb": 776
+   },
+   {
+    "url": "img/rk019_f.webp",
+    "width": 10608,
+    "height": 7360,
+    "kb": 620
+   }
+  ],
+  "srcSize": [
+   10608,
+   7360
+  ]
+ },
+ {
+  "id": "rk020",
+  "group": "mek",
+  "code": "MC2-RK-020",
+  "title": "Çapraz, Korkuluk ve Merdiven Detayları",
+  "dpi": 300,
+  "source": "images_20140610_0018.TIF",
+  "levels": [
+   {
+    "url": "img/rk020_s.webp",
+    "width": 1600,
+    "height": 1110,
+    "kb": 167
+   },
+   {
+    "url": "img/rk020_m.webp",
+    "width": 4096,
+    "height": 2843,
+    "kb": 903
+   },
+   {
+    "url": "img/rk020_f.webp",
+    "width": 10608,
+    "height": 7362,
+    "kb": 732
+   }
+  ],
+  "srcSize": [
+   10608,
+   7362
+  ]
+ },
+ {
+  "id": "rk021",
+  "group": "mek",
+  "code": "MC2-RK-021",
+  "title": "Seviye Göstergesi Komplesi",
+  "dpi": 400,
+  "source": "SEVİYE GESTRGESİimages_20140610_0021.TIF",
+  "levels": [
+   {
+    "url": "img/rk021_s.webp",
+    "width": 1600,
+    "height": 1110,
+    "kb": 144
+   },
+   {
+    "url": "img/rk021_m.webp",
+    "width": 4096,
+    "height": 2842,
+    "kb": 765
+   },
+   {
+    "url": "img/rk021_f.webp",
+    "width": 14144,
+    "height": 9814,
+    "kb": 973
+   }
+  ],
+  "srcSize": [
+   14144,
+   9814
+  ]
+ },
+ {
+  "id": "rk022",
+  "group": "mek",
+  "code": "MC2-RK-022",
+  "title": "Seviye Göstergesi Detayları",
+  "dpi": 400,
+  "source": "SEVİYE GESTRGESİiimages_20140610_0022.TIF",
+  "levels": [
+   {
+    "url": "img/rk022_s.webp",
+    "width": 1600,
+    "height": 1110,
+    "kb": 100
+   },
+   {
+    "url": "img/rk022_m.webp",
+    "width": 4096,
+    "height": 2842,
+    "kb": 575
+   },
+   {
+    "url": "img/rk022_f.webp",
+    "width": 14144,
+    "height": 9814,
+    "kb": 725
+   }
+  ],
+  "srcSize": [
+   14144,
+   9814
+  ]
+ },
+ {
+  "id": "rk023",
+  "group": "hid",
+  "code": "MC2-RK-023",
+  "title": "Hidrolik Devre Şeması",
+  "dpi": 300,
+  "source": "images_20140610_0021.TIF",
+  "levels": [
+   {
+    "url": "img/rk023_s.webp",
+    "width": 1600,
+    "height": 1111,
+    "kb": 91
+   },
+   {
+    "url": "img/rk023_m.webp",
+    "width": 4096,
+    "height": 2844,
+    "kb": 511
+   },
+   {
+    "url": "img/rk023_f.webp",
+    "width": 10608,
+    "height": 7366,
+    "kb": 415
+   }
+  ],
+  "srcSize": [
+   10608,
+   7366
+  ]
+ },
+ {
+  "id": "el01",
+  "group": "elk",
+  "code": "ELK-01",
+  "title": "Hidrolik Kaldırma Elektrik Projesi – Sayfa 1",
+  "dpi": 300,
+  "source": "mardin hidrolik kaldırma elektrik projeleri.pdf",
+  "levels": [
+   {
+    "url": "img/el01_s.webp",
+    "width": 1600,
+    "height": 1131,
+    "kb": 46
+   },
+   {
+    "url": "img/el01_m.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 133
+   },
+   {
+    "url": "img/el01_f.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 133
+   }
+  ],
+  "srcSize": [
+   3507,
+   2480
+  ]
+ },
+ {
+  "id": "el02",
+  "group": "elk",
+  "code": "ELK-02",
+  "title": "Hidrolik Kaldırma Elektrik Projesi – Sayfa 2",
+  "dpi": 300,
+  "source": "mardin hidrolik kaldırma elektrik projeleri.pdf",
+  "levels": [
+   {
+    "url": "img/el02_s.webp",
+    "width": 1600,
+    "height": 1131,
+    "kb": 75
+   },
+   {
+    "url": "img/el02_m.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 222
+   },
+   {
+    "url": "img/el02_f.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 222
+   }
+  ],
+  "srcSize": [
+   3507,
+   2480
+  ]
+ },
+ {
+  "id": "el03",
+  "group": "elk",
+  "code": "ELK-03",
+  "title": "Hidrolik Kaldırma Elektrik Projesi – Sayfa 3",
+  "dpi": 300,
+  "source": "mardin hidrolik kaldırma elektrik projeleri.pdf",
+  "levels": [
+   {
+    "url": "img/el03_s.webp",
+    "width": 1600,
+    "height": 1131,
+    "kb": 70
+   },
+   {
+    "url": "img/el03_m.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 200
+   },
+   {
+    "url": "img/el03_f.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 200
+   }
+  ],
+  "srcSize": [
+   3507,
+   2480
+  ]
+ },
+ {
+  "id": "el04",
+  "group": "elk",
+  "code": "ELK-04",
+  "title": "Hidrolik Kaldırma Elektrik Projesi – Sayfa 4",
+  "dpi": 300,
+  "source": "mardin hidrolik kaldırma elektrik projeleri.pdf",
+  "levels": [
+   {
+    "url": "img/el04_s.webp",
+    "width": 1600,
+    "height": 1131,
+    "kb": 54
+   },
+   {
+    "url": "img/el04_m.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 161
+   },
+   {
+    "url": "img/el04_f.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 161
+   }
+  ],
+  "srcSize": [
+   3507,
+   2480
+  ]
+ },
+ {
+  "id": "el05",
+  "group": "elk",
+  "code": "ELK-05",
+  "title": "Hidrolik Kaldırma Elektrik Projesi – Sayfa 5",
+  "dpi": 300,
+  "source": "mardin hidrolik kaldırma elektrik projeleri.pdf",
+  "levels": [
+   {
+    "url": "img/el05_s.webp",
+    "width": 1600,
+    "height": 1131,
+    "kb": 53
+   },
+   {
+    "url": "img/el05_m.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 163
+   },
+   {
+    "url": "img/el05_f.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 163
+   }
+  ],
+  "srcSize": [
+   3507,
+   2480
+  ]
+ },
+ {
+  "id": "el06",
+  "group": "elk",
+  "code": "ELK-06",
+  "title": "Hidrolik Kaldırma Elektrik Projesi – Sayfa 6",
+  "dpi": 300,
+  "source": "mardin hidrolik kaldırma elektrik projeleri.pdf",
+  "levels": [
+   {
+    "url": "img/el06_s.webp",
+    "width": 1600,
+    "height": 1131,
+    "kb": 60
+   },
+   {
+    "url": "img/el06_m.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 179
+   },
+   {
+    "url": "img/el06_f.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 179
+   }
+  ],
+  "srcSize": [
+   3507,
+   2480
+  ]
+ },
+ {
+  "id": "el07",
+  "group": "elk",
+  "code": "ELK-07",
+  "title": "Hidrolik Kaldırma Elektrik Projesi – Sayfa 7",
+  "dpi": 300,
+  "source": "mardin hidrolik kaldırma elektrik projeleri.pdf",
+  "levels": [
+   {
+    "url": "img/el07_s.webp",
+    "width": 1600,
+    "height": 1131,
+    "kb": 40
+   },
+   {
+    "url": "img/el07_m.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 117
+   },
+   {
+    "url": "img/el07_f.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 117
+   }
+  ],
+  "srcSize": [
+   3507,
+   2480
+  ]
+ },
+ {
+  "id": "el08",
+  "group": "elk",
+  "code": "ELK-08",
+  "title": "Hidrolik Kaldırma Elektrik Projesi – Sayfa 8",
+  "dpi": 300,
+  "source": "mardin hidrolik kaldırma elektrik projeleri.pdf",
+  "levels": [
+   {
+    "url": "img/el08_s.webp",
+    "width": 1600,
+    "height": 1131,
+    "kb": 85
+   },
+   {
+    "url": "img/el08_m.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 251
+   },
+   {
+    "url": "img/el08_f.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 251
+   }
+  ],
+  "srcSize": [
+   3507,
+   2480
+  ]
+ },
+ {
+  "id": "el09",
+  "group": "elk",
+  "code": "ELK-09",
+  "title": "Hidrolik Kaldırma Elektrik Projesi – Sayfa 9",
+  "dpi": 300,
+  "source": "mardin hidrolik kaldırma elektrik projeleri.pdf",
+  "levels": [
+   {
+    "url": "img/el09_s.webp",
+    "width": 1600,
+    "height": 1131,
+    "kb": 66
+   },
+   {
+    "url": "img/el09_m.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 195
+   },
+   {
+    "url": "img/el09_f.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 195
+   }
+  ],
+  "srcSize": [
+   3507,
+   2480
+  ]
+ },
+ {
+  "id": "el10",
+  "group": "elk",
+  "code": "ELK-10",
+  "title": "Hidrolik Kaldırma Elektrik Projesi – Sayfa 10",
+  "dpi": 300,
+  "source": "mardin hidrolik kaldırma elektrik projeleri.pdf",
+  "levels": [
+   {
+    "url": "img/el10_s.webp",
+    "width": 1600,
+    "height": 1131,
+    "kb": 68
+   },
+   {
+    "url": "img/el10_m.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 186
+   },
+   {
+    "url": "img/el10_f.webp",
+    "width": 3507,
+    "height": 2480,
+    "kb": 186
+   }
+  ],
+  "srcSize": [
+   3507,
+   2480
+  ]
+ },
+ {
+  "id": "koruma",
+  "group": "kor",
+  "code": "KY-01",
+  "title": "Hidrolik Güç Ünitesi Koruma Yapısı Montaj Resmi",
+  "dpi": 500,
+  "source": "koruma yapısı montaj TEKNİK RESİM.PDF",
+  "levels": [
+   {
+    "url": "img/koruma_s.webp",
+    "width": 1600,
+    "height": 1131,
+    "kb": 135
+   },
+   {
+    "url": "img/koruma_m.webp",
+    "width": 4096,
+    "height": 2897,
+    "kb": 533
+   },
+   {
+    "url": "img/koruma_f.webp",
+    "width": 8268,
+    "height": 5847,
+    "kb": 1271
+   }
+  ],
+  "srcSize": [
+   8268,
+   5847
+  ]
+ },
+ {
+  "id": "yol",
+  "group": "yol",
+  "code": "YOL-01",
+  "title": "Tel Çit Uygulamalı Kanal Tip Kesiti ve Stabilize Yol",
+  "dpi": 200,
+  "source": "MYSCAN_20130624_0026.PDF",
+  "levels": [
+   {
+    "url": "img/yol_s.webp",
+    "width": 1600,
+    "height": 1065,
+    "kb": 103
+   },
+   {
+    "url": "img/yol_m.webp",
+    "width": 4096,
+    "height": 2727,
+    "kb": 743
+   },
+   {
+    "url": "img/yol_f.webp",
+    "width": 7314,
+    "height": 4870,
+    "kb": 1755
+   }
+  ],
+  "srcSize": [
+   7314,
+   4870
+  ]
+ },
+ {
+  "id": "orn1",
+  "group": "orn",
+  "code": "ÖRN-1",
+  "title": "Örnek Hidrolik Silindir",
+  "dpi": 96,
+  "source": "örnek hidrolik silindir..jpg",
+  "levels": [
+   {
+    "url": "img/orn1_s.webp",
+    "width": 1600,
+    "height": 972,
+    "kb": 47
+   },
+   {
+    "url": "img/orn1_m.webp",
+    "width": 3905,
+    "height": 2373,
+    "kb": 244
+   },
+   {
+    "url": "img/orn1_f.webp",
+    "width": 3905,
+    "height": 2373,
+    "kb": 244
+   }
+  ],
+  "srcSize": [
+   3905,
+   2373
+  ]
+ },
+ {
+  "id": "orn2",
+  "group": "orn",
+  "code": "ÖRN-2",
+  "title": "Örnek Hidrolik Piston Boyu",
+  "dpi": 96,
+  "source": "örnek hidrolik piston boyu.png",
+  "levels": [
+   {
+    "url": "img/orn2_s.webp",
+    "width": 904,
+    "height": 656,
+    "kb": 36
+   },
+   {
+    "url": "img/orn2_m.webp",
+    "width": 904,
+    "height": 656,
+    "kb": 43
+   },
+   {
+    "url": "img/orn2_f.webp",
+    "width": 904,
+    "height": 656,
+    "kb": 43
+   }
+  ],
+  "srcSize": [
+   904,
+   656
+  ]
+ }
+]
